@@ -1,17 +1,3 @@
-.bleu {
-    background-color: blue; 
-    height: 40px;
-    width: 200px;
-  }
-  .rouge {
-    background-color: red;
-    height: 40px;
-    width: 200px;
-  }
-  .bleu:hover {
-    ~.rouge {background-color: green;}
-  }
-  
 .photographer_section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
