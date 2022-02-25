@@ -375,6 +375,22 @@ h1 {
   cursor: pointer;
 }
 
+.bleu {
+  background-color: blue;
+  height: 40px;
+  width: 200px;
+}
+
+.rouge {
+  background-color: red;
+  height: 40px;
+  width: 200px;
+}
+
+.bleu:hover ~ .rouge {
+  background-color: green;
+}
+
 .photographer_section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -390,7 +406,25 @@ h1 {
   flex-direction: column;
 }
 
+.photographer_section article a {
+  text-decoration: none;
+}
+
+.photographer_section article a .linkContainer {
+  border: #ffffff solid 2px;
+  padding: 5px 5px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.photographer_section article .linkContainer:hover {
+  border-radius: 10px;
+  border: #D3573C solid 2px;
+  padding: 5px 5px 0px;
+}
+
 .photographer_section article h2 {
+  text-align: center;
   color: #D3573C;
   font-size: 2.25em;
   font-weight: 400;
@@ -399,6 +433,7 @@ h1 {
 }
 
 .photographer_section article .imgContainer {
+  align-self: center;
   height: 200px;
   width: 200px;
   position: relative;
