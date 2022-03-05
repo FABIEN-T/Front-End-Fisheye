@@ -3,17 +3,33 @@
   <head>
     <link href="./css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye - photographe </title>
+    <link
+      rel="shortcut icon"
+      href="./assets/icons/favicon-photo.png"
+      type="image/png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Fisheye - photographe </title>    
+    <script src="./scripts/utils/function.js" defer></script>    
+    <script src="./scripts/factories/photographerPageFactory.js" defer></script> 
+    <script src="./scripts/pages/photographerPage.js" defer></script>     
+    <script src="./scripts/utils/contactForm.js" defer></script>
   </head>
+
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <a href="https://fabien-t.github.io/Front-End-Fisheye/public/" arialabel="lien vers la page d'acceuil">
+        <img src="assets/images/logo.png" alt="logo" class="logo" />
+      </a>
     </header>
     <main id="main">
       <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <!-- <button class="contact_button" onclick="displayModal()">Contactez-moi</button> -->
       </div>
     </main>
     <div id="contact_modal">
@@ -31,6 +47,5 @@
 				</form>
 			</div>
 		</div>
-    <script src="/scripts/utils/contactForm.js"></script>
   </body>
 </html>

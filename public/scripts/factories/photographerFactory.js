@@ -1,11 +1,13 @@
 function photographerFactory(data) {
-    const { name, portrait, city, country, tagline, price } = data;
-
+    const { name, id, portrait, city, country, tagline, price } = data;
+    console.log("ID", id);
     const picture = `assets/photographers/${portrait}`;
 
-    function getUserCardDOM() {       
+    function getUserCardDOM() {   
+        // Déclaration des variables pour la création d'éléments HTML
         const article = document.createElement( 'article' );  
         const linkPhotographer = document.createElement( 'a' );
+        linkPhotographer.classList.add( 'linkPhotographer' );
         const linkContainer = document.createElement( 'div' );
         linkContainer.classList.add( 'linkContainer' );
         const imgContainer = document.createElement( 'div' );
@@ -18,25 +20,34 @@ function photographerFactory(data) {
         slogan.classList.add( 'tagline' );
         const cost = document.createElement( 'div' );
         cost.classList.add( 'price');
-        
-        linkPhotographer.setAttribute("href", "#" );
-        // linkPhotographer.setAttribute("arialabel", "lien du photographe" );
 
-        img.setAttribute("src", picture);
-        img.setAttribute("alt", name); // comment insérer "portrait de" ?
+        console.log("hostname", window.location.hostname);
+        // const link = `https://fabien-t.github.io/Front-End-Fisheye/public/photographer.html?id=${id}`
+        const link = `http://127.0.0.1:5500/public/photographer.html?id=${id}`
+        // const link = window.location
+        console.log("LIEN", link);
+
+        // Création des attributs
+        linkPhotographer.setAttribute( 'href', link );
+        // linkPhotographer.setAttribute( '', id );
+        linkPhotographer.setAttribute("arialabel", "lien du photographe" );
+
+        img.setAttribute( 'src', picture );
+        img.setAttribute( 'alt', "Portrait de " + name ); 
 
         h2.textContent = name;
-        h2.setAttribute("arialabel", "nom du photographe");
+        h2.setAttribute( 'arialabel', 'nom du photographe' );
 
         cityCountry.textContent = city+','+' '+country;
-        cityCountry.setAttribute("arialabel", "ville du photographe");
+        cityCountry.setAttribute( 'arialabel', 'ville du photographe' );
 
         slogan.textContent = tagline;
-        slogan.setAttribute("arialabel", "slogan du photographe");
+        slogan.setAttribute( 'arialabel', 'slogan du photographe' );
 
-        cost.textContent = price+"€/jour";
-        cost.setAttribute("arialabel", "prix");
+        cost.textContent = price+'€/jour';
+        cost.setAttribute( 'arialabel', 'prix' );
         
+        // Création des éléments HTML
         // article.appendChild(imgContainer);
         article.appendChild(linkPhotographer);
         linkPhotographer.appendChild(linkContainer);
@@ -49,5 +60,13 @@ function photographerFactory(data) {
 
         return (article);
     }
+    
     return { name, picture, city, country, tagline, price, getUserCardDOM }
 }
+
+
+
+// window.addEventListener("DOMContentLoaded", (event) => {
+//     console.log("DOM entièrement chargé et analysé");
+//   });
+
