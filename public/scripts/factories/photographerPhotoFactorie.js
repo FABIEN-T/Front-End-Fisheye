@@ -30,6 +30,7 @@ function photographerPhotoFactory(data) {
     video.setAttribute("src", movie);
     video.setAttribute("control", "");
     video.setAttribute("poster", "");
+    video.setAttribute("alt", title);
     h2.textContent = title;
     h2.setAttribute("arialabel", "title");
     nbLikes.textContent = likes;

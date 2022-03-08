@@ -4,15 +4,13 @@
 
 .photograph-header {
     background-color: #fafafa;
+    // background-color: #999999;
     height: 300px;
-    margin: 0 100px;
+    margin: 020px 100px 100px;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-
-
-
 // .contact {
 //     order: 1;
 //     margin-top: -60px;
@@ -102,7 +100,11 @@
 
 }
 
-.photograph-photos .photoTextContainer .photoContainer {
+.photograph-photos .photoTextContainer {
+    margin-bottom: 18px;
+}
+
+.photograph-photos .photoContainer {
     // align-self: center;
     height: 350px;
     width: 350px;
@@ -113,7 +115,20 @@
     // box-shadow: 0px 5px 15px #cccccc;
 }
 
-.photograph-photos .photoTextContainer .photoContainer img, video {
+.photograph-photos .photoContainer img, video {
+    object-fit: cover;
+    max-height: 350px;
+    min-width: 350px;
+}
+
+.photograph-photos .photoContainer img {
+    object-fit: cover;
+    max-height: 350px;
+    min-width: 350px;
+    object-position: 80% 10%;
+}
+
+.photograph-photos .photoContainer video {
     object-fit: cover;
     max-height: 350px;
     min-width: 350px;
@@ -123,16 +138,13 @@
     transform: translate(-50%, -50%);
 }
 
-
-
-.titleContainer {
+.photograph-photos .titleContainer {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-
 }
 
-.titleContainer h2, .nbLikes {
+.photograph-photos .titleContainer h2, .nbLikes {
     color: #901C1C;
     font-size: 1.5em;
     font-weight: 400;
@@ -140,15 +152,21 @@
     margin: 0px;
 }
 
-.nbLikes {
+.photograph-photos .titleContainer h2 {    
+    width: 280px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 1.953em;
+}
+
+.photograph-photos .nbLikes {
     margin-right: 5px;
 }
 
-.titleContainer .iconHeart  {
-    color: transparent;
-    background-clip: text;
+.photograph-photos .titleContainer .iconHeart  {
     font-size: 1.4em;
-    background-color: #901C1C;
+    color: #901C1C;
     line-height: 1.953em;
 }
 
