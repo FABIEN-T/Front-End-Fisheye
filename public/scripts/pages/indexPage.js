@@ -21,8 +21,3 @@ async function init() {
 init();
 
 // linkPhotographer.addEventListener('click', photographerPage());
-// const photographersHeader = document.getElementsByClassName(".photograph-header");  
-// console.log(".photograph-header", photographersHeader);
-// const photographerPageModel = photographerPage(photographer);
-// const userCardHeaderDOM = photographerPageModel.getPhotographerPageDOM();
-// photographersHeader.appendChild(userCardHeaderDOM);
