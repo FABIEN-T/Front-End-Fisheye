@@ -22,9 +22,8 @@ function photographerFactory(data) {
         cost.classList.add( 'price');
 
         console.log("hostname", window.location.hostname);
-        // const link = `https://fabien-t.github.io/Front-End-Fisheye/public/photographer.html?id=${id}`
-        const link = `http://127.0.0.1:5500/public/photographer.html?id=${id}`
-        // const link = window.location
+        const link = `https://fabien-t.github.io/Front-End-Fisheye/public/photographer.html?id=${id}`
+        // const link = `http://127.0.0.1:5500/public/photographer.html?id=${id}`
         console.log("LIEN", link);
 
         // Création des attributs
