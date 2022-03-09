@@ -364,6 +364,38 @@ h1 {
   margin-left: 100px;
 }
 
+.photograph-header .contact_button {
+  font-size: 1.125em;
+  font-weight: 700;
+  color: white;
+  padding: 11px;
+  width: 170px;
+  height: 69px;
+  border: none;
+  background-color: #901C1C;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.photograph-header .contact_button:hover {
+  background-color: #DB8876;
+  color: black;
+}
+
+#contact_modal .contact_button {
+  font-size: 1.125em;
+  font-weight: 700;
+  background-color: #901C1C;
+  color: white;
+  width: 170px;
+}
+
+#contact_modal .contact_button:hover {
+  border: #901C1C solid 2px;
+  background-color: #DB8876;
+  color: black;
+}
+
 .photographer_section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -445,35 +477,14 @@ h1 {
   line-height: 11.72px;
 }
 
-#contact_modal {
-  display: none;
-}
-
 .photograph-header {
   background-color: #fafafa;
   height: 300px;
   margin: 20px 100px 100px;
+  padding: 0 30px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-}
-
-.contact_button {
-  font-size: 1.125em;
-  font-weight: 700;
-  color: white;
-  padding: 11px;
-  width: 170px;
-  height: 69px;
-  border: none;
-  background-color: #901C1C;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.contact_button:hover {
-  background-color: #DB8876;
-  color: black;
 }
 
 .photograph-header .nameContainer {
@@ -526,7 +537,7 @@ h1 {
 }
 
 .photograph-photos {
-  margin: 0 100px;
+  margin: 0 100px 40px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -599,46 +610,88 @@ h1 {
   line-height: 1.953em;
 }
 
-.modal {
-  border-radius: 5px;
+.insert {
+  box-sizing: border-box;
+  width: 376px;
+  height: 60px;
+  padding: 18px 50px;
+  position: fixed;
+  bottom: 0px;
+  right: 36px;
+  border-radius: 5px 5px 0px 0px;
   background-color: #DB8876;
+}
+
+.insert .insertText {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+#contact_modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+#contact_modal .content {
+  border-radius: 5px;
+  background-color: #db8876;
   width: 50%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 35px;
-  margin: auto;
+  position: absolute;
+  top: 1%;
+  left: 25%;
+  padding: 10px 35px 35px;
+  margin: 0 auto;
 }
 
-.modal header {
+#contact_modal header {
   justify-content: space-between;
   width: 100%;
 }
 
-.modal header img {
+#contact_modal header img {
   cursor: pointer;
 }
 
-.modal header h2 {
-  font-size: 64px;
+#contact_modal header h2 {
+  font-size: 4em;
   font-weight: normal;
   text-align: center;
 }
 
-form {
+#contact_modal form {
   display: flex;
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
 }
 
-form label {
-  color: #312E2E;
-  font-size: 36px;
+#contact_modal .formData {
+  margin: 0px 0px 5px;
+  padding: 0px;
 }
 
-form div {
+#contact_modal form label,
+form input,
+form textarea {
+  color: #312e2e;
+  font-size: 2.25em;
+  line-height: 1.5em;
+  margin: 0px;
+  padding: 0px;
+}
+
+#contact_modal form div {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -646,11 +699,35 @@ form div {
   margin-bottom: 26px;
 }
 
-form input {
+#contact_modal form input {
   width: 100%;
   height: 68px;
   border: none;
   border-radius: 5px;
+}
+
+#contact_modal form textarea {
+  width: 100%;
+  height: 170px;
+  border: none;
+  border-radius: 5px;
+  resize: none;
+}
+
+/* Mise en forme des messages d'erreurs */
+.error input {
+  color: #ff4e60;
+  border: 2px solid #fe142f;
+}
+
+.error > span {
+  display: flex;
+  font-size: 10px;
+  visibility: visible;
+  opacity: 1;
+  color: #fe142f;
+  margin-top: -5px;
+  margin-bottom: -8px;
 }
 
 /*# sourceMappingURL=style.css.map */

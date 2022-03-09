@@ -15,10 +15,7 @@
       src="./scripts/factories/photographerPageFactorie.js"
       defer
     ></script>
-    <script
-      src="./scripts/factories/photographerPhotoFactorie.js"
-      defer
-    ></script>
+    <script src="./scripts/factories/photographerPhotoFactorie.js" defer></script>
     <script src="./scripts/pages/photographerPage.js" defer></script>
     <script src="./scripts/utils/contactForm.js" defer></script>
   </head>
@@ -40,21 +37,83 @@
       </div>
       <div class="photograph-photos">
       </div>
-    </main>
-    <div id="contact_modal">
-      <div class="modal">
-        <header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
-        </header>
-        <form>
-          <div>
-            <label>Prénom</label>
-            <input />
+      <div class="insert">
+        <div class="insertText">
+          <div class="insertLikes">
+            <i class="fas fa-heart iconHeart"></i>
           </div>
-          <button class="contact_button">Envoyer</button>
-        </form>
+          <div>/ jour</div>
+        </div>        
       </div>
-    </div>
+    </main>
+    
+      <div id="contact_modal">
+        <div class="content">
+          <header>
+            <h2>Contactez-moi</h2>
+            <img src="assets/icons/close.svg" onclick="closeModal()" />
+          </header>
+          <form>
+            <div class="modal-body">
+              <form name="reserve" action="photographer.html" method="get" id="form">
+                <div class="formData firstName">
+                  <label for="first">Prénom</label>
+                  <br />
+                  <input
+                    class="text-control"
+                    type="text"
+                    id="first"
+                    name="first"
+                    minlength="2"
+                  />
+                  <!-- span permettant l'affichage du message d'erreur si le champ est incorrect -->
+                  <span></span>
+                  <br />
+                </div>
+
+                <div class="formData lastName">
+                  <label for="last">Nom</label>
+                  <br />
+                  <input
+                    class="text-control"
+                    type="text"
+                    id="last"
+                    name="last"
+                    minlength="2"
+                  />
+                  <span></span>
+                  <br />
+                </div>
+
+                <div class="formData address">
+                  <label for="email">E-mail</label>
+                  <br />
+                  <input
+                    class="text-control"
+                    type="email"
+                    id="email"
+                    name="email"
+                  />
+                  <span></span>
+                  <br />
+                </div>
+
+                <div class="formData message">
+                  <label for="textSpace">Votre message</label>
+                  <textarea
+                    class="text-control"
+                    type="text"
+                    id="textSpace"
+                    name="textSpace"                  
+                  />
+                  </textarea>
+                </div>  
+            </div>
+            <!-- <button class="contact_button">Envoyer</button> -->
+            <input class="contact_button" type="submit" value="Envoyer"/>
+          </form>
+        </div>
+      </div>
   </body>
 </html>
+

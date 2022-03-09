@@ -1,38 +1,12 @@
-#contact_modal {
-    display: none;
-}
-
 .photograph-header {
     background-color: #fafafa;
     // background-color: #999999;
     height: 300px;
     margin: 020px 100px 100px;
+    padding: 0 30px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-}
-// .contact {
-//     order: 1;
-//     margin-top: -60px;
-// }
-
-.contact_button {
-    font-size: 1.125em;
-    font-weight: 700;
-    color: white;
-    // margin-top: 40px;
-    padding: 11px;
-    width: 170px;
-    height: 69px;
-    border: none;
-    background-color: #901C1C;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.contact_button:hover {
-    background-color: #DB8876;
-    color: black;
 }
 
 .photograph-header .nameContainer {
@@ -93,7 +67,7 @@
 
 // photographer-photos
 .photograph-photos {
-    margin: 0 100px;
+    margin: 0 100px 40px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -169,5 +143,25 @@
     color: #901C1C;
     line-height: 1.953em;
 }
+
+.insert {
+    box-sizing: border-box;
+    width: 376px;
+    height: 60px;
+    padding: 18px 50px;
+    position: fixed;
+    bottom: 0px;
+    right: 36px;
+    border-radius: 5px 5px 0px 0px;
+    background-color: #DB8876;
+}
+
+.insert .insertText {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
 
 

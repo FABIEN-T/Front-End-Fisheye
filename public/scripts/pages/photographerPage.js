@@ -1,5 +1,3 @@
-//Mettre le code JavaScript lié à la page photographer.html
-
 async function displayData(photographer) {
   const photographersHeader = document.querySelector(".photograph-header");
   // console.log("async", photographer);
@@ -20,7 +18,6 @@ async function displayDataPhoto(photoVideo) {
 async function init() {
   // Récupère les datas des photographes
   const { photographers } = await getPhotographers();
-  // console.log("tableau", photographers);
   // console.log(
   //   "list id",
   //   photographers.map((e) => `${e.id}`)
@@ -30,11 +27,6 @@ async function init() {
 
   photographers.forEach((element) => {
     if (photographerId == element.id) {
-      // console.log(element.id);
-      // console.log(element.name);
-      // console.log(element.city);
-      // console.log(element.country);
-      // console.log(element.tagline);
       let photographerData = element;
       displayData(photographerData);
     }
@@ -45,14 +37,14 @@ async function init() {
   media.forEach((element) => {
     if (photographerId == element.photographerId) {      
       // console.log("photographerId", element.photographerId);
-      console.log("ID", element.id);
-      // console.log("title", element.title);
-      if (element.image) {
-        console.log("JPG", element.image);
-      }
-      else {
-        console.log("MP4", element.video);
-      } 
+      // console.log("ID", element.id);
+      // // console.log("title", element.title);
+      // if (element.image) {
+      //   console.log("JPG", element.image);
+      // }
+      // else {
+      //   console.log("MP4", element.video);
+      // } 
       let photoData = element;
       displayDataPhoto(photoData);
     }
