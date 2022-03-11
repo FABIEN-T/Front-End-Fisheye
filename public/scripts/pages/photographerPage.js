@@ -1,34 +1,33 @@
-async function displayData(photographer) {
-  const photographersHeader = document.querySelector(".photograph-header");
-  // console.log("async", photographer);
-  const photographerPageModel = photographerPageFactory(photographer);
-  const userPhotographerCardDOM = photographerPageModel.getPhotographerPageDOM();
-  photographersHeader.appendChild(userPhotographerCardDOM);
-}
+// async function displayData(photographer) {
+//   // const photographersHeader = document.querySelector(".photographHeader");
+//   // console.log("async", photographer);
+//   const photographerPageModel = photographerPageFactory(photographer);
+//   const userPhotographerCardDOM = photographerPageModel.getPhotographerPageDOM();
+//   // photographersHeader.appendChild(userPhotographerCardDOM);
+// }
 
-async function displayDataPhoto(photoVideo) {
-  // console.log("async", photoVideo);
-  const photographPhotos = document.querySelector(".photograph-photos");
-  const photographerPhotoModel = photographerPhotoFactory(photoVideo);
-  const userPhotographerPhotoDOM = photographerPhotoModel.getPhotographerPhotoDOM();  
-  photographPhotos.appendChild(userPhotographerPhotoDOM);
-}
+// async function displayDataPhoto(media) {
+//   // console.log("async", photoVideo);
+//   const photographPhotos = document.querySelector(".photograph-photos");
+//   const photographerPhotoModel = photographerPhotoFactory(media);
+//   const userPhotographerPhotoDOM = photographerPhotoModel.getPhotographerPhotoDOM();  
+//   photographPhotos.appendChild(userPhotographerPhotoDOM);
+// }
 
 
 async function init() {
   // Récupère les datas des photographes
   const { photographers } = await getPhotographers();
-  // console.log(
-  //   "list id",
-  //   photographers.map((e) => `${e.id}`)
-  // );
   let params = new URL(document.location).searchParams;
   let photographerId = params.get("id");
 
   photographers.forEach((element) => {
     if (photographerId == element.id) {
       let photographerData = element;
-      displayData(photographerData);
+      // displayData(photographerData);
+      const photographerPageModel = photographerPageFactory(photographerData);
+      photographerPageModel.getPhotographerPageDOM();
+
     }
   });
 
@@ -45,8 +44,14 @@ async function init() {
       // else {
       //   console.log("MP4", element.video);
       // } 
-      let photoData = element;
-      displayDataPhoto(photoData);
+      let type = "";
+      if (element.video) {
+        type = "video";       
+      } 
+      if (element.image) {
+        type = "image";
+      }
+      photographerPhotoFactory(element, type);  
     }
   });
 }
@@ -54,3 +59,8 @@ async function init() {
 init();
 
 
+
+  // console.log(
+  //   "list id",
+  //   photographers.map((e) => `${e.id}`)
+  // );

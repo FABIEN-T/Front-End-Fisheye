@@ -23,10 +23,22 @@
 // }
 
 function displayModal() {
+  let params = new URL(document.location).searchParams;
+  let photographerId = params.get("id");  
+  console.log("photographerId", photographerId);
+  
+
   const modal = document.getElementById("contact_modal");
   modal.style.display = "block";
-  // const bground = document.getElementsByClassName("bground");
-  // bground.style.display = "block";
+  // const h2 = document.createElement("h2");
+  // h2.textContent = "coucou";
+  // header.appendChild(h2);
+  // const { photographers } = await getPhotographers();
+  // const { name, id } = photographers;
+  // console.log(data);
+  
+  
+  // 
   //   initModal();
   // console.log("MODAL");
   // const h2 = document.querySelector(h2);

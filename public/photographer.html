@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="./css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8" />
@@ -15,27 +15,26 @@
       src="./scripts/factories/photographerPageFactorie.js"
       defer
     ></script>
-    <script src="./scripts/factories/photographerPhotoFactorie.js" defer></script>
+    <!-- <script src="./scripts/utils/function.js" defer></script> -->
+    <script src="./scripts/factories/photographerMediaFactorie.js" defer></script>
     <script src="./scripts/pages/photographerPage.js" defer></script>
+    <script src="./scripts/factories/modalFactorie.js" defer></script>
     <script src="./scripts/utils/contactForm.js" defer></script>
   </head>
 
   <body>
     <header>
-      <a
-        href="https://fabien-t.github.io/Front-End-Fisheye/public/"
-        arialabel="lien vers la page d'acceuil"
-      >
+      <a href="https://fabien-t.github.io/Front-End-Fisheye/public/">
         <img src="assets/images/logo.png" alt="logo" class="logo" />
       </a>
     </header>
     <main id="main">
-      <div class="photograph-header">
+      <div class="photographHeader">
         <button class="contact_button" onclick="displayModal()">
           Contactez-moi
         </button>
       </div>
-      <div class="photograph-photos">
+      <div class="photographMedia">
       </div>
       <div class="insert">
         <div class="insertText">
@@ -51,11 +50,11 @@
         <div class="content">
           <header>
             <h2>Contactez-moi</h2>
-            <img src="assets/icons/close.svg" onclick="closeModal()" />
+            <img src="assets/icons/close.svg" onclick="closeModal()" alt="croix de fermeture"/>
           </header>
-          <form>
+          <form name="reserve" action="photographer.html" method="get" id="form">
             <div class="modal-body">
-              <form name="reserve" action="photographer.html" method="get" id="form">
+              
                 <div class="formData firstName">
                   <label for="first">Prénom</label>
                   <br />
@@ -102,13 +101,12 @@
                   <label for="textSpace">Votre message</label>
                   <textarea
                     class="text-control"
-                    type="text"
                     id="textSpace"
                     name="textSpace"                  
-                  />
+                  >
                   </textarea>
                 </div>  
-            </div>
+              </div>
             <!-- <button class="contact_button">Envoyer</button> -->
             <input class="contact_button" type="submit" value="Envoyer"/>
           </form>

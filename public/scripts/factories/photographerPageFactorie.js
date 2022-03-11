@@ -1,4 +1,4 @@
-
+//FONCTION DE MISE EN FORME DES DATAS DU HEADER
 function photographerPageFactory(data) {
     const { name, portrait, city, country, tagline} = data;
     
@@ -6,7 +6,7 @@ function photographerPageFactory(data) {
 
     function getPhotographerPageDOM() {   
         // Déclaration des variables pour la création d'éléments HTML
-        const photographHeader= document.querySelector(".photograph-header");
+        const photographHeader= document.querySelector(".photographHeader");
         // const article = document.createElement( 'article' );
         const nameContainer = document.createElement( 'div' );
         nameContainer.classList.add( 'nameContainer' );
@@ -20,8 +20,8 @@ function photographerPageFactory(data) {
         const img = document.createElement( 'img' );
         const imgContainer = document.createElement( 'div' );
         imgContainer.classList.add( 'imgContainer');
-        // Création des attributs
-        
+
+        // Création des attributs        
         img.setAttribute('src', picture );
         img.setAttribute('alt', "Portrait de " + name );
     

@@ -364,7 +364,7 @@ h1 {
   margin-left: 100px;
 }
 
-.photograph-header .contact_button {
+.photographHeader .contact_button {
   font-size: 1.125em;
   font-weight: 700;
   color: white;
@@ -377,7 +377,7 @@ h1 {
   cursor: pointer;
 }
 
-.photograph-header .contact_button:hover {
+.photographHeader .contact_button:hover {
   background-color: #DB8876;
   color: black;
 }
@@ -396,14 +396,14 @@ h1 {
   color: black;
 }
 
-.photographer_section {
+.photographerSection {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 70px;
   margin-top: 50px;
 }
 
-.photographer_section article {
+.photographerSection article {
   justify-self: center;
   display: flex;
   justify-content: center;
@@ -411,24 +411,24 @@ h1 {
   flex-direction: column;
 }
 
-.photographer_section article a {
+.photographerSection article a {
   text-decoration: none;
 }
 
-.photographer_section article a .linkContainer {
+.photographerSection article a .linkContainer {
   border: #ffffff solid 2px;
   padding: 5px 5px 0px;
   display: flex;
   flex-direction: column;
 }
 
-.photographer_section article .linkContainer:hover {
+.photographerSection article .linkContainer:hover {
   border-radius: 10px;
   border: #D3573C solid 2px;
   padding: 5px 5px 0px;
 }
 
-.photographer_section article h2 {
+.photographerSection article h2 {
   text-align: center;
   color: #D3573C;
   font-size: 2.25em;
@@ -437,7 +437,7 @@ h1 {
   margin: 20px 0px 0px;
 }
 
-.photographer_section article .imgContainer {
+.photographerSection article .imgContainer {
   align-self: center;
   height: 200px;
   width: 200px;
@@ -447,7 +447,7 @@ h1 {
   box-shadow: 0px 5px 15px #cccccc;
 }
 
-.photographer_section article img {
+.photographerSection article img {
   object-fit: cover;
   max-height: 200px;
   min-width: 200px;
@@ -457,27 +457,27 @@ h1 {
   transform: translate(-50%, -50%);
 }
 
-.photographer_section article .location {
+.photographerSection article .location {
   color: #901C1C;
   font-size: 0.813em;
   font-weight: 400;
   line-height: 16.93px;
 }
 
-.photographer_section article .tagline {
+.photographerSection article .tagline {
   font-size: 0.625em;
   font-weight: 400;
   line-height: 16.02px;
 }
 
-.photographer_section article .price {
+.photographerSection article .price {
   color: #757575;
   font-size: 0.563em;
   font-weight: 400;
   line-height: 11.72px;
 }
 
-.photograph-header {
+.photographHeader {
   background-color: #fafafa;
   height: 300px;
   margin: 20px 100px 100px;
@@ -487,7 +487,7 @@ h1 {
   align-items: center;
 }
 
-.photograph-header .nameContainer {
+.photographHeader .nameContainer {
   order: -1;
   display: flex;
   flex-direction: column;
@@ -495,7 +495,7 @@ h1 {
   align-items: flex-start;
 }
 
-.photograph-header h2 {
+.photographHeader h2 {
   color: #D3573C;
   font-size: 4em;
   font-weight: 400;
@@ -503,21 +503,21 @@ h1 {
   margin: 20px 0px 0px;
 }
 
-.photograph-header .location {
+.photographHeader .location {
   color: #901C1C;
   font-size: 1.5em;
   font-weight: 400;
   line-height: 31.25px;
 }
 
-.photograph-header .tagline {
+.photographHeader .tagline {
   color: #525252;
   font-size: 1.125em;
   font-weight: 400;
   line-height: 50px;
 }
 
-.photograph-header .imgContainer {
+.photographHeader .imgContainer {
   height: 200px;
   width: 200px;
   position: relative;
@@ -526,7 +526,7 @@ h1 {
   box-shadow: 0px 5px 15px #cccccc;
 }
 
-.photograph-header .imgContainer img {
+.photographHeader .imgContainer img {
   object-fit: cover;
   max-height: 200px;
   min-width: 200px;
@@ -536,18 +536,18 @@ h1 {
   transform: translate(-50%, -50%);
 }
 
-.photograph-photos {
+.photographMedia {
   margin: 0 100px 40px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.photograph-photos .photoTextContainer {
+.photographMedia .mediaTextContainer {
   margin-bottom: 18px;
 }
 
-.photograph-photos .photoContainer {
+.photographMedia .photoContainer, .videoContainer {
   height: 350px;
   width: 350px;
   position: relative;
@@ -555,36 +555,30 @@ h1 {
   overflow: hidden;
 }
 
-.photograph-photos .photoContainer img, video {
+.photographMedia .photoContainer img, .videoContainer video {
   object-fit: cover;
   max-height: 350px;
   min-width: 350px;
 }
 
-.photograph-photos .photoContainer img {
-  object-fit: cover;
-  max-height: 350px;
-  min-width: 350px;
+.photographMedia .photoContainer img {
   object-position: 80% 10%;
 }
 
-.photograph-photos .photoContainer video {
-  object-fit: cover;
-  max-height: 350px;
-  min-width: 350px;
+.photographMedia .videoContainer video {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.photograph-photos .titleContainer {
+.photographMedia .titleContainer {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
 }
 
-.photograph-photos .titleContainer h2, .nbLikes {
+.photographMedia .titleContainer h2, .nbLikes {
   color: #901C1C;
   font-size: 1.5em;
   font-weight: 400;
@@ -592,7 +586,7 @@ h1 {
   margin: 0px;
 }
 
-.photograph-photos .titleContainer h2 {
+.photographMedia .titleContainer h2 {
   width: 280px;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -600,11 +594,11 @@ h1 {
   line-height: 1.953em;
 }
 
-.photograph-photos .nbLikes {
+.photographMedia .nbLikes {
   margin-right: 5px;
 }
 
-.photograph-photos .titleContainer .iconHeart {
+.photographMedia .titleContainer .iconHeart {
   font-size: 1.4em;
   color: #901C1C;
   line-height: 1.953em;
