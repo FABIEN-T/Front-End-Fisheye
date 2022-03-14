@@ -1,10 +1,11 @@
-function photographerFactory(data) {
+function photographerIndexFactory(data) {
     const { name, id, portrait, city, country, tagline, price } = data;
-    console.log("ID", id);
     const picture = `assets/photographers/${portrait}`;
+    getUserCardDOM();
 
     function getUserCardDOM() {   
         // Déclaration des variables pour la création d'éléments HTML
+        const photographersSection = document.querySelector(".photographerSection");
         const article = document.createElement( 'article' );  
         const linkPhotographer = document.createElement( 'a' );
         linkPhotographer.classList.add( 'linkPhotographer' );
@@ -21,11 +22,11 @@ function photographerFactory(data) {
         const cost = document.createElement( 'div' );
         cost.classList.add( 'price');
 
-        console.log("hostname", window.location.hostname);
+        // console.log("hostname", window.location.hostname);
         // const link = `https://fabien-t.github.io/Front-End-Fisheye/public/photographer.html?id=${id}`
         // const link = `http://127.0.0.1:5500/public/photographer.html?id=${id}`
         const link = `photographer.html?id=${id}`
-        console.log("LIEN", link);
+        // console.log("LIEN", link);
 
         // Création des attributs
         linkPhotographer.setAttribute( 'href', link );
@@ -48,6 +49,7 @@ function photographerFactory(data) {
         cost.setAttribute( 'arialabel', 'prix' );
         
         // Création des éléments HTML
+        photographersSection.appendChild(article);
         article.appendChild(linkPhotographer);
         linkPhotographer.appendChild(linkContainer);
         linkContainer.appendChild(imgContainer);
@@ -56,16 +58,13 @@ function photographerFactory(data) {
         article.appendChild(cityCountry);
         article.appendChild(slogan);
         article.appendChild(cost);
-
-        return (article);
+        // return (article);
     }
-    
-    return { name, picture, city, country, tagline, price, getUserCardDOM }
+    // return { name, city, country, tagline, price, getUserCardDOM }
+    // return { getUserCardDOM }
 }
 
 
 
-// window.addEventListener("DOMContentLoaded", (event) => {
-//     console.log("DOM entièrement chargé et analysé");
-//   });
+
 

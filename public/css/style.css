@@ -547,7 +547,7 @@ h1 {
   margin-bottom: 18px;
 }
 
-.photographMedia .photoContainer, .videoContainer {
+.photographMedia .mediaContainer {
   height: 350px;
   width: 350px;
   position: relative;
@@ -555,17 +555,17 @@ h1 {
   overflow: hidden;
 }
 
-.photographMedia .photoContainer img, .videoContainer video {
+.photographMedia .mediaContainer img, .mediaContainer video {
   object-fit: cover;
   max-height: 350px;
   min-width: 350px;
 }
 
-.photographMedia .photoContainer img {
+.photographMedia .mediaContainer img {
   object-position: 80% 10%;
 }
 
-.photographMedia .videoContainer video {
+.photographMedia .mediaContainer video {
   position: absolute;
   top: 50%;
   left: 50%;

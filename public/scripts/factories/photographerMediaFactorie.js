@@ -4,11 +4,11 @@ function photographerPhotoFactory(data, type) {
   // console.log("log",typeFactory);
   if (type == "image") {    
     getPhotographerPhotoDOM();
-    console.log("Factorie", typeFactory);
+    // console.log("Factorie", typeFactory);
   } 
   else if (type == "video") {
     getPhotographerVideoDOM();        
-    console.log("Factorie", typeFactory);
+    // console.log("Factorie", typeFactory);
   }
 
 // function getMediaDOM() {
@@ -17,14 +17,14 @@ function photographerPhotoFactory(data, type) {
 
   function getPhotographerVideoDOM() {
     // Déclaration des variables pour la création d'éléments HTML
-    console.log("countVideo");
+    // console.log("countVideo");
     const photographMedia = document.querySelector(".photographMedia");
     const mediaTextContainer = document.createElement("div");
     mediaTextContainer.classList.add("mediaTextContainer");
     const videoElement = document.createElement("video");
     
-    const videoContainer = document.createElement("div");
-    videoContainer.classList.add("videoContainer");
+    const mediaContainer = document.createElement("div");
+    mediaContainer.classList.add("mediaContainer");
     const titleContainer = document.createElement("div");
     titleContainer.classList.add("titleContainer");
     const h2 = document.createElement("h2");
@@ -51,8 +51,8 @@ function photographerPhotoFactory(data, type) {
 
     // Création des éléments HTML
     photographMedia.appendChild(mediaTextContainer);
-    mediaTextContainer.appendChild(videoContainer);   
-    videoContainer.appendChild(videoElement);
+    mediaTextContainer.appendChild(mediaContainer);   
+    mediaContainer.appendChild(videoElement);
     mediaTextContainer.appendChild(titleContainer);
     titleContainer.appendChild(h2);
     titleContainer.appendChild(likesHeart);
@@ -64,15 +64,15 @@ function photographerPhotoFactory(data, type) {
 
 
   function getPhotographerPhotoDOM() {
-    console.log("countPhoto");
+    // console.log("countPhoto");
     // Déclaration des variables pour la création d'éléments HTML
     const photographMedia = document.querySelector(".photographMedia");
     const mediaTextContainer = document.createElement("div");
     mediaTextContainer.classList.add("mediaTextContainer");
     const imgElement = document.createElement("img");
     
-    const photoContainer = document.createElement("div");
-    photoContainer.classList.add("photoContainer");
+    const mediaContainer = document.createElement("div");
+    mediaContainer.classList.add("mediaContainer");
     const titleContainer = document.createElement("div");
     titleContainer.classList.add("titleContainer");
     const h2 = document.createElement("h2");
@@ -97,8 +97,8 @@ function photographerPhotoFactory(data, type) {
 
     // Création des éléments HTML
     photographMedia.appendChild(mediaTextContainer);
-    mediaTextContainer.appendChild(photoContainer);
-    photoContainer.appendChild(imgElement);
+    mediaTextContainer.appendChild(mediaContainer);
+    mediaContainer.appendChild(imgElement);
     mediaTextContainer.appendChild(titleContainer);
     titleContainer.appendChild(h2);
     titleContainer.appendChild(likesHeart);

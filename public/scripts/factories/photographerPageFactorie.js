@@ -1,8 +1,8 @@
 //FONCTION DE MISE EN FORME DES DATAS DU HEADER
 function photographerPageFactory(data) {
-    const { name, portrait, city, country, tagline} = data;
+    const { name, portrait, city, country, tagline} = data;    
     
-    const picture = `assets/photographers/${portrait}`;
+    getPhotographerPageDOM();
 
     function getPhotographerPageDOM() {   
         // Déclaration des variables pour la création d'éléments HTML
@@ -21,7 +21,8 @@ function photographerPageFactory(data) {
         const imgContainer = document.createElement( 'div' );
         imgContainer.classList.add( 'imgContainer');
 
-        // Création des attributs        
+        // Création des attributs
+        const picture = `assets/photographers/${portrait}`;        
         img.setAttribute('src', picture );
         img.setAttribute('alt', "Portrait de " + name );
     
@@ -44,15 +45,11 @@ function photographerPageFactory(data) {
         nameContainer.appendChild(slogan);
         // photographHeader.appendChild(button);
         photographHeader.appendChild(imgContainer);
-        imgContainer.appendChild(img);
-    
-        
-        // linkPhotographer.forEach((link) => link.addEventListener('click', photographerPage));
-       
-        return (photographHeader);
+        imgContainer.appendChild(img);       
+        // return (photographHeader);
     }
     
-    return { name, picture, city, country, tagline, getPhotographerPageDOM }
+    // return { name, city, country, tagline, getPhotographerPageDOM }
 }
 
 
