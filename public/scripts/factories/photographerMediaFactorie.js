@@ -2,15 +2,23 @@ function photographerPhotoFactory(data, type) {
   const { id, photographerId, title, image, video, likes, date, price } = data; 
   const typeFactory = type;
   // console.log("log",typeFactory);
-  if (type == "image") {    
+  if (typeFactory == "image") {    
     getPhotographerPhotoDOM();
     // console.log("Factorie", typeFactory);
   } 
-  else if (type == "video") {
+  else if (typeFactory == "video") {
     getPhotographerVideoDOM();        
     // console.log("Factorie", typeFactory);
   }
-
+  // const photographMedia = document.querySelector(".photographMedia");
+  // const mediaContainer = photographMedia.querySelectorAll("div.mediaTextContainer > div.mediaContainer"); 
+  // mediaContainer.addEventListener("click", displayLightbox);
+  // const mediaContainer = document.querySelectorAll(".mediaContainer");
+  // console.log(mediaContainer);
+  // mediaContainer.forEach(() => {
+  //   mediaContainer.addEventListener("click", displayLightbox);
+  // });
+  
 // function getMediaDOM() {
 
 // }
@@ -20,11 +28,10 @@ function photographerPhotoFactory(data, type) {
     // console.log("countVideo");
     const photographMedia = document.querySelector(".photographMedia");
     const mediaTextContainer = document.createElement("div");
-    mediaTextContainer.classList.add("mediaTextContainer");
-    const videoElement = document.createElement("video");
-    
+    mediaTextContainer.classList.add("mediaTextContainer");  
     const mediaContainer = document.createElement("div");
     mediaContainer.classList.add("mediaContainer");
+    const videoElement = document.createElement("video");
     const titleContainer = document.createElement("div");
     titleContainer.classList.add("titleContainer");
     const h2 = document.createElement("h2");
@@ -36,11 +43,15 @@ function photographerPhotoFactory(data, type) {
     // iconHeart.classList.add("iconHeart");
 
     // Création des attributs
+    
+
+
     const movie = `assets/images/${video}`;
     videoElement.setAttribute("src", movie);
     videoElement.setAttribute("control", "");
     videoElement.setAttribute("poster", "");
-    videoElement.setAttribute("alt", title); 
+    videoElement.setAttribute("alt", title);
+   
     
     h2.textContent = title;
     h2.setAttribute("arialabel", "title");
@@ -51,7 +62,7 @@ function photographerPhotoFactory(data, type) {
 
     // Création des éléments HTML
     photographMedia.appendChild(mediaTextContainer);
-    mediaTextContainer.appendChild(mediaContainer);   
+    mediaTextContainer.appendChild(mediaContainer);
     mediaContainer.appendChild(videoElement);
     mediaTextContainer.appendChild(titleContainer);
     titleContainer.appendChild(h2);
@@ -69,10 +80,9 @@ function photographerPhotoFactory(data, type) {
     const photographMedia = document.querySelector(".photographMedia");
     const mediaTextContainer = document.createElement("div");
     mediaTextContainer.classList.add("mediaTextContainer");
-    const imgElement = document.createElement("img");
-    
     const mediaContainer = document.createElement("div");
     mediaContainer.classList.add("mediaContainer");
+    const imgElement = document.createElement("img");
     const titleContainer = document.createElement("div");
     titleContainer.classList.add("titleContainer");
     const h2 = document.createElement("h2");
@@ -82,11 +92,12 @@ function photographerPhotoFactory(data, type) {
     nbLikes.classList.add("nbLikes");
     const iconHeart = document.createElement("i");
     // iconHeart.classList.add("iconHeart");
-
+    
     // Création des attributs
     const picture = `assets/images/${image}`;
     imgElement.setAttribute("src", picture);
     imgElement.setAttribute("alt", title);
+   
     
     h2.textContent = title;
     h2.setAttribute("arialabel", "title");

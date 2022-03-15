@@ -18,6 +18,8 @@
     <!-- <script src="./scripts/utils/function.js" defer></script> -->
     <script src="./scripts/factories/photographerMediaFactorie.js" defer></script>
     <script src="./scripts/pages/photographerPage.js" defer></script>
+    <script src="./scripts/factories/lightboxFactorie.js" defer></script>
+    <script src="./scripts/utils/lightbox.js" defer></script>
     <script src="./scripts/factories/modalFactorie.js" defer></script>
     <script src="./scripts/utils/contactForm.js" defer></script>
   </head>
@@ -111,6 +113,11 @@
             <input class="contact_button" type="submit" value="Envoyer"/>
           </form>
         </div>
+      </div>
+
+      <div id="lightbox">
+        <!-- <h2>Lightbox</h2> -->
+        <img src="assets/icons/close.svg" onclick="closeLightbox()" alt="croix de fermeture"/>
       </div>
   </body>
 </html>

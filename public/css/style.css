@@ -422,7 +422,7 @@ h1 {
   flex-direction: column;
 }
 
-.photographerSection article .linkContainer:hover {
+.photographerSection article a .linkContainer:hover {
   border-radius: 10px;
   border: #D3573C solid 2px;
   padding: 5px 5px 0px;
@@ -548,6 +548,7 @@ h1 {
 }
 
 .photographMedia .mediaContainer {
+  cursor: pointer;
   height: 350px;
   width: 350px;
   position: relative;
@@ -557,19 +558,19 @@ h1 {
 
 .photographMedia .mediaContainer img, .mediaContainer video {
   object-fit: cover;
-  max-height: 350px;
-  min-width: 350px;
 }
 
 .photographMedia .mediaContainer img {
-  object-position: 80% 10%;
+  max-height: 350px;
+  min-width: 350px;
+  object-position: 80% 18%;
 }
 
 .photographMedia .mediaContainer video {
+  min-height: 350px;
+  max-width: 350px;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  object-position: 50% 50%;
 }
 
 .photographMedia .titleContainer {
@@ -722,6 +723,35 @@ form textarea {
   color: #fe142f;
   margin-top: -5px;
   margin-bottom: -8px;
+}
+
+#lightbox {
+  box-sizing: border-box;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: white;
+  padding: 60px 60px;
+}
+
+#lightbox img {
+  cursor: pointer;
+  background-color: #901C1C;
+}
+
+#lightbox .mediaContainer img, .mediaContainer video {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 100%;
+}
+
+#lightbox .icon {
+  color: #901C1C;
 }
 
 /*# sourceMappingURL=style.css.map */

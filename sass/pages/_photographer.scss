@@ -78,6 +78,7 @@
 }
 
 .photographMedia .mediaContainer {
+    cursor: pointer;
     height: 350px;
     width: 350px;
     position: relative;
@@ -85,27 +86,21 @@
     overflow: hidden;
 }
 
-.photographMedia .mediaContainer img, .mediaContainer video {
+.photographMedia .mediaContainer img, .mediaContainer video {    
     object-fit: cover;
-    max-height: 350px;
-    min-width: 350px;
 }
 
 .photographMedia .mediaContainer img {
-    // object-fit: cover;
-    // max-height: 350px;
-    // min-width: 350px;
-    object-position: 80% 10%;
+    max-height: 350px;
+    min-width: 350px;  
+    object-position: 80% 18%;  
 }
 
 .photographMedia .mediaContainer video {
-    // object-fit: cover;
-    // max-height: 350px;
-    // min-width: 350px;
+    min-height: 350px;
+    max-width: 350px;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    object-position: 50% 50%;  
 }
 
 .photographMedia .titleContainer {

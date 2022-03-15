@@ -1,0 +1,40 @@
+#lightbox {
+    box-sizing: border-box;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgb(255, 255, 255);
+    padding: 60px 60px;
+  }
+
+//   #lightbox .content {
+//       display: flex;
+//   }
+
+  #lightbox img {
+    cursor: pointer;
+    background-color: #901C1C;
+    // fill: green;
+  }
+
+//   #lightbox .mediaTextContainer {
+//   }
+
+//   #lightbox .mediatextContainer .linkLightbox:hover {
+      
+//   }
+
+  #lightbox .mediaContainer img, .mediaContainer video {
+      box-sizing: border-box;
+      max-width: 100%;
+      min-width: 100%;
+  }
+
+  #lightbox .icon{
+    color: #901C1C;
+  }

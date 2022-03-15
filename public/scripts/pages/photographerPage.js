@@ -28,11 +28,25 @@ async function init() {
       photographerPhotoFactory(element, type);
     }
   });
-}
+  
+// Détection du clic sur un media et ouverture de la lightbox 
+  const mediaContainer = document.querySelectorAll(".mediaContainer");
+  // console.log(mediaContainer);
+  
+  for(let i = 0;i < mediaContainer.length;i++){
+    mediaContainer[i].addEventListener("click", displayLightbox);
+    // console.log("itérations", i);
+    };
+}  
 
 init();
+
+
+
+
 
 // console.log(
 //   "list id",
 //   photographers.map((e) => `${e.id}`)
 // );
+
