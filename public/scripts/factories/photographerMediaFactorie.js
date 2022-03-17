@@ -10,6 +10,7 @@ function photographerPhotoFactory(data, type) {
     getPhotographerVideoDOM();        
     // console.log("Factorie", typeFactory);
   }
+  
   // const photographMedia = document.querySelector(".photographMedia");
   // const mediaContainer = photographMedia.querySelectorAll("div.mediaTextContainer > div.mediaContainer"); 
   // mediaContainer.addEventListener("click", displayLightbox);

@@ -1,4 +1,4 @@
-async function init() {
+async function initPhotographer() {
   // Récupère l'ID dans l'URL
   let params = new URL(document.location).searchParams;
   let photographerId = params.get("id");
@@ -6,41 +6,56 @@ async function init() {
   // Récupère les datas et les medias des photographes
   const { photographers, media } = await getPhotographers();
 
-// Récupère les medias des photographes
+  // Récupère les medias des photographes
   photographers.forEach((element) => {
     if (photographerId == element.id) {
-      photographerPageFactory(element);      
+      photographerPageFactory(element);
     }
   });
 
-  // Récupère les datas des médias
+  // Récupère les datas des médias pour le photographe sélectionné
   media.forEach((element) => {
+    
     if (photographerId == element.photographerId) {
       let type = "";
-  // Détection du type de médias : image ou vidéo
+      // Détection du type de médias : image ou vidéo
       if (element.video) {
         type = "video";
       }
       if (element.image) {
         type = "image";
       }
-// type mis en paramètre dans la fonction         
+      // type mis en paramètre dans la fonction
       photographerPhotoFactory(element, type);
     }
   });
-  
-// Détection du clic sur un media et ouverture de la lightbox 
+
+  // Ecoute du clic sur un média pour lancer la galerie
   const mediaContainer = document.querySelectorAll(".mediaContainer");
-  // console.log(mediaContainer);
   
-  for(let i = 0;i < mediaContainer.length;i++){
-    mediaContainer[i].addEventListener("click", displayLightbox);
-    // console.log("itérations", i);
-    };
-}  
+  // for (let i = 0; i < mediaContainer.length; i++) {
+  //   mediaContainer[i].addEventListener("click", (e) => {
+  //     console.log("id", e.target.id);
+  //   });
 
-init();
+  mediaContainer.forEach(element => element.addEventListener("click", (e) => {
+   
+    console.log("id", e.target.id)
+  }
 
+  ));
+
+    
+    // console.log(event.target.id);
+    // .addEventListener("input", (e) => {      
+    //     console.log("ImageID", e.target.id);
+    //   });
+    // console.log("element", element);
+    // console.log("itérations", i, mediaContainer);
+    }
+// }
+
+initPhotographer();
 
 
 
@@ -49,4 +64,3 @@ init();
 //   "list id",
 //   photographers.map((e) => `${e.id}`)
 // );
-

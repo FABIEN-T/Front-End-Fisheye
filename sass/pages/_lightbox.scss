@@ -9,32 +9,32 @@
     width: 100%;
     overflow: auto;
     background-color: rgb(255, 255, 255);
-    padding: 60px 60px;
+    padding: 30px 120px;
   }
 
 //   #lightbox .content {
 //       display: flex;
 //   }
 
-  #lightbox img {
+  #lightbox .iconCross {
     cursor: pointer;
     background-color: #901C1C;
-    // fill: green;
+    position: fixed;
+    top: 30px;
+    right: 50px;
   }
 
-//   #lightbox .mediaTextContainer {
-//   }
-
-//   #lightbox .mediatextContainer .linkLightbox:hover {
-      
-//   }
-
-  #lightbox .mediaContainer img, .mediaContainer video {
+  #lightbox .boxMediaContainer img, .boxMediaContainer video {
       box-sizing: border-box;
       max-width: 100%;
       min-width: 100%;
   }
 
-  #lightbox .icon{
+  #lightbox .boxMediaTextContainer .boxTitleContainer h2 {
     color: #901C1C;
+    font-size: 1.5em;
+    margin-top: 0px;
+    font-weight: 400;
   }
+
+ 

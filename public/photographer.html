@@ -20,7 +20,7 @@
     <script src="./scripts/pages/photographerPage.js" defer></script>
     <script src="./scripts/factories/lightboxFactorie.js" defer></script>
     <script src="./scripts/utils/lightbox.js" defer></script>
-    <script src="./scripts/factories/modalFactorie.js" defer></script>
+    <script src="./scripts/factories/contactFactorie.js" defer></script>
     <script src="./scripts/utils/contactForm.js" defer></script>
   </head>
 
@@ -50,8 +50,8 @@
     
       <div id="contact_modal">
         <div class="content">
-          <header>
-            <h2>Contactez-moi</h2>
+          <header class="headerModal">
+            <h2 class="hContact">Contactez </h2>
             <img src="assets/icons/close.svg" onclick="closeModal()" alt="croix de fermeture"/>
           </header>
           <form name="reserve" action="photographer.html" method="get" id="form">
@@ -66,6 +66,8 @@
                     id="first"
                     name="first"
                     minlength="2"
+                    maxlength="40"
+                    placeholder="Veuillez entrer entre 2 et 40 caractères pour le champ Prénom."
                   />
                   <!-- span permettant l'affichage du message d'erreur si le champ est incorrect -->
                   <span></span>
@@ -81,6 +83,8 @@
                     id="last"
                     name="last"
                     minlength="2"
+                    maxlength="40"
+                    placeholder="Veuillez entrer entre 2 et 40 caractères pour le champ Prénom."
                   />
                   <span></span>
                   <br />
@@ -94,6 +98,7 @@
                     type="email"
                     id="email"
                     name="email"
+                    placeholder="ne pas mettre d'espace ni de caractères accentués"
                   />
                   <span></span>
                   <br />
@@ -104,7 +109,8 @@
                   <textarea
                     class="text-control"
                     id="textSpace"
-                    name="textSpace"                  
+                    name="textSpace"  
+                    placeholder="message nécessaire"                
                   >
                   </textarea>
                 </div>  
@@ -117,7 +123,7 @@
 
       <div id="lightbox">
         <!-- <h2>Lightbox</h2> -->
-        <img src="assets/icons/close.svg" onclick="closeLightbox()" alt="croix de fermeture"/>
+        <img src="assets/icons/close.svg" onclick="closeLightbox()" alt="croix de fermeture" class="iconCross"/>
       </div>
   </body>
 </html>

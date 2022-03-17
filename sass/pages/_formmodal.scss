@@ -35,7 +35,8 @@
 }
 
 #contact_modal header h2 {
-  font-size: 4em;
+  // font-size: 4em;
+  font-size: 2em;
   font-weight: normal;
   text-align: center;
 }
@@ -53,11 +54,21 @@
   // background-color: aqua;
 }
 
-#contact_modal form label,
+#contact_modal form label {
+  color: #312e2e;
+  font-size: 2.25em;
+  // font-size: 1.2em;
+  line-height: 1.5em;
+  margin: 0px;
+  padding: 0px;
+}
+
+#contact_modal 
 form input,
 form textarea {
   color: #312e2e;
-  font-size: 2.25em;
+  font-size: 1em;
+  // font-size: 1.2em;
   line-height: 1.5em;
   margin: 0px;
   padding: 0px;

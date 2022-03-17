@@ -659,7 +659,7 @@ h1 {
 }
 
 #contact_modal header h2 {
-  font-size: 4em;
+  font-size: 2em;
   font-weight: normal;
   text-align: center;
 }
@@ -676,11 +676,18 @@ h1 {
   padding: 0px;
 }
 
-#contact_modal form label,
-form input,
-form textarea {
+#contact_modal form label {
   color: #312e2e;
   font-size: 2.25em;
+  line-height: 1.5em;
+  margin: 0px;
+  padding: 0px;
+}
+
+#contact_modal form input,
+form textarea {
+  color: #312e2e;
+  font-size: 1em;
   line-height: 1.5em;
   margin: 0px;
   padding: 0px;
@@ -736,22 +743,28 @@ form textarea {
   width: 100%;
   overflow: auto;
   background-color: white;
-  padding: 60px 60px;
+  padding: 30px 120px;
 }
 
-#lightbox img {
+#lightbox .iconCross {
   cursor: pointer;
   background-color: #901C1C;
+  position: fixed;
+  top: 30px;
+  right: 50px;
 }
 
-#lightbox .mediaContainer img, .mediaContainer video {
+#lightbox .boxMediaContainer img, .boxMediaContainer video {
   box-sizing: border-box;
   max-width: 100%;
   min-width: 100%;
 }
 
-#lightbox .icon {
+#lightbox .boxMediaTextContainer .boxTitleContainer h2 {
   color: #901C1C;
+  font-size: 1.5em;
+  margin-top: 0px;
+  font-weight: 400;
 }
 
 /*# sourceMappingURL=style.css.map */
