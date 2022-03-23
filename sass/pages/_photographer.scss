@@ -129,6 +129,12 @@
     margin-right: 5px;
 }
 
+// .photographMedia .titleContainer .likeHeart {
+//     // width: 100px;
+//     display: flex;
+//     // flex-direction: row;
+// }
+
 .photographMedia .titleContainer .iconHeart  {
     font-size: 1.4em;
     color: #901C1C;
@@ -139,17 +145,25 @@
     box-sizing: border-box;
     width: 376px;
     height: 60px;
-    padding: 18px 50px;
+    padding: 18px 30px;
     position: fixed;
     bottom: 0px;
     right: 36px;
     border-radius: 5px 5px 0px 0px;
     background-color: #DB8876;
+    font-size: 1.5em;
+    font-weight: 500;
 }
 
 .insert .insertText {
     display: flex;
     justify-content: space-between;
-    font-size: 1.5em;
-    font-weight: 500;
+}
+
+.insert .insertLikes {
+    display: flex;
+}
+
+.insert .totalLikes {
+    margin-right: 5px;
 }

@@ -26,7 +26,8 @@ async function initPhotographer() {
         type = "image";
       }
       // type mis en paramètre dans la fonction
-      photographerPhotoFactory(element, type);
+      photographerMediaFactory(element, type);
+      // totalLikes();
     }
   });
 
@@ -38,12 +39,12 @@ async function initPhotographer() {
   //     console.log("id", e.target.id);
   //   });
 
-  mediaContainer.forEach(element => element.addEventListener("click", (e) => {
+  // mediaContainer.forEach(element => element.addEventListener("click", (e) => {
    
-    console.log("id", e.target.id)
-  }
+  //   console.log("id", e.target.id)
+  // }
 
-  ));
+  // ));
 
     
     // console.log(event.target.id);
@@ -56,6 +57,8 @@ async function initPhotographer() {
 // }
 
 initPhotographer();
+
+
 
 
 

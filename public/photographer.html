@@ -16,8 +16,9 @@
       defer
     ></script>
     <!-- <script src="./scripts/utils/function.js" defer></script> -->
-    <script src="./scripts/factories/photographerMediaFactorie.js" defer></script>
     <script src="./scripts/pages/photographerPage.js" defer></script>
+    <script src="./scripts/factories/photographerMediaFactorie.js" defer></script>
+    <script src="./scripts/utils/insert.js" defer></script>
     <script src="./scripts/factories/lightboxFactorie.js" defer></script>
     <script src="./scripts/utils/lightbox.js" defer></script>
     <script src="./scripts/factories/contactFactorie.js" defer></script>
@@ -41,9 +42,12 @@
       <div class="insert">
         <div class="insertText">
           <div class="insertLikes">
-            <i class="fas fa-heart iconHeart"></i>
+            <div class="totalLikes"></div>
+            <div class="iconLikes">
+              <i class="fas fa-heart iconHeart"></i>
+            </div>
           </div>
-          <div>/ jour</div>
+          <div class="pricePerDay">/ jour</div>
         </div>        
       </div>
     </main>
