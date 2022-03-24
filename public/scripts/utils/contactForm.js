@@ -20,6 +20,8 @@ async function displayModal() {
         // console.log(title.innerHTML);
       }
     }
+    // const attributId = modal.getAttribute("id");
+    // console.log("attributId", attributId);
   });
 
   contactFactory();

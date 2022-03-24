@@ -1,5 +1,5 @@
-function photographerMediaFactory(data, type) {
-  const { id, photographerId, title, image, video, likes, date, price } = data; 
+function photographerMediaFactory(dataMedia, type) {
+  const { id, photographerId, title, image, video, likes, date, price } = dataMedia; 
   // console.log("factory", likes);
 
   const typeFactory = type;
@@ -13,18 +13,27 @@ function photographerMediaFactory(data, type) {
     // console.log("Factorie", typeFactory);
   }
   
-  // const photographMedia = document.querySelector(".photographMedia");
-  // const mediaContainer = photographMedia.querySelectorAll("div.mediaTextContainer > div.mediaContainer"); 
-  // mediaContainer.addEventListener("click", displayLightbox);
-  // const mediaContainer = document.querySelectorAll(".mediaContainer");
-  // console.log(mediaContainer);
-  // mediaContainer.forEach(() => {
-  //   mediaContainer.addEventListener("click", displayLightbox);
-  // });
-  
-// function getMediaDOM() {
+  // Ecoute du click sur un média
+  const clickImg = document.querySelectorAll("img");
+  const clickVideo = document.querySelectorAll("video");
+  // const attributId = .getAttribute("id");
+  // console.log("attributId", attributId);
+  console.log("clickImage", clickImg);
+  clickImg.forEach((dataMedia) => {
+    // console.log(clickImg.getAttribute);
+    dataMedia.addEventListener("click", (e) => {
+      // console.log("target img", e.target.id);
+      displayLightbox(e);
+    })
+  }); 
 
-// }
+  clickVideo.forEach((dataMedia) => {
+    dataMedia.addEventListener("click", (e) => {      
+      // console.log("target video", e.target.id);
+      displayLightbox(e);
+    })
+  }); 
+  
 
   function getPhotographerVideoDOM() {
     // Déclaration des variables pour la création d'éléments HTML

@@ -27,32 +27,14 @@ async function initPhotographer() {
       }
       // type mis en paramètre dans la fonction
       photographerMediaFactory(element, type);
-      // totalLikes();
     }
   });
 
   // Ecoute du clic sur un média pour lancer la galerie
-  const mediaContainer = document.querySelectorAll(".mediaContainer");
   
-  // for (let i = 0; i < mediaContainer.length; i++) {
-  //   mediaContainer[i].addEventListener("click", (e) => {
-  //     console.log("id", e.target.id);
-  //   });
 
-  // mediaContainer.forEach(element => element.addEventListener("click", (e) => {
-   
-  //   console.log("id", e.target.id)
-  // }
-
-  // ));
 
     
-    // console.log(event.target.id);
-    // .addEventListener("input", (e) => {      
-    //     console.log("ImageID", e.target.id);
-    //   });
-    // console.log("element", element);
-    // console.log("itérations", i, mediaContainer);
     }
 // }
 

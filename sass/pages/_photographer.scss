@@ -78,7 +78,7 @@
 }
 
 .photographMedia .mediaContainer {
-    cursor: pointer;
+    // cursor: pointer;
     height: 350px;
     width: 350px;
     position: relative;
@@ -87,6 +87,7 @@
 }
 
 .photographMedia .mediaContainer img, .mediaContainer video {    
+    cursor: pointer;
     object-fit: cover;
 }
 

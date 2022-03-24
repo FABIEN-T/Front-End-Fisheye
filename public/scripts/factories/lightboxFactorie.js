@@ -1,16 +1,25 @@
-function lightboxFactory() {
+function lightboxFactory(dataMedia) {
+  const {id, photographerId, title, image, video} = dataMedia;
+  // console.log("media", media);
+  // console.log("id", e);
   async function initLightbox() {
     // Récupère l'ID dans l'URL
     let params = new URL(document.location).searchParams;
     let photographerId = params.get("id");
-
-    // Récupère les datas et les medias des photographes
-    const { media } = await getPhotographers();
     
-    // Récupère les datas des médias pour le photographe sélectionné
-    media.forEach((element) => {
-      
-      if (photographerId == element.photographerId) {
+    const photographMedia = document.querySelector(".photographMedia");
+    const imgElement = photographMedia.querySelector("img"); 
+    const imgId = imgElement.getAttribute("id");
+    console.log("attribut imgId", imgId);
+    // console.log("Id", dataMedia.id);
+
+    // if (imgId == id) {
+    //   console.log("ok");
+    console.log(id);
+    dataMedia.forEach((element) => {   
+      console.log(element);   
+    // Pour un photographe sélectionné, tri des "img" et "video"  
+      if (photographerId == element.photographerId) {        
         console.log("element.id", element.id);
         // let type = "";
         // Détection du type de médias : image ou vidéo
@@ -18,25 +27,33 @@ function lightboxFactory() {
           // type = "video";
           // console.log("Video Element.id", element.id);
           // console.log(element.video);
-          getLightboxVideoDOM(element);
+          getLightboxVideoDOM();
         }
         if (element.image) {
           // console.log("Photo Element.id", element.id);
           // console.log(element.image);
-          getLightboxPhotoDOM(element);
+          getLightboxPhotoDOM();
         }
         // type mis en paramètre dans la fonction
         // recoveryData(element, type);
       }
     });
+  // }
+
   }
   initLightbox();
+  // const photographMedia = document.querySelector(".photographMedia");
+  // const imgId = photographMedia.querySelector("img"); 
+  // // const attributId = lightbox.getAttribute("id");
+  // // console.log("attributId", attributId);
+  // const attributId = imgId.getAttribute("id");
+  // console.log("imgId", attributId);
 
-  function getLightboxVideoDOM(element) {
-    const { id, title, video, date } = element;
+  function getLightboxVideoDOM() {
+    // const { id, title, video, date } = element;
     // Déclaration des variables pour la création d'éléments HTML
     // console.log("countVideo");
-    const lightbox = document.querySelector("#lightbox");
+    const lightbox = document.querySelector("#lightbox");    
     const boxMediaTextContainer = document.createElement("div");
     boxMediaTextContainer.classList.add("boxMediaTextContainer");
     const boxMediaContainer = document.createElement("div");
@@ -65,13 +82,14 @@ function lightboxFactory() {
     // return (photographMedia);
   }
 
-  function getLightboxPhotoDOM(element) {
-    const { id, title, image, date } = element;
+  function getLightboxPhotoDOM() {
+    console.log("getLightboxPhotoDOM")
+    // const { id, title, image, date } = element;
     // console.log("countPhoto");
     // Déclaration des variables pour la création d'éléments HTML
-    const lightbox = document.querySelector(".photographMedia");
-    const boxMediaTextContainer = document.createElement("div");
-    boxMediaTextContainer.classList.add("boxMediaTextContainer");
+    const lightbox = document.querySelector("#lightbox");
+    const boxMediaTextContainer = document.querySelector(".boxMediaTextContainer");
+    // boxMediaTextContainer.classList.add("boxMediaTextContainer");
     const boxMediaContainer = document.createElement("div");
     boxMediaContainer.classList.add("boxMediaContainer");
     const imgElement = document.createElement("img");
@@ -105,4 +123,5 @@ function lightboxFactory() {
     getLightboxVideoDOM,
     getLightboxPhotoDOM,
   };
+  
 }
