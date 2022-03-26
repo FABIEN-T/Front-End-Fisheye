@@ -1,4 +1,4 @@
-async function insert() {
+async function informationFooter() {
   let params = new URL(document.location).searchParams;
   let photographerId = params.get("id");
   // console.log("photographerId", photographerId);
@@ -7,17 +7,17 @@ async function insert() {
   photographers.forEach((element) => {
     if (photographerId == element.id) {
       
-      insertPrice(element.price);
-      insertTotalLikes();
+      informationPrice(element.price);
+      informationTotalLikes();
       // console.log("PRIX", element.price);
     }
   });
   
-  function insertPrice(price) {
+  function informationPrice(price) {
     document.querySelector(".pricePerDay").innerHTML = price + "€ / jour";
   }
 
-  function insertTotalLikes() {
+  function informationTotalLikes() {
     let totalOfLikes = 0;
     // const photographMedia = document.querySelector(".photographMedia");  
     const nbLikes = document.querySelectorAll(".nbLikes");
@@ -31,5 +31,6 @@ async function insert() {
   }
 }
 
-insert();
+informationFooter();
+
 

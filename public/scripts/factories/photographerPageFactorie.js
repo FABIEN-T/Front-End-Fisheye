@@ -25,7 +25,9 @@ function photographerPageFactory(data) {
         const picture = `assets/photographers/${portrait}`;        
         img.setAttribute('src', picture );
         img.setAttribute('alt', "Portrait de " + name );
-    
+        
+        photographHeader.setAttribute('arialabel', 'HEADER présentation du photographe')
+
         h2.textContent = name;
         h2.setAttribute('arialabel', 'nom du photographe');
     

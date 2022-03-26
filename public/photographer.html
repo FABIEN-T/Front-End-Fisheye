@@ -18,7 +18,7 @@
     <!-- <script src="./scripts/utils/function.js" defer></script> -->
     <script src="./scripts/pages/photographerPage.js" defer></script>
     <script src="./scripts/factories/photographerMediaFactorie.js" defer></script>
-    <script src="./scripts/utils/insert.js" defer></script>
+    <script src="./scripts/utils/footer.js" defer></script>
     <script src="./scripts/factories/lightboxFactorie.js" defer></script>
     <script src="./scripts/utils/lightbox.js" defer></script>
     <script src="./scripts/factories/contactFactorie.js" defer></script>
@@ -26,37 +26,39 @@
   </head>
 
   <body>
-    <header>
-      <a href="https://fabien-t.github.io/Front-End-Fisheye/public/">
-        <img src="assets/images/logo.png" alt="logo" class="logo" />
+    <header role="banner">
+      <a href="https://fabien-t.github.io/Front-End-Fisheye/public/" aria-label="logo et lien de la page d'acceuil">
+        <img src="assets/images/logo.png" alt="logo" class="logo"/>
       </a>
     </header>
-    <main id="main">
-      <div class="photographHeader">
+    <main id="main" role="main">
+      <header class="photographHeader">
         <button class="contact_button" onclick="displayModal()">
           Contactez-moi
         </button>
-      </div>
-      <div class="photographMedia">
-      </div>
-      <div class="insert">
-        <div class="insertText">
-          <div class="insertLikes">
-            <div class="totalLikes"></div>
-            <div class="iconLikes">
-              <i class="fas fa-heart iconHeart"></i>
-            </div>
-          </div>
-          <div class="pricePerDay">/ jour</div>
-        </div>        
-      </div>
+      </header>
+      <section class="gallery" role="section">
+      </section>
+      
     </main>
     
-      <div id="contact_modal">
-        <div class="content">
+    <footer class="insert" aria-label="total des likes et prix par jour">
+      <div class="insertText">
+        <div class="insertLikes">
+          <div class="totalLikes"></div>
+          <div class="iconLikes">
+            <i class="fas fa-heart iconHeart"></i>
+          </div>
+        </div>
+        <div class="pricePerDay">/ jour</div>
+      </div>        
+    </footer>
+      
+    <div id="contact_modal" role="formulaire" >
+        <div class="content" aria-labelledby="contactPhotographer">
           <header class="headerModal">
-            <h2 class="hContact">Contactez </h2>
-            <img src="assets/icons/close.svg" onclick="closeModal()" alt="croix de fermeture"/>
+            <h2 id="contactPhotographer"></h2>
+            <img src="assets/icons/close.svg" onclick="closeModal()" aria-label="Fermer le formulaire" alt="croix de fermeture"/>
           </header>
           <form name="reserve" action="photographer.html" method="get" id="form">
             <div class="modal-body">
@@ -123,9 +125,9 @@
             <input class="contact_button" type="submit" value="Envoyer"/>
           </form>
         </div>
-      </div>
+    </div>
 
-      <div id="lightbox">
+    <div id="lightbox" role="diaporama">
         <!-- <h2>Lightbox</h2> -->
         <img src="assets/icons/close.svg" onclick="closeLightbox()" alt="croix de fermeture" class="iconCross"/>
         <div class="boxContainer">
@@ -140,7 +142,9 @@
         </div>
          
 
-      </div>
+      
+    </div>
+
   </body>
 </html>
 

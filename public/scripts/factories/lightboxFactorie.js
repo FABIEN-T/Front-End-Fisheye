@@ -10,14 +10,14 @@ function lightboxFactory(dataMedia) {
     const photographMedia = document.querySelector(".photographMedia");
     const imgElement = photographMedia.querySelector("img"); 
     const imgId = imgElement.getAttribute("id");
-    console.log("attribut imgId", imgId);
+    // console.log("attribut imgId", imgId);
     // console.log("Id", dataMedia.id);
 
     // if (imgId == id) {
     //   console.log("ok");
-    console.log(id);
+    // console.log(id);
     dataMedia.forEach((element) => {   
-      console.log(element);   
+      // console.log(element);   
     // Pour un photographe sélectionné, tri des "img" et "video"  
       if (photographerId == element.photographerId) {        
         console.log("element.id", element.id);

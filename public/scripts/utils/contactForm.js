@@ -13,9 +13,9 @@ async function displayModal() {
       // document.querySelector(".headerModal").getElementByClassName("hContact");
       function recoveryName(name) {
         // console.log(name);
-        const photographerName = document.querySelector(".hContact");
-        photographerName.innerHTML = "Contactez " + name;        
-        photographerName.setAttribute( 'arialabel', 'nom du photographe' );
+        const contactPhotographe = document.querySelector("#contactPhotographer");
+        contactPhotographe.innerHTML = "Contactez " + name;        
+        contactPhotographe.setAttribute( 'arialabel', 'contactez ' + name);
         // document.querySelector(".hContact").innerHTML = "Contactez " + name;
         // console.log(title.innerHTML);
       }

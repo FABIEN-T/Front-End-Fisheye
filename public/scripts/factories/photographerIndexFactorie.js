@@ -27,7 +27,9 @@ function photographerIndexFactory(data) {
         // Création des attributs
         linkPhotographer.setAttribute( 'href', link );
         // linkPhotographer.setAttribute( '', id );
-        linkPhotographer.setAttribute("arialabel", "lien du photographe" );
+        linkPhotographer.setAttribute("arialabel", "page du photographe" );
+
+        article.setAttribute("aria-label", "carte du photographe " + name);
 
         img.setAttribute( 'src', picture );
         img.setAttribute( 'alt', "Portrait de " + name ); 
