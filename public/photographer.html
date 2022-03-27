@@ -19,10 +19,11 @@
     <script src="./scripts/pages/photographerPage.js" defer></script>
     <script src="./scripts/factories/photographerMediaFactorie.js" defer></script>
     <script src="./scripts/utils/footer.js" defer></script>
-    <script src="./scripts/factories/lightboxFactorie.js" defer></script>
-    <script src="./scripts/utils/lightbox.js" defer></script>
+    <!-- <script src="./scripts/factories/lightboxFactorie.js" defer></script>
+    <script src="./scripts/utils/lightbox.js" defer></script> -->
     <script src="./scripts/factories/contactFactorie.js" defer></script>
     <script src="./scripts/utils/contactForm.js" defer></script>
+    <script src="./scripts/utils/contactFunctions.js"></script>
   </head>
 
   <body>
@@ -54,11 +55,11 @@
       </div>        
     </footer>
       
-    <div id="contact_modal" role="formulaire" >
+    <div id="contact_modal" role="formulaire">
         <div class="content" aria-labelledby="contactPhotographer">
           <header class="headerModal">
             <h2 id="contactPhotographer"></h2>
-            <img src="assets/icons/close.svg" onclick="closeModal()" aria-label="Fermer le formulaire" alt="croix de fermeture"/>
+            <img src="assets/icons/close.svg" class="closeModalCross"  aria-label="Fermer le formulaire" alt="croix de fermeture"/>
           </header>
           <form name="reserve" action="photographer.html" method="get" id="form">
             <div class="modal-body">
@@ -73,11 +74,11 @@
                     name="first"
                     minlength="2"
                     maxlength="40"
-                    placeholder="Veuillez entrer entre 2 et 40 caractères pour le champ Prénom."
+                    placeholder="Entre 2 et 40 caractères."
                   />
                   <!-- span permettant l'affichage du message d'erreur si le champ est incorrect -->
                   <span></span>
-                  <br />
+                  <!-- <br /> -->
                 </div>
 
                 <div class="formData lastName">
@@ -90,10 +91,10 @@
                     name="last"
                     minlength="2"
                     maxlength="40"
-                    placeholder="Veuillez entrer entre 2 et 40 caractères pour le champ Prénom."
+                    placeholder="Entre 2 et 40 caractères."
                   />
                   <span></span>
-                  <br />
+                  <!-- <br /> -->
                 </div>
 
                 <div class="formData address">
@@ -104,21 +105,21 @@
                     type="email"
                     id="email"
                     name="email"
-                    placeholder="ne pas mettre d'espace ni de caractères accentués"
+                    placeholder="Caractères accentués non autorisés."
                   />
                   <span></span>
-                  <br />
+                  <!-- <br /> -->
                 </div>
 
                 <div class="formData message">
-                  <label for="textSpace">Votre message</label>
+                  <label for="message">Votre message</label>
                   <textarea
                     class="text-control"
-                    id="textSpace"
-                    name="textSpace"  
-                    placeholder="message nécessaire"                
-                  >
-                  </textarea>
+                    id="message"
+                    name="message"  
+                    maxlength="500" 
+                    placeholder="500 caractères maximum."></textarea>                  
+                  <span></span>
                 </div>  
               </div>
             <!-- <button class="contact_button">Envoyer</button> -->
@@ -128,8 +129,7 @@
     </div>
 
     <div id="lightbox" role="diaporama">
-        <!-- <h2>Lightbox</h2> -->
-        <img src="assets/icons/close.svg" onclick="closeLightbox()" alt="croix de fermeture" class="iconCross"/>
+        <img src="assets/icons/close.svg" alt="croix de fermeture" aria-label="Fermer la lightbox" class="closeLightboxCross"/>
         <div class="boxContainer">
           <div>
             <i class="fas fa-angle-left iconDirection"></i>

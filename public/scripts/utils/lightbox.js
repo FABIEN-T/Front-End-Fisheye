@@ -1,5 +1,5 @@
-// const iconCross = document.querySelector(".iconCross");
-// iconCross.addEventListener("click", closeLightbox());
+const closeLightboxCross = document.querySelector(".closeLightboxCross");
+closeLightboxCross.addEventListener("click", closeLightbox());
 
 
 async function displayLightbox(e) {
@@ -11,7 +11,7 @@ async function displayLightbox(e) {
 }
 
 function closeLightbox() {
-  const lightbox = document.getElementById("lightbox");  
+  const lightbox = document.querySelector("#lightbox");  
   lightbox.style.display = "none";  
   // const boxMediaTextContainer = document.getElementsByClassName("boxMediaTextContainer");
   // console.log(lightbox, boxMediaTextContainer);

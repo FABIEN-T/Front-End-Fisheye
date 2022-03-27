@@ -10,63 +10,36 @@ async function displayModal() {
   photographers.forEach((element) => {
     if (photographerId == element.id) {
       recoveryName(element.name);
-      // document.querySelector(".headerModal").getElementByClassName("hContact");
       function recoveryName(name) {
         // console.log(name);
         const contactPhotographe = document.querySelector("#contactPhotographer");
         contactPhotographe.innerHTML = "Contactez " + name;        
         contactPhotographe.setAttribute( 'arialabel', 'contactez ' + name);
-        // document.querySelector(".hContact").innerHTML = "Contactez " + name;
-        // console.log(title.innerHTML);
       }
     }
-    // const attributId = modal.getAttribute("id");
-    // console.log("attributId", attributId);
   });
 
   contactFactory();
+  }
 
-  // console.log(document.querySelector(".hContact"));
-  // const h2 = document.getElementsByClassName("hContact");
-  // h2.innerHTML = "coucou";
+const closeModalCross = document.querySelector(".closeModalCross");
+closeModalCross.addEventListener("click", closeModal);
 
-  // const { photographers } = await getPhotographers();
-  // const { name, id } = photographers;
-  // console.log(data);
-
-  //
-  //   initModal();
-  // console.log("MODAL");
-  // const h2 = document.querySelector(h2);
-  // console.log("MODAL", h2);
-  // h2.textContent = "Contactez-nous";
-}
 
 function closeModal() {
   const modal = document.getElementById("contact_modal");
   modal.style.display = "none";
+  document.getElementById("form").reset(); // Effacement des champs à la fermeture de la Modale
+  // Boucle de suppression de la classe error
+  const constCloseClass = document.querySelectorAll(".formData"); 
+  const constCloseSpan = document.querySelectorAll  (".formData > span");
+  for (element of constCloseClass) {
+    element.classList.remove("error");
+  } 
+  // Boucle de suppression des messages d'erreurs
+  for (element of constCloseSpan) {
+    element.textContent = "";
+  }
 }
 
-// async function displayData(photographer) {
-//   const photographersHeader = document.querySelector(".photograph-header");
-//   // console.log("async", photographer);
-//   const photographerPageModel = photographerPageFactory(photographer);
-//   const userPhotographerCardDOM =
-//     photographerPageModel.getPhotographerPageDOM();
-//   photographersHeader.appendChild(userPhotographerCardDOM);
-// }
 
-// async function initModal() {
-//   // Récupère les datas des photographes
-//   const { photographers } = await getPhotographers();
-//   let params = new URL(document.location).searchParams;
-//   let photographerId = params.get("id");
-//   console.log("photographerId", photographerId);
-
-//   photographers.forEach((element) => {
-//     if (photographerId == element.id) {
-//       let photographerData = element;
-//       displayData(photographerData);
-//     }
-//   });
-// }

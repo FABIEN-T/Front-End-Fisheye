@@ -41,7 +41,7 @@ increment();
 function increment() {
   const nbLikes = document.querySelectorAll(".nbLikes");
   // consconsole.log("nbLikes.innerHTML", e.innerHTML);
-  console.log(nbLikes.innerHTML);
+  // console.log(nbLikes.innerHTML);
   
   // nbLikes.forEach((e) => {
   //   console.log("nbLikes.innerHTML", e.innerHTML);
