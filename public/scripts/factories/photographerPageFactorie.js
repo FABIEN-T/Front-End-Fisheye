@@ -10,8 +10,10 @@ function photographerPageFactory(data) {
         // const article = document.createElement( 'article' );
         const nameContainer = document.createElement( 'div' );
         nameContainer.classList.add( 'nameContainer' );
-        const h2 = document.createElement( 'h2' );
-        const cityCountry = document.createElement( 'div' );
+        const h1 = document.createElement( 'h1' );
+        const paragraph = document.createElement( 'p' );
+        paragraph.classList.add( 'paragraph' );
+        const cityCountry = document.createElement( 'h2' );
         cityCountry.classList.add( 'location' );
         const slogan = document.createElement( 'div' );
         slogan.classList.add( 'tagline' );
@@ -19,32 +21,42 @@ function photographerPageFactory(data) {
         // button.classList.add( 'contact_button' );
         const img = document.createElement( 'img' );
         const imgContainer = document.createElement( 'div' );
-        imgContainer.classList.add( 'imgContainer');
+        imgContainer.classList.add( 'imgContainer' );
+        const picture = `assets/photographers/${portrait}`; 
 
         // Création des attributs
-        const picture = `assets/photographers/${portrait}`;        
+
+        imgContainer.setAttribute("tabindex", "60");      
         img.setAttribute('src', picture );
         img.setAttribute('alt', "Portrait de " + name );
+        img.setAttribute('role', 'Image');
+        // img.setAttribute("tabindex", "60");
         
-        photographHeader.setAttribute('arialabel', 'HEADER présentation du photographe')
+        // photographHeader.setAttribute('aria-label', 'présentation du photographe')
 
-        h2.textContent = name;
-        h2.setAttribute('arialabel', 'nom du photographe');
-    
+        h1.textContent = name;
+        h1.setAttribute('aria-label', 'nom du photographe');
+        h1.setAttribute('role', 'Header (h1)');
+        h1.setAttribute("tabindex", "20");
+        
+        paragraph.setAttribute('role', 'Text');
+        paragraph.setAttribute("tabindex", "30");
+
         cityCountry.textContent = city+','+' '+country;
-        cityCountry.setAttribute('arialabel', 'ville du photographe');
+        cityCountry.setAttribute('aria-label', 'ville du photographe');
     
         slogan.textContent = tagline;
-        slogan.setAttribute('arialabel', 'slogan du photographe');
+        slogan.setAttribute('aria-label', 'slogan du photographe');
 
         // button.textContent = "Contactez-moi";
         // button.setAttribute('onclick', 'displayModal()')
                 
         // Création des éléments HTML
         photographHeader.appendChild(nameContainer);       
-        nameContainer.appendChild(h2);
-        nameContainer.appendChild(cityCountry);
-        nameContainer.appendChild(slogan);
+        nameContainer.appendChild(h1);
+        nameContainer.appendChild(paragraph);
+        paragraph.appendChild(cityCountry);
+        paragraph.appendChild(slogan);
         // photographHeader.appendChild(button);
         photographHeader.appendChild(imgContainer);
         imgContainer.appendChild(img);       

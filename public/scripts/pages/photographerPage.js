@@ -36,10 +36,10 @@ async function initPhotographer() {
 
 initPhotographer();
 
-increment(); 
+// increment(); 
 
-function increment() {
-  const nbLikes = document.querySelectorAll(".nbLikes");
+// function increment() {
+//   const nbLikes = document.querySelectorAll(".nbLikes");
   // consconsole.log("nbLikes.innerHTML", e.innerHTML);
   // console.log(nbLikes.innerHTML);
   
@@ -73,7 +73,7 @@ function increment() {
   
       
 
-}
+// }
 
 
 // function increment() {

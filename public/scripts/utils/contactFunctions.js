@@ -27,6 +27,7 @@
  * Le champ Prénom a un minimum de 2 caractères / n'est pas vide.
  */
 function firstNameChecker(value) {
+  // console.log("first", value);
   if (!value) {
     //Si la valeur n'est pas bonne, attribuer "null" à firstNameValue
     errorMessage("firstName", "Le champ Prénom doit être rempli.");
@@ -105,11 +106,10 @@ function mailChecker(value) {
  function messageChecker(value) {
   if (!value) {
     messageValue = null;
-    console.log("MESSAGE", "vide");
+    console.log("MESSAGE", value);
     errorMessage("message", "Vous devez saisir un message !");
   } else {
     errorMessage("message", "", true);
-    // emailValue = value.trim();
   }
 }
 

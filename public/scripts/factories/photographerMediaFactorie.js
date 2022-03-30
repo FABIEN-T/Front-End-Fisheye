@@ -46,7 +46,7 @@ function photographerMediaFactory(dataMedia, type) {
     
     const textContainer = document.createElement("div");
     textContainer.classList.add("textContainer");
-    const h2 = document.createElement("h2");
+    const h3 = document.createElement("h3");
     const likesHeart = document.createElement("div");
     likesHeart.classList.add("likesHeart");
     const nbLikes = document.createElement("span");
@@ -55,19 +55,25 @@ function photographerMediaFactory(dataMedia, type) {
     // iconHeart.classList.add("iconHeart");
 
     // Création des attributs et contenus
-    h2.textContent = title;
-    h2.setAttribute("arialabel", "title");
-    nbLikes.textContent = likes;
-    nbLikes.setAttribute("arialabel", "nombre de likes");
-    iconHeart.setAttribute("class", "far fa-heart iconHeart unClick");    
-    iconHeart.setAttribute("arialabel", "like");
+    mediaContainer.setAttribute('tabindex', '80');
 
+    h3.textContent = title;
+    h3.setAttribute("aria-label", "title");
+    h3.setAttribute('role', 'Text');
+    h3.setAttribute("tabindex", "80");
+
+    nbLikes.textContent = likes;
+    nbLikes.setAttribute("aria-label", "nombre de likes");    
+    iconHeart.setAttribute("class", "far fa-heart iconHeart unClick");    
+    iconHeart.setAttribute("aria-label", "likes");
+    iconHeart.setAttribute('role', 'Image');
+    iconHeart.setAttribute("tabindex", "80");
+    
     // Création des éléments HTML
     gallery.appendChild(mediaTextContainer);
-    mediaTextContainer.appendChild(mediaContainer);
-    
+    mediaTextContainer.appendChild(mediaContainer);    
     mediaTextContainer.appendChild(textContainer);
-    textContainer.appendChild(h2);
+    textContainer.appendChild(h3);
     textContainer.appendChild(likesHeart);
     likesHeart.appendChild(nbLikes);
     likesHeart.appendChild(iconHeart);
@@ -80,7 +86,8 @@ function photographerMediaFactory(dataMedia, type) {
       videoElement.setAttribute("id", id);
       videoElement.setAttribute("control", "");
       videoElement.setAttribute("poster", "");
-      videoElement.setAttribute("alt", title);
+      videoElement.setAttribute("alt", "");
+      // videoElement.setAttribute("tabindex", "80");
       mediaContainer.appendChild(videoElement);
         
     } else {
@@ -89,7 +96,10 @@ function photographerMediaFactory(dataMedia, type) {
       const picture = `assets/images/${image}`;
       imgElement.setAttribute("src", picture);
       imgElement.setAttribute("id", id);
-      imgElement.setAttribute("alt", title);
+      imgElement.setAttribute("alt", "");
+      imgElement.setAttribute("aria-label", "ouverture du diaporama");
+      imgElement.setAttribute('role', 'Image link')
+      // imgElement.setAttribute("tabindex", "80");
       mediaContainer.appendChild(imgElement);
     }
     // return (gallery);

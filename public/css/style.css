@@ -344,12 +344,20 @@ body {
   margin: 0;
 }
 
+*:focus {
+  border-radius: 10px;
+  border: #D3573C solid 3px;
+  outline: none;
+  padding: 2px 2px;
+}
+
 header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   height: 90px;
+  margin-left: 100px;
 }
 
 h1 {
@@ -361,7 +369,6 @@ h1 {
 
 .logo {
   height: 50px;
-  margin-left: 100px;
 }
 
 .photographHeader .contact_button {
@@ -382,7 +389,16 @@ h1 {
   color: black;
 }
 
+.photographHeader .contact_button:focus {
+  color: black;
+  background-color: #DB8876;
+  outline: none;
+  border-radius: 10px;
+  border: #901C1C solid 4px;
+}
+
 #contact_modal .contact_button {
+  cursor: pointer;
   font-size: 1.125em;
   font-weight: 700;
   background-color: #901C1C;
@@ -391,9 +407,25 @@ h1 {
 }
 
 #contact_modal .contact_button:hover {
-  border: #901C1C solid 2px;
+  border: #901C1C solid 3px;
   background-color: #DB8876;
   color: black;
+}
+
+#contact_modal .contact_button:focus {
+  border: #000000 solid 2px;
+  background-color: #DB8876;
+  border-radius: 10px;
+  border: #901C1C solid 4px;
+  color: black;
+  font-size: 1.3em;
+}
+
+#contact_modal .buttonCross {
+  width: 50px;
+  height: 50px;
+  background-color: #2867b9;
+  border: none;
 }
 
 .photographerSection {
@@ -404,11 +436,9 @@ h1 {
 }
 
 .photographerSection article {
-  justify-self: center;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
 }
 
 .photographerSection article a {
@@ -420,12 +450,6 @@ h1 {
   padding: 5px 5px 0px;
   display: flex;
   flex-direction: column;
-}
-
-.photographerSection article a .linkContainer:hover {
-  border-radius: 10px;
-  border: #D3573C solid 2px;
-  padding: 5px 5px 0px;
 }
 
 .photographerSection article h2 {
@@ -457,24 +481,33 @@ h1 {
   transform: translate(-50%, -50%);
 }
 
+.photographerSection .informationPhotograph {
+  display: flex;
+  flex-direction: column;
+}
+
+.informationPhotograph .location, .tagline, .price {
+  margin: auto;
+}
+
 .photographerSection article .location {
   color: #901C1C;
   font-size: 0.813em;
   font-weight: 400;
-  line-height: 16.93px;
+  line-height: 1.1em;
 }
 
 .photographerSection article .tagline {
   font-size: 0.625em;
   font-weight: 400;
-  line-height: 16.02px;
+  line-height: 1.9em;
 }
 
 .photographerSection article .price {
   color: #757575;
   font-size: 0.563em;
   font-weight: 400;
-  line-height: 11.72px;
+  line-height: 1.3em;
 }
 
 .photographHeader {
@@ -495,7 +528,7 @@ h1 {
   align-items: flex-start;
 }
 
-.photographHeader h2 {
+.photographHeader h1 {
   color: #D3573C;
   font-size: 4em;
   font-weight: 400;
@@ -503,7 +536,12 @@ h1 {
   margin: 20px 0px 0px;
 }
 
-.photographHeader .location {
+.photographHeader .paragraph {
+  margin: 0;
+}
+
+.photographHeader h2 {
+  margin: -2px 0px 2px;
   color: #901C1C;
   font-size: 1.5em;
   font-weight: 400;
@@ -515,6 +553,7 @@ h1 {
   font-size: 1.125em;
   font-weight: 400;
   line-height: 50px;
+  margin: 0;
 }
 
 .photographHeader .imgContainer {
@@ -534,6 +573,13 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.photographHeader .imgContainer:focus {
+  border-radius: 10px;
+  border: #D3573C solid 3px;
+  outline: none;
+  padding: 2px 2px;
 }
 
 .gallery {
@@ -579,7 +625,7 @@ h1 {
   justify-content: space-between;
 }
 
-.gallery .textContainer h2, .nbLikes {
+.gallery .textContainer h3, .nbLikes {
   color: #901C1C;
   font-size: 1.5em;
   font-weight: 400;
@@ -587,7 +633,7 @@ h1 {
   margin: 0px;
 }
 
-.gallery .textContainer h2 {
+.gallery .textContainer h3 {
   width: 280px;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -606,7 +652,7 @@ h1 {
   line-height: 1.953em;
 }
 
-.insert {
+#footer {
   box-sizing: border-box;
   width: 376px;
   height: 60px;
@@ -620,17 +666,27 @@ h1 {
   font-weight: 500;
 }
 
-.insert .insertText {
+#footer:focus {
+  color: white;
+  background-color: #901C1C;
+  border: none;
+}
+
+#footer .insertText {
   display: flex;
   justify-content: space-between;
 }
 
-.insert .insertLikes {
+#footer .insertLikes {
   display: flex;
 }
 
-.insert .totalLikes {
+#footer .totalLikes {
   margin-right: 5px;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 #contact_modal {
@@ -658,17 +714,22 @@ h1 {
   margin: 0 auto;
 }
 
-#contact_modal header {
+#contact_modal .headerModal {
+  margin: 0;
+  display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
-#contact_modal header img {
+#contact_modal .headerModal img {
   cursor: pointer;
+  position: absolute;
+  right: 35px;
 }
 
-#contact_modal header h2 {
-  font-size: 2.75em;
+#contact_modal .headerModal h1 {
+  color: black;
+  font-size: 3em;
   font-weight: normal;
   text-align: center;
 }
@@ -711,7 +772,6 @@ form textarea {
 }
 
 #contact_modal form input, form textarea {
-  box-sizing: border-box;
   padding: 0px 10px;
   width: 100%;
   border: none;
@@ -725,6 +785,10 @@ form textarea {
 #contact_modal form textarea {
   height: 170px;
   resize: none;
+}
+
+#contact_modal button:focus, form input:focus, form textarea:focus {
+  box-shadow: 0 0 10px #312E2E;
 }
 
 /* Mise en forme des messages d'erreurs */

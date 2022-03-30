@@ -1,3 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
+// #contact_modal > *:focus {
+//   box-shadow: 0 0 20px green;
+//   // border: solid 3px green;       
+// } 
+
 #contact_modal {
   display: none;
   position: fixed;
@@ -25,18 +34,23 @@
   margin: 0 auto;
 }
 
-#contact_modal header {
+#contact_modal .headerModal {
+  margin: 0;
+  display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
-#contact_modal header img {
+#contact_modal .headerModal img {
   cursor: pointer;
+  position: absolute;
+  right: 35px;
 }
 
-#contact_modal header h2 {
+#contact_modal .headerModal h1 {
   // font-size: 4em;
-  font-size: 2.75em;
+  color: black;
+  font-size: 3em;
   font-weight: normal;
   text-align: center;
 }
@@ -67,6 +81,8 @@
 form input,
 form textarea {
   color: black;
+  // outline: none;
+  // border: #312e2e solid 5px;
   font-size: 1.8em;
   line-height: 1.5em;
   margin: 0px;
@@ -82,7 +98,6 @@ form textarea {
 }
 
 #contact_modal form input, form textarea {
-  box-sizing: border-box;
   padding: 0px 10px;
   width: 100%;
   border: none;
@@ -96,6 +111,12 @@ form textarea {
 #contact_modal form textarea {  
   height: 170px;
   resize: none;
+}
+
+#contact_modal button:focus, form input:focus, form textarea:focus {
+  box-shadow: 0 0 10px #312E2E;
+  // border: #312e2e solid 5px;
+  // outline: #312e2e;
 }
 
 /* Mise en forme des messages d'erreurs */

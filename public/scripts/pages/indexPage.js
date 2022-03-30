@@ -1,3 +1,10 @@
+// window.addEventListener("keydown", myFunction);
+
+// function myFunction(event) {  
+//       console.log(event.key, event.keyCode);
+// }
+
+
 async function init() {
   // Récupère les datas des photographes
   const { photographers } = await getPhotographers();

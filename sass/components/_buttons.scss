@@ -17,7 +17,18 @@
     color: black;   
 }
 
+.photographHeader .contact_button:focus {
+    color: black;
+    background-color: #DB8876;
+    outline: none;
+    // box-shadow: 3px 3px 15px #901C1C;   
+    border-radius: 10px;
+    border: #901C1C solid 4px;
+    //  padding: 4px 4px;
+}
+
 #contact_modal .contact_button {
+    cursor: pointer;
     font-size: 1.125em;
     font-weight: 700;
     background-color: #901C1C;
@@ -26,7 +37,23 @@
 }
 
 #contact_modal .contact_button:hover {
-    border: #901C1C solid 2px;
+    border: #901C1C solid 3px;
     background-color: #DB8876;
     color: black;
+}
+
+#contact_modal .contact_button:focus {
+    border: #000000 solid 2px;
+    background-color: #DB8876;
+    border-radius: 10px;
+    border: #901C1C solid 4px;
+    color: black;
+    font-size: 1.3em;
+}
+
+#contact_modal .buttonCross {
+    width: 50px;
+    height: 50px;
+    background-color: #2867b9;  
+    border: none;
 }

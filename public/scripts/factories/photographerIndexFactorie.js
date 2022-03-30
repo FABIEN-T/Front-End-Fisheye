@@ -15,36 +15,42 @@ function photographerIndexFactory(data) {
         imgContainer.classList.add( 'imgContainer');
         const img = document.createElement( 'img' );
         const h2 = document.createElement( 'h2' );
+        const informationPhotograph = document.createElement( 'div' );
+        informationPhotograph.classList.add( 'informationPhotograph' );
         const cityCountry = document.createElement( 'div' );
         cityCountry.classList.add( 'location' );
         const slogan = document.createElement( 'div' );
         slogan.classList.add( 'tagline' );
         const cost = document.createElement( 'div' );
         cost.classList.add( 'price');
+        
         const link = `photographer.html?id=${id}`
         // console.log("LIEN", link);
 
         // Création des attributs
         linkPhotographer.setAttribute( 'href', link );
-        // linkPhotographer.setAttribute( '', id );
-        linkPhotographer.setAttribute("arialabel", "page du photographe" );
+        linkPhotographer.setAttribute( "role", "Link(h2) + image" );
+        linkPhotographer.setAttribute("aria-label", name );
 
         article.setAttribute("aria-label", "carte du photographe " + name);
 
         img.setAttribute( 'src', picture );
-        img.setAttribute( 'alt', "Portrait de " + name ); 
+        img.setAttribute( 'alt', 'Portrait de ' + name ); 
 
         h2.textContent = name;
-        h2.setAttribute( 'arialabel', 'nom du photographe' );
+        h2.setAttribute( 'aria-label', 'nom du photographe' );
+
+        informationPhotograph.setAttribute('role', 'Text paragraph');
+        informationPhotograph.setAttribute( 'tabindex', '0')
 
         cityCountry.textContent = city+','+' '+country;
-        cityCountry.setAttribute( 'arialabel', 'ville du photographe' );
+        cityCountry.setAttribute( 'aria-label', 'ville du photographe' );
 
         slogan.textContent = tagline;
-        slogan.setAttribute( 'arialabel', 'slogan du photographe' );
+        slogan.setAttribute( 'aria-label', 'slogan du photographe' );
 
         cost.textContent = price+'€/jour';
-        cost.setAttribute( 'arialabel', 'prix' );
+        cost.setAttribute( 'aria-label', 'prix' );
         
         // Création des éléments HTML
         photographersSection.appendChild(article);
@@ -53,10 +59,18 @@ function photographerIndexFactory(data) {
         linkContainer.appendChild(imgContainer);
         imgContainer.appendChild(img);
         linkContainer.appendChild(h2);
-        article.appendChild(cityCountry);
-        article.appendChild(slogan);
-        article.appendChild(cost);
+        article.appendChild(informationPhotograph);
+        informationPhotograph.appendChild(cityCountry);
+        informationPhotograph.appendChild(slogan);
+        informationPhotograph.appendChild(cost);
         // return (article);
+
+        document.querySelector('.logo').focus();
+        // if (e.key === "Tab") {  
+        //     focusInModal(e);
+        //   }
+
+
     }
     // return { name, city, country, tagline, price, getUserCardDOM }
     // return { getUserCardDOM }

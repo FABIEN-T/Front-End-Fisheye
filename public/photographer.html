@@ -4,7 +4,7 @@
     <link href="./css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8" />
     <link
-      rel="icon"     
+      rel="icon"
       type="image/png"
       sizes="32x32"
       href="./assets/icons/favicon-photo.png"
@@ -17,34 +17,60 @@
     ></script>
     <!-- <script src="./scripts/utils/function.js" defer></script> -->
     <script src="./scripts/pages/photographerPage.js" defer></script>
-    <script src="./scripts/factories/photographerMediaFactorie.js" defer></script>
+    <script
+      src="./scripts/factories/photographerMediaFactorie.js"
+      defer
+    ></script>
     <script src="./scripts/utils/footer.js" defer></script>
     <script src="./scripts/factories/lightboxFactorie.js" defer></script>
     <script src="./scripts/utils/lightbox.js" defer></script>
-    <script src="./scripts/factories/contactFactorie.js" defer></script>
+    <script src="./scripts/utils/contactValidation.js" defer></script>
     <script src="./scripts/utils/contactForm.js" defer></script>
     <script src="./scripts/utils/contactFunctions.js"></script>
   </head>
 
   <body>
-    <header role="banner">
-      <a href="https://fabien-t.github.io/Front-End-Fisheye/public/" aria-label="logo et lien de la page d'acceuil">
-        <img src="assets/images/logo.png" alt="logo" class="logo"/>
+    <header id="header" role="banner" aria-hidden="false">
+      <a
+        href="https://fabien-t.github.io/Front-End-Fisheye/public/"
+        aria-label="logo et lien de la page d'accueil"
+        tabindex="10"
+      >
+        <img
+          src="assets/images/logo.png"
+          alt="Fisheye Home page"
+          class="logo"
+          role="Image link"
+        />
       </a>
     </header>
-    <main id="main" role="main">
-      <header class="photographHeader">
-        <button class="contact_button" onclick="displayModal()">
+    <main id="main" role="main" aria-hidden="false">
+      <section
+        class="photographHeader"
+        role="section"
+        aria-label="présentation du photographe"
+      >
+        <button
+          class="contact_button"
+          aria-label="Contact me"
+          role="Buttons"
+          tabindex="50"
+        >
           Contactez-moi
         </button>
-      </header>
-      <section class="gallery" role="section">
       </section>
-      
+      <section class="gallery" role="section"></section>
     </main>
-    
-    <footer class="insert" aria-label="total des likes et prix par jour">
-      <div class="insertText">
+
+    <!-- FOOTER : "insert" total deds likes et prix/jour -->
+    <footer
+      id="footer"
+      class="insert"
+      aria-label="total des likes et prix par jour"
+      aria-hidden="false"
+      tabindex="70"
+    >
+      <div class="insertText" role="Text">
         <div class="insertLikes">
           <div class="totalLikes"></div>
           <div class="iconLikes">
@@ -52,99 +78,129 @@
           </div>
         </div>
         <div class="pricePerDay">/ jour</div>
-      </div>        
+      </div>
     </footer>
-      
-    <div id="contact_modal" role="formulaire">
-        <div class="content" aria-labelledby="contactPhotographer">
-          <header class="headerModal">
-            <h2 id="contactPhotographer"></h2>
-            <img src="assets/icons/close.svg" class="closeModalCross"  aria-label="Fermer le formulaire" alt="croix de fermeture"/>
-          </header>
-          <form name="reserve" action="photographer.html" method="get" id="form">
-            <div class="modal-body">
-              
-                <div class="formData firstName">
-                  <label for="first">Prénom</label>
-                  <br />
-                  <input
-                    class="text-control"
-                    type="text"
-                    id="first"
-                    name="first"
-                    minlength="2"
-                    maxlength="40"
-                    placeholder="Entre 2 et 40 caractères."
-                  />
-                  <!-- span permettant l'affichage du message d'erreur si le champ est incorrect -->
-                  <span></span>
-                  <!-- <br /> -->
-                </div>
 
-                <div class="formData lastName">
-                  <label for="last">Nom</label>
-                  <br />
-                  <input
-                    class="text-control"
-                    type="text"
-                    id="last"
-                    name="last"
-                    minlength="2"
-                    maxlength="40"
-                    placeholder="Entre 2 et 40 caractères."
-                  />
-                  <span></span>
-                  <!-- <br /> -->
-                </div>
+    <!-- FORMULAIRE DE CONTACT -->
+    <aside
+      id="contact_modal"
+      role="Dialog"
+      aria-hidden="true"
+      aria-labelledby="contactPhotographer"
+    >
+      <div class="content">
+        <header class="headerModal">
+          <h1 id="contactPhotographer" role="Heading (h1)"></h1>
+          <button class="buttonCross" type="button" role="Button">
+            <img
+              src="assets/icons/close.svg"
+              class="closeModalCross"
+              aria-label="Fermer le formulaire"
+              alt="croix de fermeture"
+            />
+          </button>
+        </header>
 
-                <div class="formData address">
-                  <label for="email">E-mail</label>
-                  <br />
-                  <input
-                    class="text-control"
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Caractères accentués non autorisés."
-                  />
-                  <span></span>
-                  <!-- <br /> -->
-                </div>
+        <form name="reserve" action="photographer.html" method="get" id="form">
+          <div class="modal-body">
+            <div class="formData firstName">
+              <label for="first" role="Label">Prénom</label>
+              <br />
+              <input
+                class="text-control"
+                type="text"
+                id="first"
+                name="first"
+                minlength="2"
+                maxlength="40"
+                placeholder="Entre 2 et 40 caractères."
+                aria-required="true"
+                role="Text field"
+              />
 
-                <div class="formData message">
-                  <label for="message">Votre message</label>
-                  <textarea
-                    class="text-control"
-                    id="message"
-                    name="message"  
-                    maxlength="500" 
-                    placeholder="500 caractères maximum."></textarea>                  
-                  <span></span>
-                </div>  
-              </div>
-            <!-- <button class="contact_button">Envoyer</button> -->
-            <input class="contact_button" type="submit" value="Envoyer"/>
-          </form>
-        </div>
-    </div>
+              <!-- span permettant l'affichage du message d'erreur si le champ est incorrect -->
+              <span></span>
+              <!-- <br /> -->
+            </div>
 
-    <div id="lightbox" role="diaporama">
-        <img src="assets/icons/close.svg" alt="croix de fermeture" aria-label="Fermer la lightbox" class="closeLightboxCross"/>
-        <div class="boxContainer">
-          <div>
-            <i class="fas fa-angle-left iconDirection"></i>
+            <div class="formData lastName">
+              <label for="last" role="Label">Nom</label>
+              <br />
+              <input
+                class="text-control"
+                type="text"
+                id="last"
+                name="last"
+                minlength="2"
+                maxlength="40"
+                placeholder="Entre 2 et 40 caractères."
+                aria-required="true"
+                role="Text field"
+              />
+              <span></span>
+              <!-- <br /> -->
+            </div>
+
+            <div class="formData address">
+              <label for="email" role="Label">E-mail</label>
+              <br />
+              <input
+                class="text-control"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Caractères accentués non autorisés."
+                aria-required="true"
+                role="Text field"
+              />
+              <span></span>
+              <!-- <br /> -->
+            </div>
+
+            <div class="formData message">
+              <label for="message" role="Label">Votre message</label>
+              <textarea
+                class="text-control"
+                id="message"
+                name="message"
+                maxlength="500"
+                role="Text field"
+                placeholder="500 caractères maximum."
+                aria-required="true"
+              ></textarea>
+              <span></span>
+            </div>
           </div>
-          <div class="boxMediaTextContainer">
-          </div>
-          <div>
-            <i class="fas fa-angle-right iconDirection"></i>
-          </div>          
+          <!-- <button class="contact_button">Envoyer</button> -->
+          <input
+            class="contact_button"
+            type="submit"
+            value="Envoyer"
+            role="Button"
+            aria-label="Envoyer"
+          />
+        </form>
+      </div>
+    </aside>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" role="diaporama" aria-hidden="true">
+      <img
+        src="assets/icons/close.svg"
+        alt="croix de fermeture"
+        aria-label="Fermer la lightbox"
+        class="closeLightboxCross"
+        role="Button"
+      />
+      <div class="boxContainer">
+        <div>
+          <i class="fas fa-angle-left iconDirection"></i>
         </div>
-         
-
-      
+        <div class="boxMediaTextContainer"></div>
+        <div>
+          <i class="fas fa-angle-right iconDirection"></i>
+        </div>
+      </div>
     </div>
-
   </body>
 </html>
-

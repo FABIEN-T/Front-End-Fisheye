@@ -18,7 +18,7 @@
     // padding-top: -50px;
 }
 
-.photographHeader h2 {
+.photographHeader h1 {
     // margin-top: -20px;
     // text-align: center;
     color: #D3573C;
@@ -28,7 +28,12 @@
     margin: 20px 0px 0px;
 }
 
-.photographHeader .location {
+.photographHeader .paragraph {
+    margin: 0;
+}
+
+.photographHeader h2 {
+    margin: -2px 0px 2px;
     color: #901C1C;
     font-size: 1.5em;
     font-weight: 400;
@@ -40,6 +45,7 @@
     font-size: 1.125em;
     font-weight: 400;
     line-height: 50px;
+    margin: 0;
     // line-height: 23.44px;
 }
 
@@ -62,6 +68,14 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.photographHeader .imgContainer:focus {     
+        border-radius: 10px;
+        border: #D3573C solid 3px;
+        outline: none;
+        padding: 2px 2px;
+    
 }
 
 // photographer-photos
@@ -89,12 +103,13 @@
 .gallery .mediaContainer img, .mediaContainer video {    
     cursor: pointer;
     object-fit: cover;
+    
 }
 
 .gallery .mediaContainer img {
     max-height: 350px;
     min-width: 350px;  
-    object-position: 80% 18%;  
+    object-position: 80% 18%;   
 }
 
 .gallery .mediaContainer video {
@@ -110,7 +125,7 @@
     justify-content: space-between;
 }
 
-.gallery .textContainer h2, .nbLikes {
+.gallery .textContainer h3, .nbLikes {
     color: #901C1C;
     font-size: 1.5em;
     font-weight: 400;
@@ -118,7 +133,7 @@
     margin: 0px;
 }
 
-.gallery .textContainer h2 {    
+.gallery .textContainer h3 {    
     width: 280px;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -143,7 +158,7 @@
     line-height: 1.953em;
 }
 
-.insert {
+#footer {
     box-sizing: border-box;
     width: 376px;
     height: 60px;
@@ -157,15 +172,21 @@
     font-weight: 500;
 }
 
-.insert .insertText {
+#footer:focus {
+    color: white;
+    background-color: #901C1C;
+    border: none;
+}
+
+#footer .insertText {
     display: flex;
     justify-content: space-between;
 }
 
-.insert .insertLikes {
+#footer .insertLikes {
     display: flex;
 }
 
-.insert .totalLikes {
+#footer .totalLikes {
     margin-right: 5px;
 }
