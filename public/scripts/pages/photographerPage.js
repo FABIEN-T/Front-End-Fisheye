@@ -29,8 +29,7 @@ async function initPhotographer() {
       photographerMediaFactory(element, type);
     }
   });
-   
-
+  increment();
     }
 // }
 
@@ -38,42 +37,43 @@ initPhotographer();
 
 // increment(); 
 
-// function increment() {
-//   const nbLikes = document.querySelectorAll(".nbLikes");
+function increment() {
+  const nbLikes = document.querySelectorAll(".nbLikes");
   // consconsole.log("nbLikes.innerHTML", e.innerHTML);
-  // console.log(nbLikes.innerHTML);
+  // console.log(document);
+  console.log(nbLikes);
   
-  // nbLikes.forEach((e) => {
-  //   console.log("nbLikes.innerHTML", e.innerHTML);
+  nbLikes.forEach((e) => {
+    console.log("nbLikes.innerHTML", e.innerHTML);
   
-  //   let memoryCount = e.innerHTML;
-  //   // console.log("memoryCount", memoryCount);
-  //   const refreshLike = () => {
-  //     nbLikes.innerText = `${memoryCount}`;
-  //     console.log(nbLikes.innerText);
-  //   }
-  //   const iconHeart = document.querySelectorAll(".iconHeart");
-  //   iconHeart.forEach((e) => {
-  //     e.addEventListener("click", (iconHeart) => {
-  //       if (iconHeart.classList.contains("unClick")) {
-  //         console.log("+1");
-  //         iconHeart.classList.replace("unClick", "click");
-  //         memoryCount++;
-  //         refreshLike();
-  //         } else {
-  //           console.log("-1");
-  //           iconHeart.classList.replace("click", "unClick");
-  //           memoryCount--;
-  //           refreshLike();
-  //         }
-  //     });
-  //   });
-  // });
-
-  
-      
-
-// }
+    let memoryCount = e.innerHTML;
+    // console.log("memoryCount", memoryCount);
+    // const refreshLike = () => {
+    //   nbLikes.innerText = `${memoryCount}`;
+    //   console.log(nbLikes.innerText);
+    // }
+    const iconHeart = document.querySelectorAll(".iconHeart");
+    
+    iconHeart.addEventListener("click", (e) => {
+        console.log(e.target);
+        console.log("click");
+        if (e.target.classList.contains("unClick")) {
+          console.log("+1");
+          e.target.classList.replace("unClick", "click");
+          memoryCount++;
+          // refreshLike();
+          nbLikes.innerText = `${memoryCount}`;
+          console.log(nbLikes.innerText);
+          } else {
+            console.log("-1");
+            e.target.classList.replace("click", "unClick");
+            memoryCount--;
+            refreshLike();
+          }
+      });
+    });
+  };
+}
 
 
 // function increment() {

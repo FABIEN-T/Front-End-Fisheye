@@ -5,8 +5,7 @@ async function informationFooter() {
 
   const { photographers } = await getPhotographers();
   photographers.forEach((element) => {
-    if (photographerId == element.id) {
-      
+    if (photographerId == element.id) {      
       informationPrice(element.price);
       informationTotalLikes();
       // console.log("PRIX", element.price);

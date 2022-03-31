@@ -5,11 +5,11 @@ function photographerMediaFactory(dataMedia, type) {
   const typeFactory = type;
   // console.log("log",typeFactory);
   if (typeFactory == "image") {    
-    getPhotographerDOM(image);
+    getPhotographerGalleryDOM(image);
     // console.log("Factorie", typeFactory);
   } 
   else if (typeFactory == "video") {
-    getPhotographerDOM(video);        
+    getPhotographerGalleryDOM(video);        
     // console.log("Factorie", typeFactory);
   }
   
@@ -35,7 +35,7 @@ function photographerMediaFactory(dataMedia, type) {
   }); 
   
 
-  function getPhotographerDOM(type) {
+  function getPhotographerGalleryDOM(type) {
     // Déclaration des variables pour la création d'éléments HTML
     // console.log("countVideo");
     const gallery = document.querySelector(".gallery");
@@ -112,8 +112,7 @@ function photographerMediaFactory(dataMedia, type) {
     likes,
     date,
     price,    
-    getPhotographerDOM,
-    getPhotographerDOM
+    getPhotographerGalleryDOM
   };
 
 }
