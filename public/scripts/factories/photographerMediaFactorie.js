@@ -38,7 +38,8 @@ function photographerMediaFactory(dataMedia, type) {
   function getPhotographerGalleryDOM(type) {
     // Déclaration des variables pour la création d'éléments HTML
     // console.log("countVideo");
-    const gallery = document.querySelector(".gallery");
+    const gallery = document.querySelector("#gallery");
+    document.getElementsByClassName
     const mediaTextContainer = document.createElement("article");
     mediaTextContainer.classList.add("mediaTextContainer");  
     const mediaContainer = document.createElement("div");
@@ -50,21 +51,20 @@ function photographerMediaFactory(dataMedia, type) {
     const likesHeart = document.createElement("div");
     likesHeart.classList.add("likesHeart");
     const nbLikes = document.createElement("span");
-    nbLikes.classList.add("nbLikes");
+    // nbLikes.classList.add("nbLikes");
     const iconHeart = document.createElement("i");
-    // iconHeart.classList.add("iconHeart");
 
     // Création des attributs et contenus
     mediaContainer.setAttribute('tabindex', '80');
-
     h3.textContent = title;
     h3.setAttribute("aria-label", "title");
     h3.setAttribute('role', 'Text');
     h3.setAttribute("tabindex", "80");
 
     nbLikes.textContent = likes;
-    nbLikes.setAttribute("aria-label", "nombre de likes");    
-    iconHeart.setAttribute("class", "far fa-heart iconHeart unClick");    
+    nbLikes.setAttribute("aria-label", "nombre de likes");  
+    nbLikes.setAttribute("class", "nbLikes unClick");
+    iconHeart.setAttribute("class", "far fa-heart iconHeart");    
     iconHeart.setAttribute("aria-label", "likes");
     iconHeart.setAttribute('role', 'Image');
     iconHeart.setAttribute("tabindex", "80");
@@ -78,7 +78,7 @@ function photographerMediaFactory(dataMedia, type) {
     likesHeart.appendChild(nbLikes);
     likesHeart.appendChild(iconHeart);
 
-    if(type==video) {
+    if(type == video) {
       const videoElement = document.createElement("video");
       videoElement.classList.add(likes);
       const movie = `assets/images/${video}`;

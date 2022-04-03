@@ -344,13 +344,6 @@ body {
   margin: 0;
 }
 
-*:focus {
-  border-radius: 10px;
-  border: #D3573C solid 3px;
-  outline: none;
-  padding: 2px 2px;
-}
-
 header {
   display: flex;
   flex-direction: row;
@@ -582,18 +575,18 @@ h1 {
   padding: 2px 2px;
 }
 
-.gallery {
+#gallery {
   margin: 0 100px 40px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.gallery .mediaTextContainer {
+#gallery .mediaTextContainer {
   margin-bottom: 18px;
 }
 
-.gallery .mediaContainer {
+#gallery .mediaContainer {
   height: 350px;
   width: 350px;
   position: relative;
@@ -601,31 +594,31 @@ h1 {
   overflow: hidden;
 }
 
-.gallery .mediaContainer img, .mediaContainer video {
+#gallery .mediaContainer img, .mediaContainer video {
   cursor: pointer;
   object-fit: cover;
 }
 
-.gallery .mediaContainer img {
+#gallery .mediaContainer img {
   max-height: 350px;
   min-width: 350px;
   object-position: 80% 18%;
 }
 
-.gallery .mediaContainer video {
+#gallery .mediaContainer video {
   min-height: 350px;
   max-width: 350px;
   position: absolute;
   object-position: 50% 50%;
 }
 
-.gallery .textContainer {
+#gallery .textContainer {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
 }
 
-.gallery .textContainer h3, .nbLikes {
+#gallery .textContainer h3, .nbLikes {
   color: #901C1C;
   font-size: 1.5em;
   font-weight: 400;
@@ -633,7 +626,7 @@ h1 {
   margin: 0px;
 }
 
-.gallery .textContainer h3 {
+#gallery .textContainer h3 {
   width: 280px;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -641,11 +634,11 @@ h1 {
   line-height: 1.953em;
 }
 
-.gallery .nbLikes {
+#gallery .nbLikes {
   margin-right: 5px;
 }
 
-.gallery .textContainer .iconHeart {
+#gallery .textContainer .iconHeart {
   cursor: pointer;
   font-size: 1.4em;
   color: #901C1C;
@@ -682,7 +675,7 @@ h1 {
 }
 
 #footer .totalLikes {
-  margin-right: 5px;
+  width: 50px;
 }
 
 * {

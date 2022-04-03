@@ -37,43 +37,117 @@ initPhotographer();
 
 // increment(); 
 
-function increment() {
-  const nbLikes = document.querySelectorAll(".nbLikes");
-  // consconsole.log("nbLikes.innerHTML", e.innerHTML);
-  // console.log(document);
-  console.log(nbLikes);
-  
-  nbLikes.forEach((e) => {
-    console.log("nbLikes.innerHTML", e.innerHTML);
-  
-    let memoryCount = e.innerHTML;
-    // console.log("memoryCount", memoryCount);
-    // const refreshLike = () => {
-    //   nbLikes.innerText = `${memoryCount}`;
-    //   console.log(nbLikes.innerText);
-    // }
-    const iconHeart = document.querySelectorAll(".iconHeart");
-    
-    iconHeart.addEventListener("click", (e) => {
-        console.log(e.target);
-        console.log("click");
-        if (e.target.classList.contains("unClick")) {
-          console.log("+1");
-          e.target.classList.replace("unClick", "click");
-          memoryCount++;
-          // refreshLike();
-          nbLikes.innerText = `${memoryCount}`;
-          console.log(nbLikes.innerText);
-          } else {
-            console.log("-1");
-            e.target.classList.replace("click", "unClick");
-            memoryCount--;
-            refreshLike();
-          }
-      });
-    });
+function increment() {  
+  gallery.onclick = function(event) {
+    if (!event.target.className.includes('iconHeart')) return;
+      // console.log(event.target.className); 
+      let nbLikes = event.target.previousSibling;
+    //let plus = event.target.closest('.nbLikes');  
+      // console.log(nbLikes);
+      if(nbLikes.classList.contains('unClick')){
+        nbLikes.classList.replace('unClick', 'click');
+        nbLikes.innerHTML++
+        event.target.setAttribute("class", "fas fa-heart iconHeart");
+      } else { 
+        nbLikes.classList.replace('click', 'unClick');
+        nbLikes.innerHTML--
+        event.target.setAttribute("class", "far fa-heart iconHeart");
+      }
+      informationFooter(); 
   };
-}
+
+
+
+
+
+
+
+//   document.addEventListener('click', function(event) {
+
+//     if (event.target.dataset.counter != undefined) { // si l'attribut existe...
+//         event.target.value++;
+//         console.log();    
+//     }
+// .contains
+//   });
+
+  // const nbLikes = document.querySelectorAll(".nbLikes");
+  // const iconHeart = document.querySelector(".iconHeart");
+  // console.log("nbLikes.innerHTML", nbLikes.innerHTML);
+  // // console.log(document);
+  // // console.log("1", nbLikes.innerHTML);
+  
+  // nbLikes.forEach((e) => {
+  //   // console.log("nbLikes.innerHTML", e.innerHTML);
+    
+  //   let memoryCount = e.innerHTML;
+  //   // let memoryCount = document.querySelectorAll(".nbLikes").innerHTML;
+  //   // console.log("memoryCount", memoryCount);
+    
+    
+  //   iconHeart.addEventListener("click", (e) => {
+  //       // console.log("e.target", e.target);
+  //       if (e.target.classList.contains("unClick")) {
+  //         console.log("+1");
+  //         e.target.classList.replace("unClick", "click");
+  //         memoryCount++;
+  //         // refreshLike();
+  //         nbLikes.innerText = memoryCount;
+  //         console.log("nbLikes.innerText", nbLikes.innerText);
+  //         document.querySelectorAll(".nbLikes").innerHTML = memoryCount;
+  //         } 
+  //         else {
+  //           console.log("-1");
+  //           e.target.classList.replace("click", "unClick");
+  //           memoryCount--;
+  //           // refreshLike();
+  //           nbLikes.innerText = memoryCount;
+  //           console.log(nbLikes.innerText);
+  //         }
+  //     });
+  //   });
+  };
+
+// MATIN MENTORAT
+//   function increment() {
+//     const nbLikes = document.querySelectorAll(".nbLikes");
+//     // console.log("nbLikes.innerHTML", nbLikes.innerHTML);
+//     // console.log(document);
+//     // console.log("1", nbLikes.innerHTML);
+    
+//     nbLikes.forEach((e) => {
+//       console.log("nbLikes.innerHTML", e.innerHTML);
+    
+//       let memoryCount = e.innerHTML;
+//       console.log("memoryCount", memoryCount);
+//       // const refreshLike = () => {
+//       //   nbLikes.innerText = `${memoryCount}`;
+//       //   console.log(nbLikes.innerText);
+//       // }
+//       const iconHeart = document.querySelectorAll(".iconHeart");
+      
+//       iconHeart.addEventListener("click", (e) => {
+//           console.log(e.target);
+//           console.log("click");
+//           if (e.target.classList.contains("unClick")) {
+//             console.log("+1");
+//             e.target.classList.replace("unClick", "click");
+//             memoryCount++;
+//             // refreshLike();
+//             nbLikes.innerText = `${memoryCount}`;
+//             console.log(nbLikes.innerText);
+//             } else {
+//               console.log("-1");
+//               e.target.classList.replace("click", "unClick");
+//               memoryCount--;
+//               // refreshLike();
+//               nbLikes.innerText = `${memoryCount}`;
+//               console.log(nbLikes.innerText);
+//             }
+//         });
+//       });
+//     };
+
 
 
 // function increment() {
@@ -114,3 +188,4 @@ function increment() {
 //   "list id",
 //   photographers.map((e) => `${e.id}`)
 // );
+
