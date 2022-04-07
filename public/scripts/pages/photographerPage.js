@@ -30,6 +30,7 @@ async function initPhotographer() {
     }
   });
   increment();
+  lightbox();
     }
 // }
 
@@ -38,23 +39,25 @@ initPhotographer();
 // increment(); 
 
 function increment() {  
-  gallery.onclick = function(event) {
-    if (!event.target.className.includes('iconHeart')) return;
+
+  // gallery.onclick = function(e) {
+  gallery.addEventListener('click', function(e) {
+    if (e.target.className.includes('iconHeart')) {
       // console.log(event.target.className); 
-      let nbLikes = event.target.previousSibling;
+      let nbLikes = e.target.previousSibling;
     //let plus = event.target.closest('.nbLikes');  
-      // console.log(nbLikes);
       if(nbLikes.classList.contains('unClick')){
         nbLikes.classList.replace('unClick', 'click');
         nbLikes.innerHTML++
-        event.target.setAttribute("class", "fas fa-heart iconHeart");
+        e.target.setAttribute("class", "fas fa-heart iconHeart");
       } else { 
         nbLikes.classList.replace('click', 'unClick');
         nbLikes.innerHTML--
-        event.target.setAttribute("class", "far fa-heart iconHeart");
+        e.target.setAttribute("class", "far fa-heart iconHeart");
       }
-      informationFooter(); 
-  };
+      informationFooter();
+    }      
+  });
 
 
 

@@ -22,11 +22,11 @@
       defer
     ></script>
     <script src="./scripts/utils/footer.js" defer></script>
-    <script src="./scripts/factories/lightboxFactorie.js" defer></script>
-    <script src="./scripts/utils/lightbox.js" defer></script>
     <script src="./scripts/utils/contactValidation.js" defer></script>
     <script src="./scripts/utils/contactForm.js" defer></script>
-    <script src="./scripts/utils/contactFunctions.js"></script>
+    <script src="./scripts/utils/contactFunctions.js" defer></script>
+    <script src="./scripts/utils/lightbox.js" defer></script>
+    
   </head>
 
   <body>
@@ -184,23 +184,33 @@
     </aside>
 
     <!-- LIGHTBOX -->
-    <div id="lightbox" role="diaporama" aria-hidden="true">
+    <div id="lightboxModal" role="diaporama" aria-hidden="true">
       <img
         src="assets/icons/close.svg"
         alt="croix de fermeture"
         aria-label="Fermer la lightbox"
         class="closeLightboxCross"
         role="Button"
+        onclick="closeLightModal()"
       />
-      <div class="boxContainer">
-        <div>
-          <i class="fas fa-angle-left iconDirection"></i>
+      <div class="lightboxContainer">
+        <div class="angleContainer">
+          <i class="fas fa-angle-left prev"></i>
         </div>
-        <div class="boxMediaTextContainer"></div>
-        <div>
-          <i class="fas fa-angle-right iconDirection"></i>
+        <!-- <div class="lightboxMediaTextContainer"> -->
+          <div class="lightboxMediaContainer"></div>
+          <!-- <div class="lightboxTextContainer">TITRE H2</div>  -->
+          <!-- <figure> -->
+            <!-- <img src="/media/cc0-images/elephant-660-480.jpg"
+                 alt="Elephant at sunset"> -->
+            <!-- <figcaption>coucou</figcaption> -->
+          <!-- </figure> -->
+        <!-- </div> -->
+        <div class="angleContainer">
+          <i class="fas fa-angle-right next"></i>
         </div>
       </div>
     </div>
   </body>
 </html>
+

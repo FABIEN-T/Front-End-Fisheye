@@ -1,59 +1,119 @@
-#lightbox {
-    box-sizing: border-box;
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-    background-color: rgb(255, 255, 255);
-    padding: 30px 60px;
-  }
+#lightboxModal {
+  box-sizing: border-box;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: white;
+  padding: 30px 30px;
+  margin: 0;
+}
 
-  #lightbox .closeLightboxCross {
-    cursor: pointer;
-    background-color: #901C1C;
-    position: fixed;
-    top: 30px;
-    right: 50px;
-  }
+#lightboxModal .closeLightboxCross {
+  cursor: pointer;
+  background-color: #901c1c;
+  position: fixed;
+  top: 30px;
+  right: 45px;
+}
 
-  #lightbox .boxContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    // border: blue solid 3px;
-  }
+#lightboxModal .lightboxContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  // object-fit: contain;
+  // overflow: hidden;
+  // width:1200px;
+  // border: blue solid 3px;
+  // background-color: #d3573c;
+}
 
-  #lightbox .boxMediaTextContainer {
-    width: 100%;
-    height: 800px;
-    // background-color: rgb(12, 105, 70);
-  }
+#lightboxModal .angleContainer {
+  display: flex;
+  // background-color: white;
+  height: 100%;
+  margin: 0px;  
+}
 
-  #lightbox .iconDirection {
-    cursor: pointer;
-    color: #901C1C;
-    font-size: 4em;
-  }
+#lightboxModal .prev,
+#lightboxModal .next {
+  cursor: pointer;
+  color: #901c1c;
+  font-size: 4em;
+  margin: auto 20px;
+  // background-color: antiquewhite;  
+  // border-radius: 50%;
+  // padding: 10px;
+}
 
-  #lightbox .iconDirection:hover {
-    color: #D3573C;
-  }
+#lightboxModal .prev:hover,
+#lightboxModal .next:hover {
+  color: #d3573c;
+}
 
-  // #lightbox .boxMediaContainer img, .boxMediaContainer video {
-  //     box-sizing: border-box;
-  //     max-width: 100%;
-  //     min-width: 100%;
-  // }
 
-  // #lightbox .boxMediaTextContainer .boxTitleContainer h2 {
-  //   color: #901C1C;
-  //   font-size: 1.5em;
-  //   margin-top: 0px;
-  //   font-weight: 400;
-  // }
+// #lightboxModal .lightboxMediaTextContainer {
+//   // display: flex;
+//   // flex-direction: column;
+//   width: 100%;
+//   height: 100%;
+//   background-color: rgb(178, 241, 255);
+// }
 
- 
+#lightboxModal .lightboxMediaContainer {
+// #lightboxModal figure {
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 100%;
+  // background-color: rgb(12, 105, 70);
+  overflow: hidden;
+}
+
+
+#lightboxModal .media { 
+  margin: 0px auto;
+  object-fit: contain;
+  height: 95%;
+  max-width: 100%;
+}
+
+#lightboxModal .legend {
+// #lightboxModal figcaption {  
+  margin: 12px 0px 0px 5px;
+  height: 5%;
+  color: #901C1C;
+  // background-color: rgb(193, 248, 248);
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+
+// figure {
+//   border: thin #c0c0c0 solid;
+//   display: flex;
+//   flex-flow: column;
+//   padding: 5px;
+//   max-width: 220px;
+//   margin: auto;
+// }
+
+// img {
+//   max-width: 220px;
+//   max-height: 150px;
+// }
+
+// figcaption {
+//   background-color: #222;
+//   color: #fff;
+//   font: italic smaller sans-serif;
+//   padding: 3px;
+//   text-align: left;
+// }

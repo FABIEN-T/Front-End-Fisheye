@@ -14,25 +14,25 @@ function photographerMediaFactory(dataMedia, type) {
   }
   
   // Ecoute du click sur un média
-  const clickImg = document.querySelectorAll("img");
-  const clickVideo = document.querySelectorAll("video");
-  // const attributId = .getAttribute("id");
-  // console.log("attributId", attributId);
-  // console.log("clickImage", clickImg);
-  clickImg.forEach((dataMedia) => {
-    // console.log(clickImg.getAttribute);
-    dataMedia.addEventListener("click", (e) => {
-      // console.log("target img", e.target.id);
-      displayLightbox(e);
-    })
-  }); 
+  // const clickImg = document.querySelectorAll("img");
+  // const clickVideo = document.querySelectorAll("video");
+  // // const attributId = .getAttribute("id");
+  // // console.log("attributId", attributId);
+  // // console.log("clickImage", clickImg);
+  // clickImg.forEach((dataMedia) => {
+  //   // console.log(clickImg.getAttribute);
+  //   dataMedia.addEventListener("click", (e) => {
+  //     // console.log("target img", e.target.id);
+  //     displayLightbox(e);
+  //   })
+  // }); 
 
-  clickVideo.forEach((dataMedia) => {
-    dataMedia.addEventListener("click", (e) => {      
-      // console.log("target video", e.target.id);
-      displayLightbox(e);
-    })
-  }); 
+  // clickVideo.forEach((dataMedia) => {
+  //   dataMedia.addEventListener("click", (e) => {      
+  //     // console.log("target video", e.target.id);
+  //     displayLightbox(e);
+  //   })
+  // }); 
   
 
   function getPhotographerGalleryDOM(type) {
@@ -84,9 +84,10 @@ function photographerMediaFactory(dataMedia, type) {
       const movie = `assets/images/${video}`;
       videoElement.setAttribute("src", movie);
       videoElement.setAttribute("id", id);
-      videoElement.setAttribute("control", "");
+      videoElement.setAttribute("class", "media movie");
+      // videoElement.setAttribute("control", "");
       videoElement.setAttribute("poster", "");
-      videoElement.setAttribute("alt", "");
+      videoElement.setAttribute("alt", title);
       // videoElement.setAttribute("tabindex", "80");
       mediaContainer.appendChild(videoElement);
         
@@ -94,9 +95,10 @@ function photographerMediaFactory(dataMedia, type) {
       const imgElement = document.createElement("img");
       imgElement.classList.add(likes);
       const picture = `assets/images/${image}`;
-      imgElement.setAttribute("src", picture);
+      imgElement.setAttribute("src", picture);      
       imgElement.setAttribute("id", id);
-      imgElement.setAttribute("alt", "");
+      imgElement.setAttribute("class", "media");
+      imgElement.setAttribute("alt", title);
       imgElement.setAttribute("aria-label", "ouverture du diaporama");
       imgElement.setAttribute('role', 'Image link')
       // imgElement.setAttribute("tabindex", "80");
@@ -104,7 +106,7 @@ function photographerMediaFactory(dataMedia, type) {
     }
     // return (gallery);
   }
- 
+  
   return {
     id,
     photographerId,
@@ -114,5 +116,5 @@ function photographerMediaFactory(dataMedia, type) {
     price,    
     getPhotographerGalleryDOM
   };
-
+  
 }

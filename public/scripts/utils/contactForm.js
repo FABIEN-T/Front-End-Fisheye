@@ -4,7 +4,7 @@ contact_button.addEventListener("click", displayModal);
 
 // const main = document.getElementById("main");
 const modal = document.getElementById("contact_modal");
-//DECLARATION DE VARIABLES
+//DECLARATION DE VARIABLES NAVIGATION AU CLAVIER
 const focusableSelector = "button, input, textarea";
 let focusables = [];
 let = previouslyFocusElement = null;

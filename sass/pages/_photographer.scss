@@ -92,7 +92,6 @@
 }
 
 #gallery .mediaContainer {
-    // cursor: pointer;
     height: 350px;
     width: 350px;
     position: relative;
@@ -103,18 +102,16 @@
 #gallery .mediaContainer img, .mediaContainer video {    
     cursor: pointer;
     object-fit: cover;
+    height: 100%;
+    width: 100%; 
     
 }
 
 #gallery .mediaContainer img {
-    max-height: 350px;
-    min-width: 350px;  
     object-position: 80% 18%;   
 }
 
 #gallery .mediaContainer video {
-    min-height: 350px;
-    max-width: 350px;
     position: absolute;
     object-position: 50% 50%;  
 }
