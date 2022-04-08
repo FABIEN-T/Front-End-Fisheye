@@ -55,10 +55,9 @@ function closeLightModal() {
   // }
   const movieRemove = document.querySelectorAll(".movie");
   movieRemove.forEach((e) => {
-    console.log("detect");
     document.querySelector(".movie").removeAttribute("controls", "");
   })
-  console.log("1", document.querySelectorAll(".movie"));
+  // console.log("1", document.querySelectorAll(".movie"));
 }
 
 // Fonction création de la lightbox

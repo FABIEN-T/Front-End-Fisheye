@@ -1,22 +1,28 @@
 async function initPhotographer() {
   // Récupère l'ID dans l'URL
   let params = new URL(document.location).searchParams;
-  let photographerId = params.get("id");
+  let photographerIdUrl = params.get("id");
 
   // Récupère les datas et les medias des photographes
   const { photographers, media } = await getPhotographers();
 
   // Récupère les medias des photographes
   photographers.forEach((element) => {
-    if (photographerId == element.id) {
+    if (photographerIdUrl == element.id) {
       photographerPageFactory(element);
     }
   });
 
   // Récupère les datas des médias pour le photographe sélectionné
-  media.forEach((element) => {
-    
-    if (photographerId == element.photographerId) {
+  media.forEach(element => {
+    if (photographerIdUrl == element.photographerId) {
+      // console.log(element);
+      // const tab = [];
+      // tab.push(element);
+      // console.log(tab);
+      const tab = Array.of(element);
+      console.log(tab);
+      // sorting(media);
       let type = "";
       // Détection du type de médias : image ou vidéo
       if (element.video) {
@@ -26,8 +32,9 @@ async function initPhotographer() {
         type = "image";
       }
       // type mis en paramètre dans la fonction
-      photographerMediaFactory(element, type);
+      photographerMediaFactory(element, type);      
     }
+    
   });
   increment();
   lightbox();

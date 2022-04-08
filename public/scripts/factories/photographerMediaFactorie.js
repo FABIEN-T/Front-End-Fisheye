@@ -2,6 +2,8 @@ function photographerMediaFactory(dataMedia, type) {
   const { id, photographerId, title, image, video, likes, date, price } = dataMedia; 
   // console.log("factory", likes);
 
+  // console.log("dataMedia", dataMedia);
+
   const typeFactory = type;
   // console.log("log",typeFactory);
   if (typeFactory == "image") {    
