@@ -63,7 +63,7 @@ function lightbox() {
   // console.log("array", Array.from(document.getElementsByClassName("media")));
   for (let i = 0; i < tableauMedias.length; i++) {
     tableauMedias[i].addEventListener("click", function (e) {
-      console.log("Go Lightbox", tableauMedias[i]);
+      // console.log("Go Lightbox", tableauMedias[i]);
       openLightboxModal(); // Quand un média est cliqué, ouverture de la lightbox
       document.getElementById("lightboxModal").style.display = "block";
       // console.log("mediasLength", tableauMedias.length);

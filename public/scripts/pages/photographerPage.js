@@ -33,43 +33,39 @@ async function initPhotographer() {
     // let select = document.querySelector('#sortingSelect');
     // let value = document.getElementById("sortingSelect").value;
     // document.getElementById("demo").innerHTML = "You selected: " + x;
-    let select = document.getElementById('sortingSelect');
+    let select = document.getElementById('sortingSelect');    
     let value = "popularity"; 
     
     typeSort(value);
         
     select.addEventListener('change', function (e) {
-      console.log("e.target.value", e.target.value);
+      // console.log("e.target.value", e.target.value);
       // typeSort(this.value);
       typeSort(e.target.value);
+      // console.log("type de tri", e.target.value);
     });
-    // console.log("select.selectedIndex",select.selectedIndex);
-    // let value = select.options[select.selectedIndex].value;
-    
-    // console.log("début", value);
-    // console.log(value);
-    /* elementCliqué.value */;
-    
+        
     function typeSort(value) {
+      console.log("typeSort", value);
       if(value === 'popularity'){
         thisMedias.sort((a, b) => {
           // console.log("a b", a, b);
           return a.likes > b.likes ? -1 : 1;
         })  
-        // console.log("thisMedias popularity", thisMedias);    
+        console.log("tm popularity", thisMedias);    
       }  
       if(value === 'date'){
         thisMedias.sort((a, b) => {
           return a.date < b.date ? -1 : 1;
         })
-        // console.log("thisMedias date", thisMedias);
+        console.log("tm date", thisMedias);
       }
       // console.log("2", value);
       if(value === 'title'){
         thisMedias.sort((a, b) => {
           return a.title < b.title ? -1 : 1;
         })
-        // console.log("thisMedias title", thisMedias);
+        console.log("tm title", thisMedias);
       } 
       // console.log("s1", value);
       // console.log("1", value)

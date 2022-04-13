@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+
+    <script src="./script.js" defer></script>
+    <title>JS Bin</title>
+  </head>
+  <body>
+    <div class="mySelect" tabindex="-1">
+      <div class="myLabel" tabindex="0">Trier par</div>
+      <label
+        class="custom-selector"
+        role="navigation"
+        aria-haspopup="true"
+        aria-expanded="false"
+        tabindex="0"
+      >
+        <select name="typeSort" aria-label="type de tri">
+          <option value="Popularity" tabindex="0">Popularité</option>
+          <option value="Date" tabindex="0">Date</option>
+          <option value="Title" tabindex="0">Titre</option>
+        </select>
+        <i class="fas fa-chevron-down arrow"></i>
+      </label>
+      <div class="iconArrow"></div>
+    </div>
+  </body>
+</html>

@@ -26,6 +26,7 @@
     <script src="./scripts/utils/contactForm.js" defer></script>
     <script src="./scripts/utils/contactFunctions.js" defer></script>
     <!-- <script src="./scripts/utils/sorting.js" defer></script> -->
+    <script src="./scripts/utils/select.js" defer></script>
     <script src="./scripts/utils/lightbox.js" defer></script>
   </head>
 
@@ -60,14 +61,36 @@
           Contactez-moi
         </button>
       </section>
-      <div class="selectContainer">
+
+      <div class="mySelect" tabindex="-1">
+        <div class="myLabel" tabindex="0">Trier par</div>
+        <label
+          for="sortingSelect"
+          class="custom-selector"
+          role="navigation"
+          aria-haspopup="true"
+          aria-expanded="false"
+          tabindex="0"
+        >
+          <select name="typeSort" id="sortingSelect" aria-label="type de tri">
+            <option value="popularity" tabindex="0">Popularité</option>
+            <option value="date" tabindex="0">Date</option>
+            <option value="title" tabindex="0">Titre</option>
+          </select>
+          <i class="fas fa-chevron-down arrow"></i>
+        </label>
+        <div class="iconArrow"></div>
+      </div>
+
+      <!-- <div class="selectContainer">
         <label for="sortingSelect">Triez par</label>
         <select name="sorting" id="sortingSelect">      
           <option value="popularity">Popularité</option>
           <option value="date">Date</option>
           <option value="title">Titre</option>
         </select>
-      </div>
+      </div> -->
+      
       <section id="gallery" role="section">
       </section>
     </main>
