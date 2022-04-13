@@ -25,9 +25,8 @@
     <script src="./scripts/utils/contactValidation.js" defer></script>
     <script src="./scripts/utils/contactForm.js" defer></script>
     <script src="./scripts/utils/contactFunctions.js" defer></script>
-    <script src="./scripts/utils/sorting.js" defer></script>
+    <!-- <script src="./scripts/utils/sorting.js" defer></script> -->
     <script src="./scripts/utils/lightbox.js" defer></script>
-    
   </head>
 
   <body>
@@ -45,6 +44,7 @@
         />
       </a>
     </header>
+
     <main id="main" role="main" aria-hidden="false">
       <section
         class="photographHeader"
@@ -60,7 +60,16 @@
           Contactez-moi
         </button>
       </section>
-      <section id="gallery" role="section"></section>
+      <div class="selectContainer">
+        <label for="sortingSelect">Triez par</label>
+        <select name="sorting" id="sortingSelect">      
+          <option value="popularity">Popularité</option>
+          <option value="date">Date</option>
+          <option value="title">Titre</option>
+        </select>
+      </div>
+      <section id="gallery" role="section">
+      </section>
     </main>
 
     <!-- FOOTER : "insert" total deds likes et prix/jour -->
@@ -199,13 +208,13 @@
           <i class="fas fa-angle-left prev"></i>
         </div>
         <!-- <div class="lightboxMediaTextContainer"> -->
-          <div class="lightboxMediaContainer"></div>
-          <!-- <div class="lightboxTextContainer">TITRE H2</div>  -->
-          <!-- <figure> -->
-            <!-- <img src="/media/cc0-images/elephant-660-480.jpg"
+        <div class="lightboxMediaContainer"></div>
+        <!-- <div class="lightboxTextContainer">TITRE H2</div>  -->
+        <!-- <figure> -->
+        <!-- <img src="/media/cc0-images/elephant-660-480.jpg"
                  alt="Elephant at sunset"> -->
-            <!-- <figcaption>coucou</figcaption> -->
-          <!-- </figure> -->
+        <!-- <figcaption>coucou</figcaption> -->
+        <!-- </figure> -->
         <!-- </div> -->
         <div class="angleContainer">
           <i class="fas fa-angle-right next"></i>
@@ -214,4 +223,3 @@
     </div>
   </body>
 </html>
-

@@ -506,7 +506,7 @@ h1 {
 .photographHeader {
   background-color: #fafafa;
   height: 300px;
-  margin: 20px 100px 100px;
+  margin: 20px 100px 20px;
   padding: 0 30px;
   display: flex;
   justify-content: space-between;
@@ -522,7 +522,7 @@ h1 {
 }
 
 .photographHeader h1 {
-  color: #D3573C;
+  color: #d3573c;
   font-size: 4em;
   font-weight: 400;
   line-height: 83.33px;
@@ -535,7 +535,7 @@ h1 {
 
 .photographHeader h2 {
   margin: -2px 0px 2px;
-  color: #901C1C;
+  color: #901c1c;
   font-size: 1.5em;
   font-weight: 400;
   line-height: 31.25px;
@@ -570,9 +570,47 @@ h1 {
 
 .photographHeader .imgContainer:focus {
   border-radius: 10px;
-  border: #D3573C solid 3px;
+  border: #d3573c solid 3px;
   outline: none;
   padding: 2px 2px;
+}
+
+.selectContainer {
+  margin: 0px 0px 50px 100px;
+  position: relative;
+  font-size: 1.125em;
+  font-weight: 700;
+}
+
+label {
+  margin-right: 16px;
+}
+
+.selectContainer select {
+  cursor: pointer;
+  font-weight: 700;
+  color: white;
+  background-color: #901c1c;
+  width: 170px;
+  height: 69px;
+  padding: 0px 20px;
+  border-radius: 5px;
+  outline: none;
+  appearance: none;
+}
+
+.selectContainer custom-selector::after {
+  content: "";
+  color: blue;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: green;
+  display: inline-block;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border-radius: 2px;
 }
 
 #gallery {
@@ -594,7 +632,8 @@ h1 {
   overflow: hidden;
 }
 
-#gallery .mediaContainer img, .mediaContainer video {
+#gallery .mediaContainer img,
+.mediaContainer video {
   cursor: pointer;
   object-fit: cover;
   height: 100%;
@@ -616,8 +655,9 @@ h1 {
   justify-content: space-between;
 }
 
-#gallery .textContainer h3, .nbLikes {
-  color: #901C1C;
+#gallery .textContainer h3,
+.nbLikes {
+  color: #901c1c;
   font-size: 1.5em;
   font-weight: 400;
   line-height: 1.953em;
@@ -639,7 +679,7 @@ h1 {
 #gallery .textContainer .iconHeart {
   cursor: pointer;
   font-size: 1.4em;
-  color: #901C1C;
+  color: #901c1c;
   line-height: 1.953em;
 }
 
@@ -652,14 +692,14 @@ h1 {
   bottom: 0px;
   right: 36px;
   border-radius: 5px 5px 0px 0px;
-  background-color: #DB8876;
+  background-color: #db8876;
   font-size: 1.5em;
   font-weight: 500;
 }
 
 #footer:focus {
   color: white;
-  background-color: #901C1C;
+  background-color: #901c1c;
   border: none;
 }
 

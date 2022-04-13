@@ -45,18 +45,10 @@ function openLightboxModal() {
 // console.log("1", document.getElementsByClassName("media"));
 function closeLightModal() {
   document.getElementById("lightboxModal").style.display = "none";
-  // removeControls();
-  // function removeControls() {
-  //   for (let i = 0; i < tableauMedias.length; i++) {
-  //     if (tableauMedias[i].outerHTML.includes("video")) {
-  //       tableauMedias[i].removeAttribute("controls", "");
-  //     }
-  //   }
-  // }
   const movieRemove = document.querySelectorAll(".movie");
   movieRemove.forEach((e) => {
     document.querySelector(".movie").removeAttribute("controls", "");
-  })
+  });
   // console.log("1", document.querySelectorAll(".movie"));
 }
 
@@ -71,6 +63,7 @@ function lightbox() {
   // console.log("array", Array.from(document.getElementsByClassName("media")));
   for (let i = 0; i < tableauMedias.length; i++) {
     tableauMedias[i].addEventListener("click", function (e) {
+      console.log("Go Lightbox", tableauMedias[i]);
       openLightboxModal(); // Quand un média est cliqué, ouverture de la lightbox
       document.getElementById("lightboxModal").style.display = "block";
       // console.log("mediasLength", tableauMedias.length);
@@ -117,10 +110,8 @@ function lightbox() {
         // console.log("figcaption", document.querySelector('figcaption'));
         // document.querySelector('figcaption').innerText = 'coucou';
       }
-      
     });
   }
-  
 }
 
 // const figure = document.querySelector("figure");

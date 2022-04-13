@@ -1,6 +1,6 @@
 //FONCTION DE MISE EN FORME DES DATAS DU HEADER
 function photographerPageFactory(data) {
-    const { name, portrait, city, country, tagline} = data[0];    
+    const { name, portrait, city, country, tagline} = data;    
     
     getPhotographerPageDOM();
 
