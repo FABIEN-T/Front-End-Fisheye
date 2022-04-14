@@ -223,6 +223,11 @@ label {
 //     display: flex;
 //     // flex-direction: row;
 // }
+#gallery .iconHeartButton {  
+  border : none;
+  background: transparent;
+}
+
 
 #gallery .textContainer .iconHeart {
   cursor: pointer;

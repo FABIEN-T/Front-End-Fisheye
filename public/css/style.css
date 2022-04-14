@@ -764,6 +764,11 @@ label {
   margin-right: 5px;
 }
 
+#gallery .iconHeartButton {
+  border: none;
+  background: transparent;
+}
+
 #gallery .textContainer .iconHeart {
   cursor: pointer;
   font-size: 1.4em;

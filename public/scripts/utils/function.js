@@ -3,3 +3,11 @@ async function getPhotographers() {
       return await response.json();
     }
 
+
+function echapClose(fctn) {
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" || e.key === "Esc") {
+      fctn(e);
+    }
+  });
+}

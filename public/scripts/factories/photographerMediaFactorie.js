@@ -27,7 +27,8 @@ function photographerMediaFactory(dataMedia) {
       const nbLikes = document.createElement("span");
       // nbLikes.classList.add("nbLikes");
       const iconHeart = document.createElement("i");
-
+      const iconHeartButton = document.createElement("button");
+      iconHeartButton.classList.add("iconHeartButton");
       // Création des attributs et contenus
       mediaContainer.setAttribute("tabindex", "80");
       h3.textContent = title;
@@ -52,7 +53,8 @@ function photographerMediaFactory(dataMedia) {
       textContainer.appendChild(h3);
       textContainer.appendChild(likesHeart);
       likesHeart.appendChild(nbLikes);
-      likesHeart.appendChild(iconHeart);
+      likesHeart.appendChild(iconHeartButton);
+      iconHeartButton.appendChild(iconHeart);
 
       if (type == video) {
         const videoElement = document.createElement("video");

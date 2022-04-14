@@ -35,16 +35,23 @@
 
 // Fonction ouverture de la Modale
 function openLightboxModal() {
-  // console.log("openModal");
   document.getElementById("lightboxModal").style.display = "block";
-  // document.getElementById("main").style.display = "none";
+  document.getElementById("main").style.display = "none";
 }
+
+echapClose(closeLightModal);
+// window.addEventListener("keydown", (e) => {
+//   if (e.key === "Escape" || e.key === "Esc") {
+//     closeLightModal(e);
+//   }
+// });
 
 // Fonction fermeture de la Modale
 // const tableauMedias = Array.from(document.getElementsByClassName("media"));
 // console.log("1", document.getElementsByClassName("media"));
 function closeLightModal() {
   document.getElementById("lightboxModal").style.display = "none";
+  document.getElementById("main").style.display = "block";
   const movieRemove = document.querySelectorAll(".movie");
   movieRemove.forEach((e) => {
     document.querySelector(".movie").removeAttribute("controls", "");
@@ -63,7 +70,8 @@ function lightbox() {
   // console.log("array", Array.from(document.getElementsByClassName("media")));
   for (let i = 0; i < tableauMedias.length; i++) {
     tableauMedias[i].addEventListener("click", function (e) {
-      // console.log("Go Lightbox", tableauMedias[i]);
+      console.log("Go Lightbox", tableauMedias[i]);
+      
       openLightboxModal(); // Quand un média est cliqué, ouverture de la lightbox
       document.getElementById("lightboxModal").style.display = "block";
       // console.log("mediasLength", tableauMedias.length);

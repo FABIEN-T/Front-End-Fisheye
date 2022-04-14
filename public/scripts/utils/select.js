@@ -1,4 +1,5 @@
-const selector = document.querySelector('.custom-selector');
+function selectFunction() {
+  const selector = document.querySelector('.custom-selector');
 // const ariaSelect = document.querySelector('.ariaSelect');
 // console.log(".custom-selector", selector);
 
@@ -50,4 +51,7 @@ selector.addEventListener('mousedown', e => {
     }
   })
 })
+}
+
+selectFunction();
 

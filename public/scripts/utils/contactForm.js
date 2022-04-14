@@ -4,10 +4,11 @@ contact_button.addEventListener("click", displayModal);
 
 // const main = document.getElementById("main");
 const modal = document.getElementById("contact_modal");
+
 //DECLARATION DE VARIABLES NAVIGATION AU CLAVIER
 const focusableSelector = "button, input, textarea";
 let focusables = [];
-let = previouslyFocusElement = null;
+// let previouslyFocusElement = null;
 
 // DECLARATION DE LA FONCTION D'OUVERTURE DE LA MODALE
 async function displayModal() {
@@ -76,8 +77,7 @@ function closeModal() {
 const focusInModal = function (e) {
   e.preventDefault();
   let index = focusables.findIndex((f) => f === modal.querySelector(":focus")); //sinon on a 'null is not a fonction'
-  if (e.shiftKey)  
-  {
+  if (e.shiftKey) {
     console.log("shift");
     index--;
     console.log("index--", index);
@@ -94,6 +94,7 @@ const focusInModal = function (e) {
     console.log("index-1", index);
   }
   focusables[index].focus();
+  console.log("focusables", focusables[index].focus());
 };
 
 
@@ -104,15 +105,12 @@ function listenEscape(e) {
   }
 }
 
-modal.addEventListener("keydown", listenTab);
-function listenTab(e) {
-  // if (e.key === "Escape" || e.key === "Esc") {
-  //   closeModal(e);
-  // }
-  if (e.key === "Tab") {  
-    focusInModal(e);
-  }
-}
+echapClose(closeModal);
+// window.addEventListener("keydown", (e) => {
+//   if (e.key === "Escape" || e.key === "Esc") {
+//     closeModal(e);
+//   }
+// });
 
 
  //     // recoveryName(element.name);
