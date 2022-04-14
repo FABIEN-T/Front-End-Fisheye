@@ -422,17 +422,14 @@ h1 {
 }
 
 .mySelect {
-  margin: 0px 0px 50px 100px;
+  margin: 0px 100px 50px 100px;
   display: flex;
   align-items: flex-start;
-  font-size: 1em;
-  font-weight: 700;
-  /* width: 800px; */
 }
 
 .myLabel {
   margin-right: 16px;
-  margin-top: 22px;
+  margin-top: 24px;
   font-size: 1em;
   font-weight: 700;
 }
@@ -444,7 +441,7 @@ h1 {
 
 .custom-selector select {
   cursor: pointer;
-  font-size: 1em;
+  font-size: 1.125em;
   font-weight: 700;
   color: white;
   width: 170px;
@@ -470,12 +467,12 @@ h1 {
 }
 
 .custom-selector li {
-  font-size: 1em;
+  font-size: 1.125em;
   font-weight: 700;
   height: 57px;
   display: flex;
   flex-direction: column;
-  padding: 20px 20px;
+  padding: 22px 20px;
   /* padding: 0 20px; */
   cursor: pointer;
   color: white;
@@ -485,7 +482,7 @@ h1 {
 .custom-selector li::after {
   content: "";
   /* padding-top: 40px; */
-  padding-bottom: 18px;
+  padding-bottom: 14px;
   width: 135px;
   border-bottom: white 1px solid;
 }
@@ -508,7 +505,7 @@ h1 {
   font-size: 1em;
   color: white;
   position: absolute;
-  top: 25px;
+  top: 26px;
   right: 20px;
 }
 

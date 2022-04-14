@@ -87,7 +87,6 @@ async function initPhotographer() {
   getThisMedias();
   sort();
   photographerPageFactory(thisPhotographer);
-  photographerMediaFactory(thisMedias);
   increment();
   lightbox();
 }
