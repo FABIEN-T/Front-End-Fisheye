@@ -1,6 +1,8 @@
+const lightboxModal = document.getElementById("lightboxModal");
+
 // Fonction ouverture de la Modale
 function openLightboxModal() {
-  document.getElementById("lightboxModal").style.display = "block";
+  lightboxModal.style.display = "block";
   document.getElementById("main").style.display = "none";
 }
 
@@ -13,7 +15,7 @@ function closeLightModal() {
   const movieRemove = document.querySelectorAll(".movie");
   movieRemove.forEach((e) => {
     document.querySelector(".movie").removeAttribute("controls", "");
-  });  
+  });
 }
 
 // Fonction création de la lightbox et sa navigation
@@ -21,35 +23,35 @@ function lightbox() {
   // Transformation de la Collection HTML "media" en un tableau
   // (ensemble des div de class "media" dans la gallerie)
   const tableauMedias = Array.from(document.getElementsByClassName("media"));
-  const tableauMediaContainer = Array.from(document.getElementsByClassName("mediaContainer"));
+  const tableauMediaContainer = Array.from(
+    document.getElementsByClassName("mediaContainer")
+  );
   // Boucle : pour chaque élément du tableau, écouter le "click"
   for (let i = 0; i < tableauMedias.length; i++) {
-    tableauMedias[i].addEventListener("click", function (e) {   
-      console.log("click e", e);
+    tableauMedias[i].addEventListener("click", function (e) {
+      // console.log("click e", e);
       let index = tableauMedias.indexOf(e.target); // Récupération et mémorisation de l'index du media cliqué
-      launchLightbox(index);
-      
+      launchMedia(index);
     });
   }
-  
+
   for (let i = 0; i < tableauMediaContainer.length; i++) {
-    tableauMediaContainer[i].addEventListener("keydown", function(e) {
+    tableauMediaContainer[i].addEventListener("keydown", function (e) {
       console.log("Pré", e);
       if (e.key === "Enter") {
         e.preventDefault();
         let index = tableauMediaContainer.indexOf(e.target); // Récupération et mémorisation de l'index du media cliqué
         // console.log("key e Child", e.target.firstElementChild);
         console.log("key e", index);
-        launchLightbox(index);
-    }
-  });
+        launchMedia(index);
+      }
+    });
   }
 
-  
-  function launchLightbox(index) {
+  function launchMedia(index) {
     openLightboxModal(); // Quand un média est cliqué, ouverture de la lightbox
-    console.log("click fctn", index);
-    document.getElementById("lightboxModal").style.display = "block";  
+    // console.log("click fctn", index);
+    document.getElementById("lightboxModal").style.display = "block";
     console.log("index", index);
     displaySlides(index); // Exécution de l'affichage du média cliqué avec envoi de l'index associé
 
@@ -59,6 +61,17 @@ function lightbox() {
     });
     document.querySelector(".next").addEventListener("click", function () {
       displaySlides((index += 1)); //précédent : on incrémente
+    });
+    document.addEventListener("keydown", function (e) {
+      console.log(e.key);
+      if (e.key === "ArrowLeft") {
+        displaySlides((index -= 1)); //précédent : on décrémente
+      }
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") {
+        displaySlides((index += 1)); //précédent : on incrémente
+      }
     });
 
     function displaySlides(n) {
@@ -84,9 +97,28 @@ function lightbox() {
       lightboxMediaContainer.innerHTML = tableauMedias[index].outerHTML;
 
       // console.log("contenu", tableauMedias[index].outerHTML);
-      lightboxMediaContainer.innerHTML += '<div class="legend"></div>';
+      lightboxMediaContainer.innerHTML += '<h1 class="legend"></h1>';
       const legend = document.querySelector(".legend");
       legend.innerHTML = tableauMedias[index].getAttribute("alt");
     }
   }
 }
+
+//
+
+// function focusInLightbox() {
+//   const focusableSelectorLightboxModal = "h1, i, buttons, img";
+//   let focusablesLightBox = [];  
+//   focusablesLightBox = Array.from(
+//     lightboxModal.querySelectorAll(focusableSelectorLightboxModal)
+//   );
+//   console.log("focusablesLightBox", focusablesLightBox);
+//   // Ecoute de la touche "tab" au clavier
+//   document.addEventListener("keydown", function (e) {
+//     if (e.key === "Tab" && lightboxModal !== null) {
+//       focusModals(e, focusablesLightBox);
+//     }
+//   });
+// }
+
+// focusInLightbox();

@@ -6,27 +6,29 @@ contact_button.addEventListener("click", displayModal);
 const modal = document.getElementById("contact_modal");
 
 //DECLARATION DE VARIABLES NAVIGATION AU CLAVIER
-const focusableSelector = "button, input, textarea";
-let focusables = [];
+const focusableSelectorModal = "h1, button, input, textarea";
+let focusablesModal = [];
 // let previouslyFocusElement = null;
 
 // DECLARATION DE LA FONCTION D'OUVERTURE DE LA MODALE
 async function displayModal() {
-  // e.preventDefault(); 
-  document.getElementById("header").setAttribute("aria-hidden", "true"); 
+  // e.preventDefault();
+  document.getElementById("header").setAttribute("aria-hidden", "true");
   document.getElementById("main").setAttribute("aria-hidden", "true");
   document.getElementById("footer").setAttribute("aria-hidden", "true");
   // main.setAttribute("aria-hidden", "true");
   modal.setAttribute("aria-hidden", "false");
 
   // CONSTRUCTION DU TABLEAU DES INDEX DE TABULATION
-  focusables = Array.from(modal.querySelectorAll(focusableSelector));
+  focusablesModal = Array.from(modal.querySelectorAll(focusableSelectorModal));
+  console.log("focusablesModal", focusablesModal);
+  // previouslyFocusElement  = document.querySelectorAll(':focus');
+  // console.log("previouslyFocusElement", previouslyFocusElement);
 
   // AFFICHAGE DE LA MODALE
   modal.style.display = "block";
-  // modal.removeAttribute("aria-hiden");    
+  // modal.removeAttribute("aria-hiden");
   modal.setAttribute("arial-modal", true);
-  
 
   let params = new URL(document.location).searchParams;
   let photographerId = params.get("id");
@@ -35,29 +37,43 @@ async function displayModal() {
   const { photographers } = await getPhotographers();
   photographers.forEach((element) => {
     if (photographerId == element.id) {
-        const contactPhotographer = document.querySelector(
-          "#contactPhotographer"
-        );
-        contactPhotographer.innerHTML = "Contactez " + element.name;
-        contactPhotographer.setAttribute("arialabel", "contactez " + element.name);
-      } 
+      const contactPhotographer = document.querySelector(
+        "#contactPhotographer"
+      );
+      contactPhotographer.innerHTML = "Contactez " + element.name;
+      contactPhotographer.setAttribute(
+        "arialabel",
+        "contactez " + element.name
+      );
+    }
   });
 
   // VALIDATION DU FORMULAIRE
   contactValidation();
 }
 
-// DECLARATION DE LA FONCTION DE FERMETURE DE LA MODALE
-
+// FERMETURE DE LA MODALE : Ecoute du "click" sur la croix de la modale
 const closeModalCross = document.querySelector(".closeModalCross");
 closeModalCross.addEventListener("click", closeModal);
 
+// FERMETURE DE LA MODALE : Ecoute de la touche "Enter" sur la croix de la modale
+modal.addEventListener("keyup", function (e) {
+  console.log(e.target);
+  console.log(e.target.className.includes("buttonCross"));
+  if (e.key === "Enter" && e.target.className.includes("buttonCross")) {
+    closeModal();
+  }
+});
+
+// FERMETURE DE LA MODALE : Ecoute de la touche "Echap" et lancement la fonction de fermeture de la modale
+echapClose(closeModal);
+
+// DECLARATION DE LA FONCTION DE FERMETURE DE LA MODALE
 function closeModal() {
-  // e.preventDefault();
   modal.style.display = "none";
   modal.setAttribute("aria-hiden", "true");
   modal.removeAttribute("aria-modal");
-  document.getElementById("header").setAttribute("aria-hidden", "false"); 
+  document.getElementById("header").setAttribute("aria-hidden", "false");
   document.getElementById("main").setAttribute("aria-hidden", "false");
   document.getElementById("footer").setAttribute("aria-hidden", "false");
   // modal.remove.addEventListener("click", closeModal);
@@ -74,54 +90,13 @@ function closeModal() {
   }
 }
 
-const focusInModal = function (e) {
-  e.preventDefault();
-  let index = focusables.findIndex((f) => f === modal.querySelector(":focus")); //sinon on a 'null is not a fonction'
-  if (e.shiftKey) {
-    console.log("shift");
-    index--;
-    console.log("index--", index);
-  } else {
-    index++;
-    console.log("index++", index);
-  }
-  if (index >= focusables.length) {
-    index = 0;
-    console.log("index=0", index);
-  }
-  if (index < 0) {
-    index = focusables.length - 1;
-    console.log("index-1", index);
-  }
-  focusables[index].focus();
-  console.log("focusables", focusables[index].focus());
-};
-
-
-window.addEventListener("keydown", listenEscape);
-function listenEscape(e) {
-  if (e.key === "Escape" || e.key === "Esc") {
-    closeModal(e);
-  }
+function focusInModal() {
+  // Ecoute de la touche "tab" au clavier
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Tab" && modal !== null) {
+      focusModals(e, focusablesModal);
+    }
+  });
 }
 
-echapClose(closeModal);
-// window.addEventListener("keydown", (e) => {
-//   if (e.key === "Escape" || e.key === "Esc") {
-//     closeModal(e);
-//   }
-// });
-
-
- //     // recoveryName(element.name);
-  //     // console.log(element.name);
-
-  //     // function recoveryName(name) {
-  //     //   // console.log(name);
-  //     //   const contactPhotographer = document.querySelector(
-  //     //     "#contactPhotographer"
-  //     //   );
-  //     //   contactPhotographer.innerHTML = "Contactez " + name;
-  //     //   contactPhotographer.setAttribute("arialabel", "contactez " + name);
-  //     // }
-    // }
+focusInModal();

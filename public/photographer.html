@@ -122,15 +122,8 @@
     >
       <div class="content">
         <header class="headerModal">
-          <h1 id="contactPhotographer" role="Heading (h1)"></h1>
-          <button class="buttonCross" type="button" role="Button">
-            <img
-              src="assets/icons/close.svg"
-              class="closeModalCross"
-              aria-label="Fermer le formulaire"
-              alt="croix de fermeture"
-            />
-          </button>
+          <h1 id="contactPhotographer" role="Heading (h1)" tabindex="0"></h1>
+          
         </header>
 
         <form name="reserve" action="photographer.html" method="get" id="form">
@@ -208,36 +201,40 @@
             aria-label="Envoyer"
           />
         </form>
+        <button class="buttonCross" type="button" role="Button" tabindex="1">
+          <img
+            src="assets/icons/close.svg"
+            class="closeModalCross"
+            aria-label="Fermer le formulaire"
+            alt="croix de fermeture"
+          />
+        </button>
       </div>
     </aside>
 
     <!-- LIGHTBOX -->
-    <div id="lightboxModal" role="diaporama" aria-hidden="true">
-      <img
-        src="assets/icons/close.svg"
-        alt="croix de fermeture"
-        aria-label="Fermer la lightbox"
-        class="closeLightboxCross"
-        role="Button"
-        onclick="closeLightModal()"
-      />
+    <div id="lightboxModal" role="diaporama" aria-hidden="true">      
       <div class="lightboxContainer">
         <div class="angleContainer">
           <i class="fas fa-angle-left prev"></i>
         </div>
         <!-- <div class="lightboxMediaTextContainer"> -->
         <div class="lightboxMediaContainer"></div>
-        <!-- <div class="lightboxTextContainer">TITRE H2</div>  -->
-        <!-- <figure> -->
-        <!-- <img src="/media/cc0-images/elephant-660-480.jpg"
-                 alt="Elephant at sunset"> -->
-        <!-- <figcaption>coucou</figcaption> -->
-        <!-- </figure> -->
-        <!-- </div> -->
         <div class="angleContainer">
           <i class="fas fa-angle-right next"></i>
         </div>
       </div>
+      <button class="buttonCross" type="button" role="Button" tabindex="1">
+        <img
+        src="assets/icons/close.svg"
+        alt="croix de fermeture"
+        aria-label="Fermer la lightbox"
+        class="closeLightboxCross"
+        role="Button"
+        onclick="closeLightModal()"
+        />
+      </button>
+      
     </div>
   </body>
 </html>

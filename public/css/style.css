@@ -844,14 +844,14 @@ label {
 
 #contact_modal .headerModal {
   margin: 0;
-  display: flex;
-  justify-content: space-between;
   width: 100%;
 }
 
-#contact_modal .headerModal img {
+#contact_modal .buttonCross {
   cursor: pointer;
+  background: none;
   position: absolute;
+  top: 34px;
   right: 35px;
 }
 
@@ -859,7 +859,8 @@ label {
   color: black;
   font-size: 3em;
   font-weight: normal;
-  text-align: center;
+  margin: 0;
+  width: calc(100% - 60px);
 }
 
 #contact_modal form {

@@ -45,3 +45,27 @@ function increment() {
   }
 }
 
+// Recherche de l'index "Tab"
+const focusModals = function (e, focusables) {
+  e.preventDefault();
+  let index = focusables.findIndex((searchFocus) => searchFocus === modal.querySelector(":focus")); //sinon on a 'null is not a fonction'
+  // console.log("index", focusables.length, index);
+  if (e.shiftKey) {
+    // console.log("shift"); 
+    index--;
+    // console.log("index--", index);
+  } else {
+    index++;
+    // console.log("index++", index);
+  }
+  if (index >= focusables.length) {
+    index = 0;
+    // console.log("index=0", index);
+  }
+  if (index < 0) {
+    index = focusables.length - 1;
+        console.log("index-1", focusables.length, index);
+  }
+  focusables[index].focus();
+};
+
