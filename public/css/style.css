@@ -738,9 +738,11 @@ label {
 }
 
 #gallery .textContainer {
-  display: flex;
+  display: inline-flex;
   align-items: baseline;
   justify-content: space-between;
+  width: 350px;
+  overflow: hidden;
 }
 
 #gallery .textContainer h3,
@@ -761,12 +763,14 @@ label {
 }
 
 #gallery .nbLikes {
-  margin-right: 5px;
+  margin-right: 4px;
 }
 
-#gallery .iconHeartButton {
-  border: none;
-  background: transparent;
+#gallery .textContainer .likesHeart {
+  display: inline-flex;
+  justify-content: flex-end;
+  padding-right: 1px;
+  margin: 0;
 }
 
 #gallery .textContainer .iconHeart {

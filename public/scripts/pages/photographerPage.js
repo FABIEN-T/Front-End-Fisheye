@@ -17,7 +17,6 @@ async function initPhotographer() {
       }
     });
   }
-  // console.log("currentPhotographer",thisPhotographer);
 
   // Récupère les datas des médias pour le photographe sélectionné
   function getThisMedias() {
@@ -27,8 +26,8 @@ async function initPhotographer() {
       }
     });
   }
-  // console.log("currentMedias",thisMedias);
-
+  
+// TRI
   function sort() {
     // let select = document.querySelector('#sortingSelect');
     // let value = document.getElementById("sortingSelect").value;
@@ -39,16 +38,16 @@ async function initPhotographer() {
     // console.log("hey", select.focus());
 
     // const mySelect = document.querySelector(".mySelect");
-    document
-      .querySelector(".custom-selector")
-      .addEventListener("keydown", listenEnter);
-    function listenEnter(e) {
-      if (e.key === "Enter") {
-        console.log("hey");
-
-        selectFunction();
-      }
-    }
+    // document
+    //   .querySelector(".custom-selector")
+    //   .addEventListener("keydown", listenEnter);
+      
+    // function listenEnter(e) {
+    //   if (e.key === "Enter") {
+    //     console.log("hey");
+    //     // selectFunction();
+    //   }
+    // }
 
     typeSort(value);
 
@@ -70,7 +69,7 @@ async function initPhotographer() {
       }
       if (value === "date") {
         thisMedias.sort((a, b) => {
-          return a.date < b.date ? -1 : 1;
+          return a.date > b.date ? -1 : 1;
         });
         console.log("tm date", thisMedias);
       }
@@ -101,41 +100,40 @@ async function initPhotographer() {
   sort();
   photographerPageFactory(thisPhotographer);
   increment();
-  lightbox();
+  // lightbox();
 }
 
 initPhotographer();
 
 // increment();
 
-function increment() {
-  // Ecoute du "click" sur la galerie (le coeur) et lancement du tri
-  gallery.addEventListener("click", function (e) {
-    inc(e);    
-    }
-  );
-  // Ecoute de la touche "enter" sur la galerie (le coeur) et lancement du tri
-  gallery.addEventListener("keydown", function (e) {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      inc(e);
-    }
-  });
+// function increment() {
+//   // Ecoute du "click" sur la galerie (le coeur) et lancement du tri
+//   gallery.addEventListener("click", function (e) {
+//     inc(e);
+//   });
+//   // Ecoute de la touche "enter" sur la galerie (le coeur) et lancement du tri
+//   gallery.addEventListener("keydown", function (e) {
+//     if (e.key === "Enter") {
+//       e.preventDefault();
+//       inc(e);
+//     }
+//   });
 
-  function inc(e) {
-    if (e.target.className.includes("iconHeart")) {
-      let nbLikes = e.target.parentNode.previousSibling;
-      //let plus = event.target.closest('.nbLikes');
-      if (nbLikes.classList.contains("unClick")) {
-        nbLikes.classList.replace("unClick", "click");
-        nbLikes.innerHTML++;
-        e.target.setAttribute("class", "fas fa-heart iconHeart");
-      } else {
-        nbLikes.classList.replace("click", "unClick");
-        nbLikes.innerHTML--;
-        e.target.setAttribute("class", "far fa-heart iconHeart");
-      }
-      informationFooter();
-    }
-  } 
-}
+//   function inc(e) {
+//     if (e.target.className.includes("iconHeart")) {
+//       let nbLikes = e.target.parentNode.previousSibling;
+//       //let plus = event.target.closest('.nbLikes');
+//       if (nbLikes.classList.contains("unClick")) {
+//         nbLikes.classList.replace("unClick", "click");
+//         nbLikes.innerHTML++;
+//         e.target.setAttribute("class", "fas fa-heart iconHeart");
+//       } else {
+//         nbLikes.classList.replace("click", "unClick");
+//         nbLikes.innerHTML--;
+//         e.target.setAttribute("class", "far fa-heart iconHeart");
+//       }
+//       informationFooter();
+//     }
+//   }
+// }

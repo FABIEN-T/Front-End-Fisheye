@@ -94,36 +94,36 @@ label {
 //   }
 
 .selectContainer select {
-    cursor: pointer;
-    font-weight: 700;
-    color: white;
-    background-color: #901c1c;
-    width: 170px;
-    height: 69px;
-    padding: 0px 20px;
-    border-radius: 5px;
-    // border: none;
-    outline: none;
-    appearance: none; // cache la flèche originale
-} 
+  cursor: pointer;
+  font-weight: 700;
+  color: white;
+  background-color: #901c1c;
+  width: 170px;
+  height: 69px;
+  padding: 0px 20px;
+  border-radius: 5px;
+  // border: none;
+  outline: none;
+  appearance: none; // cache la flèche originale
+}
 
 .selectContainer custom-selector::after {
-    content: '';
-    // background-color: #db8876;
-    color: blue ;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent;
-    border-top-color: green;
-    display: inline-block;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    border-radius: 2px;
+  content: "";
+  // background-color: #db8876;
+  color: blue;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: green;
+  display: inline-block;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border-radius: 2px;
 }
 // .select-selected {
 //     background-color: #901c1c;
-// } 
+// }
 
 // /*style the items (options), including the selected item:*/
 // .select-items div, .select-selected {
@@ -134,7 +134,7 @@ label {
 //     cursor: pointer;
 //     user-select: none;
 //   }
-  
+
 //   /*style items (options):*/
 //   .select-items {
 //     position: absolute;
@@ -144,12 +144,12 @@ label {
 //     right: 0;
 //     z-index: 99;
 //   }
-  
+
 //   /*hide the items when the select box is closed:*/
 //   .select-hide {
 //     display: none;
 //   }
-  
+
 //   .select-items div:hover, .same-as-selected {
 //     background-color: rgba(0, 0, 0, 0.1);
 //   }
@@ -192,9 +192,11 @@ label {
 }
 
 #gallery .textContainer {
-  display: flex;
+  display: inline-flex;
   align-items: baseline;
   justify-content: space-between;
+  width: 350px;
+  overflow: hidden;
 }
 
 #gallery .textContainer h3,
@@ -215,25 +217,32 @@ label {
 }
 
 #gallery .nbLikes {
-  margin-right: 5px;
+  margin-right: 4px;
+  // background-color: aqua;
 }
 
-// #gallery .textContainer .likeHeart {
-//     // width: 100px;
-//     display: flex;
-//     // flex-direction: row;
+#gallery .textContainer .likesHeart {
+  // background-color: rgb(215, 137, 35);
+  // width: 60px;
+  display: inline-flex;
+  justify-content: flex-end;
+  padding-right: 1px;
+  // flex-direction: row;
+  margin: 0;
+}
+
+// #gallery .iconHeartButton {
+//   border: none;
+//   background: transparent;
+//   margin: 0;
 // }
-#gallery .iconHeartButton {  
-  border : none;
-  background: transparent;
-}
-
 
 #gallery .textContainer .iconHeart {
   cursor: pointer;
   font-size: 1.4em;
   color: #901c1c;
   line-height: 1.953em;
+  // margin: 0px 0px 0px 5px;
 }
 
 #footer {
