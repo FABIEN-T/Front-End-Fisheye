@@ -829,7 +829,7 @@ label {
   background-color: rgba(255, 255, 255, 0.6);
 }
 
-#contact_modal .content {
+#contact_modal .contentModal {
   border-radius: 5px;
   background-color: #db8876;
   width: 50%;
@@ -842,7 +842,7 @@ label {
   margin: 0 auto;
 }
 
-#contact_modal .headerModal {
+#contact_modal #headerModal {
   margin: 0;
   width: 100%;
 }
@@ -855,7 +855,7 @@ label {
   right: 35px;
 }
 
-#contact_modal .headerModal h1 {
+#contact_modal #headerModal h1 {
   color: black;
   font-size: 3em;
   font-weight: normal;

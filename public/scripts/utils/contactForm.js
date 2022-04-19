@@ -10,25 +10,27 @@ const focusableSelectorModal = "h1, button, input, textarea";
 let focusablesModal = [];
 // let previouslyFocusElement = null;
 
+
 // DECLARATION DE LA FONCTION D'OUVERTURE DE LA MODALE
 async function displayModal() {
   // e.preventDefault();
   document.getElementById("header").setAttribute("aria-hidden", "true");
   document.getElementById("main").setAttribute("aria-hidden", "true");
   document.getElementById("footer").setAttribute("aria-hidden", "true");
-  // main.setAttribute("aria-hidden", "true");
   modal.setAttribute("aria-hidden", "false");
 
   // CONSTRUCTION DU TABLEAU DES INDEX DE TABULATION
   focusablesModal = Array.from(modal.querySelectorAll(focusableSelectorModal));
-  console.log("focusablesModal", focusablesModal);
+  // console.log("focusablesModal", focusablesModal);
   // previouslyFocusElement  = document.querySelectorAll(':focus');
   // console.log("previouslyFocusElement", previouslyFocusElement);
-
+  
   // AFFICHAGE DE LA MODALE
   modal.style.display = "block";
-  // modal.removeAttribute("aria-hiden");
-  modal.setAttribute("arial-modal", true);
+  // modal.removeAttribute("aria-hiden");   
+  modal.setAttribute("arial-modal", true);    
+  modal.querySelector("#headerModal").focus();  
+  
 
   let params = new URL(document.location).searchParams;
   let photographerId = params.get("id");
@@ -58,8 +60,8 @@ closeModalCross.addEventListener("click", closeModal);
 
 // FERMETURE DE LA MODALE : Ecoute de la touche "Enter" sur la croix de la modale
 modal.addEventListener("keyup", function (e) {
-  console.log(e.target);
-  console.log(e.target.className.includes("buttonCross"));
+  // console.log(e.target);
+  // console.log(e.target.className.includes("buttonCross"));
   if (e.key === "Enter" && e.target.className.includes("buttonCross")) {
     closeModal();
   }
@@ -70,9 +72,11 @@ echapClose(closeModal);
 
 // DECLARATION DE LA FONCTION DE FERMETURE DE LA MODALE
 function closeModal() {
+  modal.blur(); 
   modal.style.display = "none";
   modal.setAttribute("aria-hiden", "true");
   modal.removeAttribute("aria-modal");
+  document.removeEventListener("keydown", function(){});
   document.getElementById("header").setAttribute("aria-hidden", "false");
   document.getElementById("main").setAttribute("aria-hidden", "false");
   document.getElementById("footer").setAttribute("aria-hidden", "false");
@@ -88,15 +92,22 @@ function closeModal() {
   for (element of constCloseSpan) {
     element.textContent = "";
   }
+   
+  document.querySelector(".contact_button").focus();  
+    // console.log("previouslyFocusElement", previouslyFocusElement);
+    // previouslyFocusElement.focus();
 }
 
 function focusInModal() {
   // Ecoute de la touche "tab" au clavier
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Tab" && modal !== null) {
+    if (e.key === "Tab" && modal.style.display === "block") {
       focusModals(e, focusablesModal);
     }
   });
-}
+}     
 
-focusInModal();
+focusInModal(); 
+
+
+// modal !== null

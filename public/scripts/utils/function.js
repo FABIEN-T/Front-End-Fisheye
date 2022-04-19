@@ -67,5 +67,6 @@ const focusModals = function (e, focusables) {
         console.log("index-1", focusables.length, index);
   }
   focusables[index].focus();
+  console.log("focusables[index]", focusables[index]);
 };
 
