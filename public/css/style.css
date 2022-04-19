@@ -950,8 +950,17 @@ form textarea {
   margin: 0;
 }
 
-#lightboxModal .closeLightboxCross {
+#lightboxModal .buttonCross {
   cursor: pointer;
+  background: none;
+  position: fixed;
+  width: 42;
+  height: 42px;
+  top: 30px;
+  right: 45px;
+}
+
+#lightboxModal .closeLightboxCross {
   background-color: #901c1c;
   position: fixed;
   top: 30px;

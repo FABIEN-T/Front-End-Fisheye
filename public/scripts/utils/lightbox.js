@@ -20,6 +20,7 @@ function closeLightModal() {
 
 // Fonction création de la lightbox et sa navigation
 function lightbox() {
+  focusInLightbox();
   // Transformation de la Collection HTML "media" en un tableau
   // (ensemble des div de class "media" dans la gallerie)
   const tableauMedias = Array.from(document.getElementsByClassName("media"));
@@ -37,7 +38,7 @@ function lightbox() {
 
   for (let i = 0; i < tableauMediaContainer.length; i++) {
     tableauMediaContainer[i].addEventListener("keydown", function (e) {
-      console.log("Pré", e);
+      // console.log("Pré", e);
       if (e.key === "Enter") {
         e.preventDefault();
         let index = tableauMediaContainer.indexOf(e.target); // Récupération et mémorisation de l'index du media cliqué
@@ -52,7 +53,7 @@ function lightbox() {
     openLightboxModal(); // Quand un média est cliqué, ouverture de la lightbox
     // console.log("click fctn", index);
     document.getElementById("lightboxModal").style.display = "block";
-    console.log("index", index);
+    // console.log("index", index);
     displaySlides(index); // Exécution de l'affichage du média cliqué avec envoi de l'index associé
 
     // Ecoute du clic sur les Contrôles "média suivant" et ""media précédent"
@@ -62,13 +63,12 @@ function lightbox() {
     document.querySelector(".next").addEventListener("click", function () {
       displaySlides((index += 1)); //précédent : on incrémente
     });
-    document.addEventListener("keydown", function (e) {
-      console.log(e.key);
+
+    document.addEventListener("keydown", function(e) {
+      // console.log(e.key);
       if (e.key === "ArrowLeft") {
         displaySlides((index -= 1)); //précédent : on décrémente
       }
-    });
-    document.addEventListener("keydown", function (e) {
       if (e.key === "ArrowRight") {
         displaySlides((index += 1)); //précédent : on incrémente
       }
@@ -104,21 +104,21 @@ function lightbox() {
   }
 }
 
-//
 
-// function focusInLightbox() {
-//   const focusableSelectorLightboxModal = "h1, i, buttons, img";
-//   let focusablesLightBox = [];  
-//   focusablesLightBox = Array.from(
-//     lightboxModal.querySelectorAll(focusableSelectorLightboxModal)
-//   );
-//   console.log("focusablesLightBox", focusablesLightBox);
-//   // Ecoute de la touche "tab" au clavier
-//   document.addEventListener("keydown", function (e) {
-//     if (e.key === "Tab" && lightboxModal !== null) {
-//       focusModals(e, focusablesLightBox);
-//     }
-//   });
-// }
 
-// focusInLightbox();
+function focusInLightbox() {
+  const focusableSelectorLightboxModal = "i, h1, button";
+  let focusablesLightBox = [];  
+  focusablesLightBox = Array.from(
+    lightboxModal.querySelectorAll(focusableSelectorLightboxModal)
+  );
+  console.log("focusablesLightBox", focusablesLightBox);
+  // Ecoute de la touche "tab" au clavier
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Tab" && lightboxModal.style.display === "block") {
+      focusModals(e, focusablesLightBox);
+    }
+  });
+}
+
+

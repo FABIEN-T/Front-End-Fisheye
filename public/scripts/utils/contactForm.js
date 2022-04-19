@@ -31,11 +31,9 @@ async function displayModal() {
   modal.setAttribute("arial-modal", true);    
   modal.querySelector("#headerModal").focus();  
   
-
+      // Récupération de l'Id Photographer dans l'URL pour récupérer le nom du photographe dans la Modale
   let params = new URL(document.location).searchParams;
   let photographerId = params.get("id");
-  // console.log("photographerId", photographerId);
-
   const { photographers } = await getPhotographers();
   photographers.forEach((element) => {
     if (photographerId == element.id) {
@@ -104,10 +102,7 @@ function focusInModal() {
     if (e.key === "Tab" && modal.style.display === "block") {
       focusModals(e, focusablesModal);
     }
-  });
+  });   
 }     
 
 focusInModal(); 
-
-
-// modal !== null
