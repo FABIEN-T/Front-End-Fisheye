@@ -30,34 +30,36 @@
   position: absolute;
   top : 1%;
   left: 25%;
-  padding: 10px 35px 35px;
+  padding: 35px 35px 35px;
   margin: 0 auto;
 }
 
 #contact_modal #headerModal {
-  margin: 0;
+  margin: 0 0 20px 0;
+  padding: 0;
   // display: flex;
   // justify-content: space-between;
-  width: 100%;
+  // width: 100%;
 }
 
-#contact_modal .buttonCross {
-  cursor: pointer;
-  background: none;
-  position: absolute;
-  top: 34px;
-  right: 35px;
-}
-
-#contact_modal #headerModal h1 {
-  // font-size: 4em;
+#contact_modal #contactPhotographerH1 {
+  display: inline-block;
   color: black;
   font-size: 3em;
-  font-weight: normal;
-  // text-align: center;
+  font-weight: 400;
+  line-height: 1em;
   margin: 0;
+  padding: 0;
   width: calc(100% - 60px);
+  outline: transparent 2px solid;
 }
+
+#contact_modal #contactPhotographerH1:focus {
+  padding: 0;
+  // outline: none;
+  outline: black 2px solid;
+}
+
 
 #contact_modal form {
   display: flex;
@@ -118,7 +120,9 @@ form textarea {
 }
 
 #contact_modal button:focus, form input:focus, form textarea:focus {
-  box-shadow: 0 0 10px #312E2E;
+  // box-shadow: 0 0 10px #312E2E;
+  outline: black solid 2px;
+  border-radius: 10px;
   // border: #312e2e solid 5px;
   // outline: #312e2e;
 }

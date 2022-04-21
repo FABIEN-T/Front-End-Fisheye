@@ -344,27 +344,115 @@ body {
   margin: 0;
 }
 
+header a,
+header h1 {
+  border-radius: 10px;
+  padding: 2px;
+}
+
+header a:focus,
+header h1:focus {
+  outline: #d3573c solid 2px;
+}
+
+.linkPhotographer,
+.informationPhotograph {
+  border-radius: 10px;
+  padding: 4px;
+}
+
+.linkPhotographer:focus,
+.informationPhotograph:focus {
+  outline: #d3573c solid 2px;
+}
+
+.photographHeader .photograpHeaderH1,
+.photographHeader .paragraph,
+.mySelect .myLabel {
+  border-radius: 10px;
+  padding: 2px 4px;
+}
+
+.photographHeader .photograpHeaderH1:focus,
+.photographHeader .paragraph:focus,
+.mySelect .myLabel:focus {
+  outline: #d3573c solid 2px;
+}
+
+#gallery .mediaContainer {
+  border-radius: 10px;
+  padding: 0px;
+  border: white solid 2px;
+  outline: none;
+}
+
+#gallery .mediaContainer:focus {
+  border: #d3573c solid 2px;
+  outline: none;
+}
+
+#gallery h3:focus,
+#gallery .nbLikes:focus,
+#gallery .iconHeart:focus {
+  color: #DB8876;
+  outline: none;
+}
+
+#footer .insertLikes,
+#footer .pricePerDay {
+  border-radius: 10px;
+  padding: 0px;
+  border: #DB8876 solid 2px;
+}
+
+#footer .insertLikes:focus,
+#footer .pricePerDay:focus {
+  border: black solid 2px;
+  outline: none;
+}
+
+#lightboxModal .prev,
+#lightboxModal .next,
+#lightboxModal .media,
+#lightboxModal .legend,
+#lightboxModal .buttonCross {
+  border-radius: 10px;
+  padding: 2px;
+  border: transparent solid 2px;
+}
+
+#lightboxModal .prev:focus,
+#lightboxModal .next:focus,
+#lightboxModal .media:focus,
+#lightboxModal .legend:focus,
+#lightboxModal .buttonCross:focus {
+  border: #d3573c solid 2px;
+  outline: none;
+}
+
 header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  height: 90px;
-  margin-left: 100px;
+  padding-top: 18px;
+  padding-bottom: 22px;
+  margin: 0 100px;
 }
 
-h1 {
-  color: #901C1C;
-  margin-right: 100px;
-  font-size: 2.25em;
-  font-weight: 400;
-}
-
-.logo {
+header .logo {
   height: 50px;
 }
 
+header h1 {
+  color: #901C1C;
+  margin: 6px 0 0 0;
+  font-size: 2.25em;
+  font-weight: 400;
+  height: 100%;
+}
+
 .photographHeader .contact_button {
+  cursor: pointer;
   font-size: 1.125em;
   font-weight: 700;
   color: white;
@@ -374,20 +462,19 @@ h1 {
   border: none;
   background-color: #901C1C;
   border-radius: 5px;
-  cursor: pointer;
 }
 
-.photographHeader .contact_button:hover {
+.contact_button:hover {
   background-color: #DB8876;
   color: black;
 }
 
-.photographHeader .contact_button:focus {
+.contact_button:focus {
   color: black;
   background-color: #DB8876;
   outline: none;
   border-radius: 10px;
-  border: #901C1C solid 4px;
+  border: black solid 2px;
 }
 
 #contact_modal .contact_button {
@@ -409,15 +496,19 @@ h1 {
   border: #000000 solid 2px;
   background-color: #DB8876;
   border-radius: 10px;
-  border: #901C1C solid 4px;
+  border: black solid 2px;
   color: black;
   font-size: 1.3em;
 }
 
 #contact_modal .buttonCross {
+  cursor: pointer;
+  background: none;
+  position: absolute;
+  top: 34px;
+  right: 35px;
   width: 50px;
   height: 50px;
-  background-color: #2867b9;
   border: none;
 }
 
@@ -513,7 +604,7 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 70px;
-  margin-top: 50px;
+  margin: 50px 0px;
 }
 
 .photographerSection article {
@@ -609,7 +700,7 @@ h1 {
   align-items: flex-start;
 }
 
-.photographHeader h1 {
+.photographHeader .photograpHeaderH1 {
   color: #d3573c;
   font-size: 4em;
   font-weight: 400;
@@ -657,10 +748,7 @@ h1 {
 }
 
 .photographHeader .imgContainer:focus {
-  border-radius: 10px;
-  border: #d3573c solid 3px;
-  outline: none;
-  padding: 2px 2px;
+  outline: #d3573c solid 3px;
 }
 
 .selectContainer {
@@ -745,8 +833,7 @@ label {
   overflow: hidden;
 }
 
-#gallery .textContainer h3,
-.nbLikes {
+#gallery h3, .nbLikes {
   color: #901c1c;
   font-size: 1.5em;
   font-weight: 400;
@@ -754,7 +841,7 @@ label {
   margin: 0px;
 }
 
-#gallery .textContainer h3 {
+#gallery h3 {
   width: 280px;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -766,14 +853,14 @@ label {
   margin-right: 4px;
 }
 
-#gallery .textContainer .likesHeart {
+#gallery .likesHeart {
   display: inline-flex;
   justify-content: flex-end;
   padding-right: 1px;
   margin: 0;
 }
 
-#gallery .textContainer .iconHeart {
+#gallery .iconHeart {
   cursor: pointer;
   font-size: 1.4em;
   color: #901c1c;
@@ -792,12 +879,6 @@ label {
   background-color: #db8876;
   font-size: 1.5em;
   font-weight: 500;
-}
-
-#footer:focus {
-  color: white;
-  background-color: #901c1c;
-  border: none;
 }
 
 #footer .insertText {
@@ -838,29 +919,30 @@ label {
   position: absolute;
   top: 1%;
   left: 25%;
-  padding: 10px 35px 35px;
+  padding: 35px 35px 35px;
   margin: 0 auto;
 }
 
 #contact_modal #headerModal {
-  margin: 0;
-  width: 100%;
+  margin: 0 0 20px 0;
+  padding: 0;
 }
 
-#contact_modal .buttonCross {
-  cursor: pointer;
-  background: none;
-  position: absolute;
-  top: 34px;
-  right: 35px;
-}
-
-#contact_modal #headerModal h1 {
+#contact_modal #contactPhotographerH1 {
+  display: inline-block;
   color: black;
   font-size: 3em;
-  font-weight: normal;
+  font-weight: 400;
+  line-height: 1em;
   margin: 0;
+  padding: 0;
   width: calc(100% - 60px);
+  outline: transparent 2px solid;
+}
+
+#contact_modal #contactPhotographerH1:focus {
+  padding: 0;
+  outline: black 2px solid;
 }
 
 #contact_modal form {
@@ -917,7 +999,8 @@ form textarea {
 }
 
 #contact_modal button:focus, form input:focus, form textarea:focus {
-  box-shadow: 0 0 10px #312E2E;
+  outline: black solid 2px;
+  border-radius: 10px;
 }
 
 /* Mise en forme des messages d'erreurs */
@@ -954,7 +1037,7 @@ form textarea {
   cursor: pointer;
   background: none;
   position: fixed;
-  width: 42;
+  width: 42px;
   height: 42px;
   top: 30px;
   right: 45px;

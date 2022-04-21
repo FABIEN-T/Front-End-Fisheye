@@ -90,7 +90,8 @@ async function initPhotographer() {
       // console.log("thisMedias", thisMedias);
       photographerMediaFactory(thisMedias);
       lightbox();
-      // console.log("end", value);
+      // focusInLightbox();
+      
     }
   }
 
@@ -99,41 +100,26 @@ async function initPhotographer() {
   getThisMedias();
   sort();
   photographerPageFactory(thisPhotographer);
-  increment();
+  increment();  
+  
   // lightbox();
 }
 
 initPhotographer();
+// console.log("lightboxModal", lightboxModal);
+// focusInLightbox();
 
-// increment();
-
-// function increment() {
-//   // Ecoute du "click" sur la galerie (le coeur) et lancement du tri
-//   gallery.addEventListener("click", function (e) {
-//     inc(e);
-//   });
-//   // Ecoute de la touche "enter" sur la galerie (le coeur) et lancement du tri
-//   gallery.addEventListener("keydown", function (e) {
-//     if (e.key === "Enter") {
-//       e.preventDefault();
-//       inc(e);
+// function focusInLightbox() {
+//   const focusableSelectorLightboxModal = "h1, i, button, .media";
+//   let focusablesLightBox = [];  
+//   focusablesLightBox = Array.from(
+//     lightboxModal.querySelectorAll(focusableSelectorLightboxModal)
+//   );
+//   console.log("focusablesLightBox", focusablesLightBox);
+//   // Ecoute de la touche "tab" au clavier
+//   document.addEventListener("keydown", function (e) {
+//     if (e.key === "Tab" && lightboxModal.style.display === "block") {
+//       focusModals(e, focusablesLightBox);
 //     }
 //   });
-
-//   function inc(e) {
-//     if (e.target.className.includes("iconHeart")) {
-//       let nbLikes = e.target.parentNode.previousSibling;
-//       //let plus = event.target.closest('.nbLikes');
-//       if (nbLikes.classList.contains("unClick")) {
-//         nbLikes.classList.replace("unClick", "click");
-//         nbLikes.innerHTML++;
-//         e.target.setAttribute("class", "fas fa-heart iconHeart");
-//       } else {
-//         nbLikes.classList.replace("click", "unClick");
-//         nbLikes.innerHTML--;
-//         e.target.setAttribute("class", "far fa-heart iconHeart");
-//       }
-//       informationFooter();
-//     }
-//   }
 // }

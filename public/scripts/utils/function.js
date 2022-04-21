@@ -1,7 +1,7 @@
 async function getPhotographers() {
-    let response = await fetch("./data/photographers.json");
-      return await response.json();
-    }
+  let response = await fetch("./data/photographers.json");
+  return await response.json();
+}
 
 // Fonction écoute de la touche "Escape" pour fermer les modales
 function echapClose(f) {
@@ -15,11 +15,11 @@ function echapClose(f) {
 // Fonction incrément des Likes (coeurs)
 function increment() {
   // Ecoute du "click" sur la galerie (le coeur) et lancement du tri
-  gallery.addEventListener("click", function(e) {
+  gallery.addEventListener("click", function (e) {
     inc(e);
   });
   // Ecoute de la touche "enter" sur la galerie (le coeur) et lancement du tri
-  gallery.addEventListener("keydown", function(e) {
+  gallery.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
       e.preventDefault();
       inc(e);
@@ -46,27 +46,34 @@ function increment() {
 }
 
 // Recherche de l'index "Tab"
-const focusModals = function (e, focusables) {
+function focusModals(e, focusables) {
+  // const lightboxModal = document.getElementById("lightboxModal");
   e.preventDefault();
-  let index = focusables.findIndex((searchFocus) => searchFocus === modal.querySelector(":focus")); //sinon on a 'null is not a fonction'
-  // console.log("index", focusables.length, index);
+  // console.log("focusables[index]3", focusables[2]);
+  // console.log("focusModals focusables", focusables);
+  // console.log(document.hasFocus());
+  let index = focusables.findIndex(
+    (searchFocus) => searchFocus === document.querySelector(":focus")
+  ); //sinon on a 'null is not a fonction'
+  // console.log(focusables);
+  // let index = focusables.indexOf(focusables);
+  
+  console.log("index", focusables.length, index);         
   if (e.shiftKey) {
-    // console.log("shift"); 
+    // console.log("shift");
     index--;
-    // console.log("index--", index);
-  } else {
+    console.log("index--", index);
+  } else {   
     index++;
-    // console.log("index++", index);
+    console.log("index++", index);
   }
-  if (index >= focusables.length) {
-    index = 0;
-    // console.log("index=0", index);
+  if (index >= focusables.length) { 
+    index = 0;  
+    console.log("index=0", index);
   }
   if (index < 0) {
     index = focusables.length - 1;
-        console.log("index-1", focusables.length, index);
+    console.log("index<0", index);
   }
   focusables[index].focus();
-  console.log("focusables[index]", focusables[index]);
 };
-

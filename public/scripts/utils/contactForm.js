@@ -28,7 +28,8 @@ async function displayModal() {
   // AFFICHAGE DE LA MODALE
   modal.style.display = "block";
   // modal.removeAttribute("aria-hiden");   
-  modal.setAttribute("arial-modal", true);    
+  modal.setAttribute("arial-modal", true);   
+  // document.querySelector(".contact_button").blur(); 
   modal.querySelector("#headerModal").focus();  
   
       // Récupération de l'Id Photographer dans l'URL pour récupérer le nom du photographe dans la Modale
@@ -38,7 +39,7 @@ async function displayModal() {
   photographers.forEach((element) => {
     if (photographerId == element.id) {
       const contactPhotographer = document.querySelector(
-        "#contactPhotographer"
+        "#contactPhotographerH1"
       );
       contactPhotographer.innerHTML = "Contactez " + element.name;
       contactPhotographer.setAttribute(
@@ -96,10 +97,18 @@ function closeModal() {
     // previouslyFocusElement.focus();
 }
 
+// document.getElementById("contact_modal").addEventListener("keydown", function (e) {
+//   if (e.key === "Tab" && modal.style.display === "block") {
+//     console.log("Coucou", e);
+//   }
+// });   
+
+
 function focusInModal() {
   // Ecoute de la touche "tab" au clavier
   document.addEventListener("keydown", function (e) {
     if (e.key === "Tab" && modal.style.display === "block") {
+      // console.log("hugh", e);
       focusModals(e, focusablesModal);
     }
   });   

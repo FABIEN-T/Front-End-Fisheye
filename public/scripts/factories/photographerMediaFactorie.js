@@ -72,7 +72,6 @@ function photographerMediaFactory(dataMedia) {
         // videoElement.setAttribute("control", "");
         videoElement.setAttribute("poster", "");
         videoElement.setAttribute("alt", title);
-        // videoElement.setAttribute("tabindex", "80");
         mediaContainer.appendChild(videoElement);
       } else {
         const imgElement = document.createElement("img");
@@ -84,7 +83,6 @@ function photographerMediaFactory(dataMedia) {
         imgElement.setAttribute("alt", title);
         imgElement.setAttribute("aria-label", "ouverture du diaporama");
         // imgElement.setAttribute("role", "Image link");
-        // imgElement.setAttribute("tabindex", "80");
         mediaContainer.appendChild(imgElement);
       }
 

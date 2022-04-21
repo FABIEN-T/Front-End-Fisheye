@@ -18,7 +18,7 @@
   // padding-top: -50px;
 }
 
-.photographHeader h1 {
+.photographHeader .photograpHeaderH1 {
   // margin-top: -20px;
   // text-align: center;
   color: #d3573c;
@@ -71,10 +71,10 @@
 }
 
 .photographHeader .imgContainer:focus {
-  border-radius: 10px;
-  border: #d3573c solid 3px;
-  outline: none;
-  padding: 2px 2px;
+  // border-radius: 10px;
+  // border: #d3573c solid 3px;
+  outline: #d3573c solid 3px;
+  // padding: 2px 2px;
 }
 
 // *********************************************
@@ -199,8 +199,7 @@ label {
   overflow: hidden;
 }
 
-#gallery .textContainer h3,
-.nbLikes {
+#gallery h3, .nbLikes {
   color: #901c1c;
   font-size: 1.5em;
   font-weight: 400;
@@ -208,7 +207,7 @@ label {
   margin: 0px;
 }
 
-#gallery .textContainer h3 {
+#gallery h3 {
   width: 280px;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -221,7 +220,7 @@ label {
   // background-color: aqua;
 }
 
-#gallery .textContainer .likesHeart {
+#gallery .likesHeart {
   // background-color: rgb(215, 137, 35);
   // width: 60px;
   display: inline-flex;
@@ -237,7 +236,7 @@ label {
 //   margin: 0;
 // }
 
-#gallery .textContainer .iconHeart {
+#gallery .iconHeart {
   cursor: pointer;
   font-size: 1.4em;
   color: #901c1c;
@@ -259,11 +258,11 @@ label {
   font-weight: 500;
 }
 
-#footer:focus {
-  color: white;
-  background-color: #901c1c;
-  border: none;
-}
+// #footer:focus {
+//   color: white;
+//   background-color: #901c1c;
+//   border: none;
+// }
 
 #footer .insertText {
   display: flex;

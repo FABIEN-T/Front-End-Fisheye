@@ -3,26 +3,31 @@ const lightboxModal = document.getElementById("lightboxModal");
 // Fonction ouverture de la Modale
 function openLightboxModal() {
   lightboxModal.style.display = "block";
+  document.getElementById("header").style.display = "none";
   document.getElementById("main").style.display = "none";
+  document.getElementById("footer").style.display = "none";
 }
 
 // Fonction fermeture de la Modale
 echapClose(closeLightModal);
 
 function closeLightModal() {
+  lightboxModal.blur();
   document.getElementById("lightboxModal").style.display = "none";
+  // document.getElementById("lightboxModal").blur();
+  document.getElementById("header").style.display = "block";
   document.getElementById("main").style.display = "block";
+  document.getElementById("footer").style.display = "block";
   const movieRemove = document.querySelectorAll(".movie");
-  movieRemove.forEach((e) => {
+  movieRemove.forEach(() => {
     document.querySelector(".movie").removeAttribute("controls", "");
   });
 }
 
 // Fonction création de la lightbox et sa navigation
 function lightbox() {
-  focusInLightbox();
-  // Transformation de la Collection HTML "media" en un tableau
-  // (ensemble des div de class "media" dans la gallerie)
+  // Transformation de la Collection HTML "media" de la galerie en un tableau
+  // (ensemble des div de class "media" dans la galerie)
   const tableauMedias = Array.from(document.getElementsByClassName("media"));
   const tableauMediaContainer = Array.from(
     document.getElementsByClassName("mediaContainer")
@@ -35,7 +40,7 @@ function lightbox() {
       launchMedia(index);
     });
   }
-
+  // Boucle : pour chaque élément du tableau, écouter le clavier
   for (let i = 0; i < tableauMediaContainer.length; i++) {
     tableauMediaContainer[i].addEventListener("keydown", function (e) {
       // console.log("Pré", e);
@@ -43,35 +48,36 @@ function lightbox() {
         e.preventDefault();
         let index = tableauMediaContainer.indexOf(e.target); // Récupération et mémorisation de l'index du media cliqué
         // console.log("key e Child", e.target.firstElementChild);
-        console.log("key e", index);
+        console.log("key e", index, e.target);
         launchMedia(index);
       }
     });
   }
 
-  function launchMedia(index) {
+  async function launchMedia(index) {
     openLightboxModal(); // Quand un média est cliqué, ouverture de la lightbox
-    // console.log("click fctn", index);
     document.getElementById("lightboxModal").style.display = "block";
-    // console.log("index", index);
+    document.querySelector("#lightboxModal").focus();
+
     displaySlides(index); // Exécution de l'affichage du média cliqué avec envoi de l'index associé
 
-    // Ecoute du clic sur les Contrôles "média suivant" et ""media précédent"
+    // Ecoute du "click" sur les Contrôles "média suivant" et ""media précédent"
     document.querySelector(".prev").addEventListener("click", function () {
       displaySlides((index -= 1)); //précédent : on décrémente
     });
     document.querySelector(".next").addEventListener("click", function () {
       displaySlides((index += 1)); //précédent : on incrémente
     });
-
-    document.addEventListener("keydown", function(e) {
-      // console.log(e.key);
+    // Ecoute du clavier sur les Contrôles "média suivant" et ""media précédent"
+    document.addEventListener("keydown", function (e) {
+      // console.log("e.key", e.key);
       if (e.key === "ArrowLeft") {
         displaySlides((index -= 1)); //précédent : on décrémente
       }
       if (e.key === "ArrowRight") {
         displaySlides((index += 1)); //précédent : on incrémente
       }
+
     });
 
     function displaySlides(n) {
@@ -91,34 +97,38 @@ function lightbox() {
       if (tableauMedias[index].outerHTML.includes("video")) {
         tableauMedias[index].setAttribute("controls", "");
       }
+
       const lightboxMediaContainer = document.querySelector(
         ".lightboxMediaContainer"
       );
+      tableauMedias[index].setAttribute("tabindex", "0");
       lightboxMediaContainer.innerHTML = tableauMedias[index].outerHTML;
-
-      // console.log("contenu", tableauMedias[index].outerHTML);
       lightboxMediaContainer.innerHTML += '<h1 class="legend"></h1>';
       const legend = document.querySelector(".legend");
       legend.innerHTML = tableauMedias[index].getAttribute("alt");
+      legend.setAttribute("tabindex", "0");
+      // console.log("lightboxModal", lightboxModal);      
     }
   }
 }
 
 
-
-function focusInLightbox() {
-  const focusableSelectorLightboxModal = "i, h1, button";
-  let focusablesLightBox = [];  
-  focusablesLightBox = Array.from(
-    lightboxModal.querySelectorAll(focusableSelectorLightboxModal)
-  );
-  console.log("focusablesLightBox", focusablesLightBox);
-  // Ecoute de la touche "tab" au clavier
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Tab" && lightboxModal.style.display === "block") {
-      focusModals(e, focusablesLightBox);
-    }
-  });
-}
-
-
+// const focusableSelectorLightboxModal = "h1, i, button, .media";
+      // let focusablesLightBox = [];
+      // console.log("init", focusablesLightBox);
+      // focusablesLightBox = Array.from(
+      //   lightboxModal.querySelectorAll(focusableSelectorLightboxModal)
+      // );
+      // console.log("après mise en tableau", focusablesLightBox);
+      // focusInLightbox();
+      // function focusInLightbox() {
+      //   document.querySelector(".prev").focus();
+      //   // console.log("focusablesLightBox", focusablesLightBox);
+      //   // Ecoute de la touche "tab" au clavier
+      //   document.addEventListener("keydown", function (e) {
+      //     if (e.key === "Tab" && lightboxModal.style.display === "block") {             
+      //       console.log("hugh", e);
+      //       focusModals(e, focusablesLightBox); 
+      //     } 
+      //   });
+      // }

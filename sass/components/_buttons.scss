@@ -1,4 +1,5 @@
-.photographHeader .contact_button {
+.photographHeader .contact_button {    
+    cursor: pointer;
     font-size: 1.125em;
     font-weight: 700;
     color: white;
@@ -9,21 +10,19 @@
     border: none;
     background-color: #901C1C;
     border-radius: 5px;
-    cursor: pointer;
 }
 
-.photographHeader .contact_button:hover {
+.contact_button:hover {
     background-color: #DB8876;
     color: black;   
 }
 
-.photographHeader .contact_button:focus {
+.contact_button:focus {
     color: black;
     background-color: #DB8876;
     outline: none;
-    // box-shadow: 3px 3px 15px #901C1C;   
     border-radius: 10px;
-    border: #901C1C solid 4px;
+    border: black solid 2px;
     //  padding: 4px 4px;
 }
 
@@ -46,14 +45,23 @@
     border: #000000 solid 2px;
     background-color: #DB8876;
     border-radius: 10px;
-    border: #901C1C solid 4px;
+    border: black solid 2px;
     color: black;
     font-size: 1.3em;
 }
 
 #contact_modal .buttonCross {
+    cursor: pointer;
+    background: none;
+    position: absolute;
+    top: 34px;
+    right: 35px;
     width: 50px;
     height: 50px;
-    background-color: #2867b9;  
+    // background-color: #2867b9;  
     border: none;
+}
+
+#contact_modal .buttonCross:focus {
+    
 }

@@ -1,0 +1,107 @@
+// *:focus {
+//     // box-shadow: 3px 0 10px #d3d3d3;
+//     border-radius: 10px;
+//     border: #D3573C solid 2px;
+//     outline: none;
+//     padding: 2px 2px;
+// }
+
+//FOCUS Page Index
+header a,
+header h1 {
+  border-radius: 10px;
+  // outline: #d3573c solid 2px;
+  padding: 2px;
+}
+
+header a:focus,
+header h1:focus {
+  outline: #d3573c solid 2px;
+}
+
+
+.linkPhotographer,
+.informationPhotograph {
+  border-radius: 10px;
+  padding: 4px;
+}
+
+.linkPhotographer:focus,
+.informationPhotograph:focus {
+  outline: #d3573c solid 2px;
+}
+
+//FOCUS Page Photographers
+.photographHeader .photograpHeaderH1,
+.photographHeader .paragraph,
+.mySelect .myLabel {
+  border-radius: 10px;
+  padding: 2px 4px;
+}
+
+.photographHeader .photograpHeaderH1:focus,
+.photographHeader .paragraph:focus,
+.mySelect .myLabel:focus {
+  outline: #d3573c solid 2px;
+}
+
+#gallery .mediaContainer {
+    border-radius: 10px;
+    padding: 0px;
+    border: rgb(255, 255, 255) solid 2px;
+    outline: none;
+}
+
+#gallery .mediaContainer:focus {
+  border: #d3573c solid 2px;
+  outline: none;
+}
+
+// #gallery h3,
+// #gallery .nbLikes,
+// #gallery .iconHeart {
+//     border-radius: 10px;
+//     padding: 0px;
+//     border: rgb(255, 255, 255) solid 2px;
+// }
+
+
+#gallery h3:focus,
+#gallery .nbLikes:focus,
+#gallery .iconHeart:focus {
+  color: #DB8876;
+  outline: none;
+}
+
+#footer .insertLikes,
+#footer .pricePerDay {
+    border-radius: 10px;
+    padding: 0px;
+    border: #DB8876 solid 2px;
+}
+
+#footer .insertLikes:focus,
+#footer .pricePerDay:focus {
+    border: rgb(0, 0, 0) solid 2px;
+    outline: none;
+}
+
+#lightboxModal .prev,
+#lightboxModal .next,
+#lightboxModal .media,
+#lightboxModal .legend,
+#lightboxModal .buttonCross {
+    border-radius: 10px;
+    padding: 2px;
+    border: transparent solid 2px;
+}
+  
+#lightboxModal .prev:focus,
+#lightboxModal .next:focus,
+#lightboxModal .media:focus,
+#lightboxModal .legend:focus,
+#lightboxModal .buttonCross:focus {  
+  // background-color: aqua;
+  border: #d3573c solid 2px;
+  outline: none;   
+}

@@ -61,15 +61,14 @@
         </button>
       </section>
 
-      <div class="mySelect" tabindex="-1">
-        <div class="myLabel" tabindex="80">Trier par</div>
+      <div class="mySelect">
+        <div class="myLabel" tabindex="80"  >Trier par</div>
         <label
           for="sortingSelect"
           class="custom-selector"
           role="navigation"
           aria-haspopup="true"
-          aria-expanded="false"
-          tabindex="0"
+          aria-expanded="false"          
         >
           <select name="typeSort" id="sortingSelect" aria-label="type de tri" tabindex="80">
             <option value="popularity" tabindex="80">Popularité</option>
@@ -99,17 +98,16 @@
       id="footer"
       class="insert"
       aria-label="total des likes et prix par jour"
-      aria-hidden="false"
-      tabindex="70"
+      aria-hidden="false" 
     >
       <div class="insertText" role="Text">
-        <div class="insertLikes">
+        <div class="insertLikes" tabindex="70">
           <div class="totalLikes"></div>
           <div class="iconLikes">
             <i class="fas fa-heart iconHeart"></i>
           </div>
         </div>
-        <div class="pricePerDay">/ jour</div>
+        <div class="pricePerDay" tabindex="70">/ jour</div>
       </div>
     </footer>
 
@@ -122,8 +120,7 @@
     >
       <div class="contentModal">
         <header id="headerModal">
-          <h1 id="contactPhotographer" role="Heading (h1)" tabindex="0"></h1>
-          
+          <h1 id="contactPhotographerH1" role="Heading (h1)" tabindex="55"></h1>          
         </header>
 
         <form name="reserve" action="photographer.html" method="get" id="form">
@@ -141,6 +138,7 @@
                 placeholder="Entre 2 et 40 caractères."
                 aria-required="true"
                 role="Text field"
+                tabindex="55"
               />
               <!-- span permettant l'affichage du message d'erreur si le champ est incorrect -->
               <span></span>
@@ -159,6 +157,7 @@
                 placeholder="Entre 2 et 40 caractères."
                 aria-required="true"
                 role="Text field"
+                tabindex="55"
               />
               <span></span>
             </div>
@@ -174,6 +173,7 @@
                 placeholder="Caractères accentués non autorisés."
                 aria-required="true"
                 role="Text field"
+                tabindex="55"
               />
               <span></span>
             </div>
@@ -188,6 +188,7 @@
                 role="Text field"
                 placeholder="500 caractères maximum."
                 aria-required="true"
+                tabindex="55"
               ></textarea>
               <span></span>
             </div>
@@ -199,6 +200,7 @@
             value="Envoyer"
             role="Button"
             aria-label="Envoyer"
+            tabindex="55"
           />
         </form>
         <button class="buttonCross" type="button" role="Button" tabindex="1">
@@ -207,6 +209,7 @@
             class="closeModalCross"
             aria-label="Fermer le formulaire"
             alt="croix de fermeture"
+            tabindex="56"
           />
         </button>
       </div>
@@ -216,14 +219,16 @@
     <div id="lightboxModal" role="diaporama" aria-hidden="true">      
       <div class="lightboxContainer">
         <div class="angleContainer">
-          <i class="fas fa-angle-left prev"></i>
+          <i class="fas fa-angle-left prev" tabindex="0"></i>
         </div>
-        <!-- <div class="lightboxMediaTextContainer"> -->
         <div class="lightboxMediaContainer"></div>
         <div class="angleContainer">
-          <i class="fas fa-angle-right next"></i>
+          <i class="fas fa-angle-right next" tabindex="0"></i>
         </div>
       </div>
+      <!-- <div class="crossContainer">
+        <i class="far fa-times crossFa"></i>
+      </div> -->
       <button class="buttonCross" type="button" role="Button" tabindex="1">
         <img
         src="assets/icons/close.svg"
@@ -232,6 +237,7 @@
         class="closeLightboxCross"
         role="Button"
         onclick="closeLightModal()"
+        tabindex="0"
         />
       </button>
       
