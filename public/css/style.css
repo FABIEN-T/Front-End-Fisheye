@@ -394,7 +394,7 @@ header h1:focus {
 #gallery h3:focus,
 #gallery .nbLikes:focus,
 #gallery .iconHeart:focus {
-  color: #DB8876;
+  color: #d3573c;
   outline: none;
 }
 
@@ -411,22 +411,30 @@ header h1:focus {
   outline: none;
 }
 
-#lightboxModal .prev,
-#lightboxModal .next,
-#lightboxModal .media,
-#lightboxModal .legend,
-#lightboxModal .buttonCross {
+#lightboxModal .media {
   border-radius: 10px;
   padding: 2px;
   border: transparent solid 2px;
 }
 
+#lightboxModal .media:focus {
+  border: #d3573c solid 2px;
+  outline: none;
+}
+
 #lightboxModal .prev:focus,
 #lightboxModal .next:focus,
-#lightboxModal .media:focus,
-#lightboxModal .legend:focus,
-#lightboxModal .buttonCross:focus {
-  border: #d3573c solid 2px;
+#lightboxModal .legend:focus {
+  color: #d3573c;
+  outline: none;
+}
+
+#lightboxModal .crossCloseLightbox:focus {
+  outline: none;
+}
+
+#lightboxModal .crossCloseLightbox:focus .svgCross {
+  fill: #d3573c;
   outline: none;
 }
 
@@ -460,18 +468,18 @@ header h1 {
   width: 170px;
   height: 69px;
   border: none;
-  background-color: #901C1C;
+  background-color: #901c1c;
   border-radius: 5px;
 }
 
 .contact_button:hover {
-  background-color: #DB8876;
+  background-color: #db8876;
   color: black;
 }
 
 .contact_button:focus {
   color: black;
-  background-color: #DB8876;
+  background-color: #db8876;
   outline: none;
   border-radius: 10px;
   border: black solid 2px;
@@ -481,35 +489,43 @@ header h1 {
   cursor: pointer;
   font-size: 1.125em;
   font-weight: 700;
-  background-color: #901C1C;
+  background-color: #901c1c;
   color: white;
   width: 170px;
 }
 
 #contact_modal .contact_button:hover {
-  border: #901C1C solid 3px;
-  background-color: #DB8876;
+  border: black solid 2px;
+  background-color: #db8876;
   color: black;
 }
 
 #contact_modal .contact_button:focus {
-  border: #000000 solid 2px;
-  background-color: #DB8876;
-  border-radius: 10px;
   border: black solid 2px;
+  background-color: #db8876;
+  border-radius: 10px;
   color: black;
   font-size: 1.3em;
 }
 
-#contact_modal .buttonCross {
+#contact_modal .crossCloseModal {
   cursor: pointer;
-  background: none;
   position: absolute;
   top: 34px;
   right: 35px;
-  width: 50px;
-  height: 50px;
-  border: none;
+}
+
+#contact_modal .crossCloseLightbox:focus {
+  outline: none;
+}
+
+#contact_modal .crossCloseModal:focus .svgCross {
+  fill: black;
+  outline: none;
+}
+
+#contact_modal .crossCloseModal:focus {
+  outline: none;
 }
 
 .mySelect {
@@ -1033,23 +1049,6 @@ form textarea {
   margin: 0;
 }
 
-#lightboxModal .buttonCross {
-  cursor: pointer;
-  background: none;
-  position: fixed;
-  width: 42px;
-  height: 42px;
-  top: 30px;
-  right: 45px;
-}
-
-#lightboxModal .closeLightboxCross {
-  background-color: #901c1c;
-  position: fixed;
-  top: 30px;
-  right: 45px;
-}
-
 #lightboxModal .lightboxContainer {
   display: flex;
   flex-direction: row;
@@ -1075,6 +1074,18 @@ form textarea {
 #lightboxModal .prev:hover,
 #lightboxModal .next:hover {
   color: #d3573c;
+}
+
+#lightboxModal .crossCloseLightbox {
+  position: fixed;
+  top: 30px;
+  right: 54px;
+}
+
+#lightboxModal .svgCross:hover {
+  position: absolute;
+  cursor: pointer;
+  fill: #d3573c;
 }
 
 #lightboxModal .lightboxMediaContainer {

@@ -13,22 +13,37 @@
   margin: 0;
 }
 
-#lightboxModal .buttonCross {
-  cursor: pointer;
-  background: none;
-  position: fixed;
-  width: 42px;
-  height: 42px;
-  top: 30px;
-  right: 45px;
-}
+// #lightboxModal .buttonCross {
+//   cursor: pointer;
+//   background: none;
+//   position: fixed;
+//   width: 42px;
+//   height: 42px;
+//   top: 30px;
+//   // right: 45px;
+//   right: 54px;
+// }
 
-#lightboxModal .closeLightboxCross {
-  background-color: #901c1c;
-  position: fixed;
-  top: 30px;
-  right: 45px;
-}
+// #lightboxModal .closeLightboxCross {
+//   background-color: #901c1c;
+//   position: fixed;
+//   top: 30px;
+//   right: 45px;
+// }
+
+
+
+// #lightboxModal .closeLightboxCross {
+//   position: fixed;
+//   color: #901c1c;
+//   font-size: 3.5em;
+//   top: 30px;
+//   right: 54px;
+// }
+
+// #lightboxModal .closeLightboxCross:hover {
+//   color: #d3573c;
+// }
 
 #lightboxModal .lightboxContainer {
   display: flex;
@@ -42,7 +57,7 @@
   display: flex;
   // background-color: white;
   height: 100%;
-  margin: 0px;  
+  margin: 0px; 
 }
 
 #lightboxModal .prev,
@@ -61,6 +76,18 @@
   color: #d3573c;
 }
 
+#lightboxModal .crossCloseLightbox {
+  position: fixed;
+  top: 30px;
+  right: 54px;;
+}
+
+#lightboxModal .svgCross:hover {
+  position: absolute;
+  cursor: pointer;
+  fill: #d3573c;
+  // top: 34px;
+}
 
 // #lightboxModal .lightboxMediaTextContainer {
 //   // display: flex;

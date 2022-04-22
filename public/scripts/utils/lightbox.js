@@ -11,6 +11,10 @@ function openLightboxModal() {
 // Fonction fermeture de la Modale
 echapClose(closeLightModal);
 
+// FERMETURE DE LA MODALE : Ecoute du "click" sur la croix de la modale
+const crossCloseLightbox = document.querySelector(".crossCloseLightbox");
+crossCloseLightbox.addEventListener("click", closeLightModal);
+
 function closeLightModal() {
   lightboxModal.blur();
   document.getElementById("lightboxModal").style.display = "none";
@@ -57,27 +61,35 @@ function lightbox() {
   async function launchMedia(index) {
     openLightboxModal(); // Quand un média est cliqué, ouverture de la lightbox
     document.getElementById("lightboxModal").style.display = "block";
-    document.querySelector("#lightboxModal").focus();
+    document.getElementById("lightboxModal").focus();
 
     displaySlides(index); // Exécution de l'affichage du média cliqué avec envoi de l'index associé
 
     // Ecoute du "click" sur les Contrôles "média suivant" et ""media précédent"
     document.querySelector(".prev").addEventListener("click", function () {
-      displaySlides((index -= 1)); //précédent : on décrémente
+      displaySlides((index -= 1)); // clic sur précédent : on décrémente (image précédente)
     });
     document.querySelector(".next").addEventListener("click", function () {
-      displaySlides((index += 1)); //précédent : on incrémente
+      displaySlides((index += 1)); // clic sur précédent : on incrémente (image suivante)
     });
     // Ecoute du clavier sur les Contrôles "média suivant" et ""media précédent"
-    document.addEventListener("keydown", function (e) {
-      // console.log("e.key", e.key);
+    lightboxModal.addEventListener("keyup", function (e) {
       if (e.key === "ArrowLeft") {
-        displaySlides((index -= 1)); //précédent : on décrémente
+        displaySlides((index -= 1)); // clic sur précédent : on décrémente (image précédente)
       }
       if (e.key === "ArrowRight") {
-        displaySlides((index += 1)); //précédent : on incrémente
+        displaySlides((index += 1)); // clic sur précédent : on incrémente (image suivante)      
       }
-
+      if (e.key === "Enter" && e.target.className.includes("prev")) {
+        displaySlides((index -= 1));
+      }
+      if (e.key === "Enter" && e.target.className.includes("next")) {
+        displaySlides((index += 1));
+      }
+      console.log("e.target", e.target);
+      if (e.key === "Enter" && e.target.className.includes("crossCloseLightbox")) {
+        closeLightModal();
+      }
     });
 
     function displaySlides(n) {
@@ -107,28 +119,27 @@ function lightbox() {
       const legend = document.querySelector(".legend");
       legend.innerHTML = tableauMedias[index].getAttribute("alt");
       legend.setAttribute("tabindex", "0");
-      // console.log("lightboxModal", lightboxModal);      
+      // console.log("lightboxModal", lightboxModal);
     }
   }
 }
 
-
-// const focusableSelectorLightboxModal = "h1, i, button, .media";
-      // let focusablesLightBox = [];
-      // console.log("init", focusablesLightBox);
-      // focusablesLightBox = Array.from(
-      //   lightboxModal.querySelectorAll(focusableSelectorLightboxModal)
-      // );
-      // console.log("après mise en tableau", focusablesLightBox);
-      // focusInLightbox();
-      // function focusInLightbox() {
-      //   document.querySelector(".prev").focus();
-      //   // console.log("focusablesLightBox", focusablesLightBox);
-      //   // Ecoute de la touche "tab" au clavier
-      //   document.addEventListener("keydown", function (e) {
-      //     if (e.key === "Tab" && lightboxModal.style.display === "block") {             
-      //       console.log("hugh", e);
-      //       focusModals(e, focusablesLightBox); 
-      //     } 
-      //   });
-      // }
+// const focusableSelectorLightboxModal = "h1, i, button, .media, .crossCloseLightbox";
+// let focusablesLightBox = [];
+// console.log("init", focusablesLightBox);
+// focusablesLightBox = Array.from(
+//   lightboxModal.querySelectorAll(focusableSelectorLightboxModal)
+// );
+// console.log("après mise en tableau", focusablesLightBox);
+// focusInLightbox();
+// function focusInLightbox() {
+//   document.querySelector(".prev").focus();
+//   // console.log("focusablesLightBox", focusablesLightBox);
+//   // Ecoute de la touche "tab" au clavier
+//   document.addEventListener("keydown", function (e) {
+//     if (e.key === "Tab" && lightboxModal.style.display === "block") {
+//       console.log("hugh", e);
+//       focusModals(e, focusablesLightBox);
+//     }
+//   });
+// }

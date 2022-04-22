@@ -6,7 +6,7 @@ contact_button.addEventListener("click", displayModal);
 const modal = document.getElementById("contact_modal");
 
 //DECLARATION DE VARIABLES NAVIGATION AU CLAVIER
-const focusableSelectorModal = "h1, button, input, textarea";
+const focusableSelectorModal = "h1, button, input, textarea, .crossCloseModal";
 let focusablesModal = [];
 // let previouslyFocusElement = null;
 
@@ -54,14 +54,15 @@ async function displayModal() {
 }
 
 // FERMETURE DE LA MODALE : Ecoute du "click" sur la croix de la modale
-const closeModalCross = document.querySelector(".closeModalCross");
-closeModalCross.addEventListener("click", closeModal);
+const crossCloseModal = document.querySelector(".crossCloseModal");
+crossCloseModal.addEventListener("click", closeModal);
 
 // FERMETURE DE LA MODALE : Ecoute de la touche "Enter" sur la croix de la modale
-modal.addEventListener("keyup", function (e) {
+modal.addEventListener("keyup", function(e) {
+  console.log("e.target", e.target);
   // console.log(e.target);
   // console.log(e.target.className.includes("buttonCross"));
-  if (e.key === "Enter" && e.target.className.includes("buttonCross")) {
+  if (e.key === "Enter" && e.target.className.includes("crossCloseModal")) {
     closeModal();
   }
 });
