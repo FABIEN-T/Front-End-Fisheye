@@ -23,61 +23,57 @@
     ></script>
     <script src="./scripts/utils/footer.js" defer></script>
     <script src="./scripts/utils/contactValidation.js" defer></script>
-    <script src="./scripts/utils/contactForm.js" defer></script>
+    <script src="./scripts/utils/contactModal.js" defer></script>
     <script src="./scripts/utils/contactFunctions.js" defer></script>
     <script src="./scripts/utils/select.js" defer></script>
     <script src="./scripts/utils/lightbox.js" defer></script>
   </head>
 
   <body>
-    <header id="header" role="banner" aria-hidden="false">
+    <header id="header" aria-hidden="false">
       <a
+        class="headerLink"
         href="https://fabien-t.github.io/Front-End-Fisheye/public/"
         aria-label="logo et lien de la page d'accueil"
-        tabindex="10"
+        tabindex="0"
       >
         <img
           src="assets/images/logo.png"
           alt="Fisheye Home page"
           class="logo"
-          role="Image link"
         />
       </a>
     </header>
 
-    <main id="main" role="main" aria-hidden="false">
+    <main id="main" aria-hidden="false">
       <section
         class="photographHeader"
-        role="section"
         aria-label="présentation du photographe"
       >
-        <button
-          class="contact_button"
-          aria-label="Contact me"
-          role="Buttons"
-          tabindex="50"
-        >
+        <!-- <button class="contactButton" aria-label="Contact me" tabindex="0">
           Contactez-moi
-        </button>
+        </button> -->
       </section>
 
-      <div class="mySelect">
-        <div class="myLabel" tabindex="80">Trier par</div>
-        <label
-          for="sortingSelect"
-          class="custom-selector"
-          role="navigation"
-          aria-haspopup="true"
-          aria-expanded="false"          
-        >
-          <select name="typeSort" id="sortingSelect" aria-label="type de tri" tabindex="80">
-            <option value="popularity" tabindex="80">Popularité</option>
-            <option value="date" tabindex="80">Date</option>
-            <option value="title" tabindex="80">Titre</option>
+      <!-- SELECT TRI -->
+      <div class="selectContainer">
+        <!-- <div class="myLabel"></div> -->
+        <label for="sortingSelect" class="custom-selector" aria-haspopup="true"
+          >Trier par
+          <select
+            name="typeSort"
+            id="sortingSelect"
+            aria-label="type de tri"
+            tabindex="0"
+            aria-expanded="false"
+          >
+            <option value="popularity">Popularité</option>
+            <option value="date">Date</option>
+            <option value="title">Titre</option>
           </select>
           <i class="fas fa-chevron-down arrow"></i>
         </label>
-        <div class="iconArrow"></div>
+        <!-- <div class="iconArrow"></div> -->
       </div>
 
       <!-- <div class="selectContainer">
@@ -88,9 +84,8 @@
           <option value="title">Titre</option>
         </select>
       </div> -->
-      
-      <section id="gallery" role="section">
-      </section>
+
+      <div id="gallery"></div>
     </main>
 
     <!-- FOOTER : "insert" total deds likes et prix/jour -->
@@ -98,155 +93,152 @@
       id="footer"
       class="insert"
       aria-label="total des likes et prix par jour"
-      aria-hidden="false" 
+      aria-hidden="false"
     >
-      <div class="insertText" role="Text">
-        <div class="insertLikes" tabindex="70">
+      <div class="insertText">
+        <div class="insertLikes" tabindex="0">
           <div class="totalLikes"></div>
           <div class="iconLikes">
-            <i class="fas fa-heart iconHeart"></i>
+            <em class="fas fa-heart iconHeart"></em>
           </div>
         </div>
-        <div class="pricePerDay" tabindex="70">/ jour</div>
+        <div class="pricePerDay" tabindex="0">/ jour</div>
       </div>
     </footer>
 
     <!-- FORMULAIRE DE CONTACT -->
     <aside
       id="contact_modal"
-      role="Dialog"
       aria-hidden="true"
-      aria-labelledby="contactPhotographer"
+      aria-labelledby="contactPhotographerH1"
     >
       <div class="contentModal">
         <header id="headerModal">
-          <h1 id="contactPhotographerH1" role="Heading (h1)" tabindex="55"></h1>          
+          <h1 id="contactPhotographerH1" tabindex="0">Mimi</h1>
         </header>
 
         <form name="reserve" action="photographer.html" method="get" id="form">
           <div class="modal-body">
             <div class="formData firstName">
-              <label for="first" role="Label">Prénom</label>
+              <label for="first">Prénom</label>
               <br />
               <input
                 class="text-control"
-                type="text"
                 id="first"
                 name="first"
                 minlength="2"
                 maxlength="40"
                 placeholder="Entre 2 et 40 caractères."
                 aria-required="true"
-                role="Text field"
-                tabindex="55"
+                tabindex="0"                
+                type="text"
               />
               <!-- span permettant l'affichage du message d'erreur si le champ est incorrect -->
               <span></span>
             </div>
 
             <div class="formData lastName">
-              <label for="last" role="Label">Nom</label>
+              <label for="last">Nom</label>
               <br />
               <input
-                class="text-control"
-                type="text"
+                class="text-control"                
                 id="last"
                 name="last"
                 minlength="2"
                 maxlength="40"
                 placeholder="Entre 2 et 40 caractères."
                 aria-required="true"
-                role="Text field"
-                tabindex="55"
+                tabindex="0"
+                type="text"
               />
               <span></span>
             </div>
 
             <div class="formData address">
-              <label for="email" role="Label">E-mail</label>
+              <label for="email">E-mail</label>
               <br />
               <input
                 class="text-control"
-                type="email"
                 id="email"
                 name="email"
                 placeholder="Caractères accentués non autorisés."
                 aria-required="true"
-                role="Text field"
-                tabindex="55"
+                tabindex="0"
+                type="email"
               />
               <span></span>
             </div>
 
             <div class="formData message">
-              <label for="message" role="Label">Votre message</label>
+              <label for="message">Votre message</label>
               <textarea
                 class="text-control"
                 id="message"
                 name="message"
                 maxlength="500"
-                role="Text field"
                 placeholder="500 caractères maximum."
                 aria-required="true"
-                tabindex="55"
+                tabindex="0"
               ></textarea>
               <span></span>
             </div>
           </div>
-          <!-- <button class="contact_button">Envoyer</button> -->
+          <!-- <button class="contactButton">Envoyer</button> -->
           <input
-            class="contact_button"
-            type="submit"
+            class="contactButton"
             value="Envoyer"
-            role="Button"
             aria-label="Envoyer"
-            tabindex="55"
+            tabindex="0"
+            type="submit"
           />
         </form>
-        <div class="crossCloseModal" role="Button" tabindex="56">
-          <svg width="42" height="42" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-            <path class="svgCross" d="M42 4.23L37.77 0L21 16.77L4.23 0L0 4.23L16.77 21L0 37.77L4.23 42L21 25.23L37.77 42L42 37.77L25.23 21L42 4.23Z" fill="white"/>
-            </svg>
+        <div class="crossCloseModal" tabindex="0">
+          <svg
+            width="42"
+            height="42"
+            viewBox="0 0 42 42"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              class="svgCross"
+              d="M42 4.23L37.77 0L21 16.77L4.23 0L0 4.23L16.77 21L0 37.77L4.23 42L21 25.23L37.77 42L42 37.77L25.23 21L42 4.23Z"
+              fill="white"
+            />
+          </svg>
         </div>
-        <!-- <button class="buttonCross" type="button" role="Button" tabindex="1">
-          <img
-            src="assets/icons/close2.svg"
-            class="closeModalCross"
-            aria-label="Fermer le formulaire"
-            alt="croix de fermeture"
-            tabindex="56"
-          />
-        </button> -->
       </div>
     </aside>
 
     <!-- LIGHTBOX -->
-    <div id="lightboxModal" role="diaporama" aria-hidden="true">      
+    <div id="lightboxModal" aria-hidden="true">
       <div class="lightboxContainer">
         <div class="angleContainer">
-          <i class="fas fa-angle-left prev" tabindex="0"></i>
+          <em class="fas fa-angle-left prev" tabindex="0"></em>
         </div>
-        <div class="lightboxMediaContainer"></div>
+        <div class="lightboxMediaContainer">
+          <div class="viewContainer"></div>
+          <div class="legendContainer"></div>
+        </div>
         <div class="angleContainer">
-          <i class="fas fa-angle-right next" tabindex="0"></i>
+          <em class="fas fa-angle-right next" tabindex="0"></em>
         </div>
       </div>
-      <div class="crossCloseLightbox" role="Button" tabindex="0">
-        <svg width="42" height="42" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">
-          <path class="svgCross" d="M42 4.23L37.77 0L21 16.77L4.23 0L0 4.23L16.77 21L0 37.77L4.23 42L21 25.23L37.77 42L42 37.77L25.23 21L42 4.23Z" fill="#901c1c"/>
-          </svg>
+      <div class="crossCloseLightbox" tabindex="0">
+        <svg
+          width="42"
+          height="42"
+          viewBox="0 0 42 42"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="svgCross"
+            d="M42 4.23L37.77 0L21 16.77L4.23 0L0 4.23L16.77 21L0 37.77L4.23 42L21 25.23L37.77 42L42 37.77L25.23 21L42 4.23Z"
+            fill="#901C1C"
+          />
+        </svg>
       </div>
-      <!-- <button class="buttonCross" type="button" role="Button" tabindex="1">
-        <img
-        src="assets/icons/close.svg"
-        alt="croix de fermeture"
-        aria-label="Fermer la lightbox"
-        class="closeLightboxCross"
-        onclick="closeLightModal()"
-        tabindex="0"
-        />
-      </button> -->
-      
     </div>
   </body>
 </html>

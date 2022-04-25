@@ -1,6 +1,6 @@
 // DETECTION DU CLICK SUR LE BOUTON "CONTACTEZ-MOI"
-const contact_button = document.querySelector(".contact_button");
-contact_button.addEventListener("click", displayModal);
+const contactButton = document.querySelector(".contactButton");
+contactButton.addEventListener("click", displayModal);
 
 // const main = document.getElementById("main");
 const modal = document.getElementById("contact_modal");
@@ -29,7 +29,7 @@ async function displayModal() {
   modal.style.display = "block";
   // modal.removeAttribute("aria-hiden");   
   modal.setAttribute("arial-modal", true);   
-  // document.querySelector(".contact_button").blur(); 
+  // document.querySelector(".contactButton").blur(); 
   modal.querySelector("#headerModal").focus();  
   
       // Récupération de l'Id Photographer dans l'URL pour récupérer le nom du photographe dans la Modale
@@ -72,7 +72,7 @@ echapClose(closeModal);
 
 // DECLARATION DE LA FONCTION DE FERMETURE DE LA MODALE
 function closeModal() {
-  modal.blur(); 
+  // modal.blur(); 
   modal.style.display = "none";
   modal.setAttribute("aria-hiden", "true");
   modal.removeAttribute("aria-modal");
@@ -93,7 +93,7 @@ function closeModal() {
     element.textContent = "";
   }
    
-  document.querySelector(".contact_button").focus();  
+  document.querySelector(".contactButton").focus();  
     // console.log("previouslyFocusElement", previouslyFocusElement);
     // previouslyFocusElement.focus();
 }

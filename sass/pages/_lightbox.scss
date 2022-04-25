@@ -1,3 +1,5 @@
+// LIGHTBOX
+
 #lightboxModal {
   box-sizing: border-box;
   display: none;
@@ -13,38 +15,6 @@
   margin: 0;
 }
 
-// #lightboxModal .buttonCross {
-//   cursor: pointer;
-//   background: none;
-//   position: fixed;
-//   width: 42px;
-//   height: 42px;
-//   top: 30px;
-//   // right: 45px;
-//   right: 54px;
-// }
-
-// #lightboxModal .closeLightboxCross {
-//   background-color: #901c1c;
-//   position: fixed;
-//   top: 30px;
-//   right: 45px;
-// }
-
-
-
-// #lightboxModal .closeLightboxCross {
-//   position: fixed;
-//   color: #901c1c;
-//   font-size: 3.5em;
-//   top: 30px;
-//   right: 54px;
-// }
-
-// #lightboxModal .closeLightboxCross:hover {
-//   color: #d3573c;
-// }
-
 #lightboxModal .lightboxContainer {
   display: flex;
   flex-direction: row;
@@ -53,98 +23,98 @@
   height: 100%;
 }
 
+// Icônes image précédente / image suivante
 #lightboxModal .angleContainer {
   display: flex;
-  // background-color: white;
   height: 100%;
-  margin: 0px; 
+  margin: 0px;
 }
 
 #lightboxModal .prev,
 #lightboxModal .next {
   cursor: pointer;
-  color: #901c1c;
+  color: $primary;
   font-size: 4em;
   margin: auto 20px;
-  // background-color: antiquewhite;  
-  // border-radius: 50%;
-  // padding: 10px;
 }
 
 #lightboxModal .prev:hover,
-#lightboxModal .next:hover {
-  color: #d3573c;
+#lightboxModal .next:hover,
+#lightboxModal .prev:focus,
+#lightboxModal .next:focus {
+  color: $tertiary;
+  outline: none;
 }
 
+// Croix de fermture de la lightbox
 #lightboxModal .crossCloseLightbox {
   position: fixed;
   top: 30px;
-  right: 54px;;
+  right: 54px;
+}
+
+#lightboxModal .crossCloseLightbox:focus {
+  outline: none;
 }
 
 #lightboxModal .svgCross:hover {
   position: absolute;
   cursor: pointer;
-  fill: #d3573c;
+  fill: $tertiary;
   // top: 34px;
 }
 
-// #lightboxModal .lightboxMediaTextContainer {
-//   // display: flex;
-//   // flex-direction: column;
-//   width: 100%;
-//   height: 100%;
-//   background-color: rgb(178, 241, 255);
-// }
+#lightboxModal .crossCloseLightbox:focus .svgCross {
+  fill: $tertiary;
+  outline: none;
+}
 
+// Média et légende
 #lightboxModal .lightboxMediaContainer {
-// #lightboxModal figure {
   margin-top: 0px;
   display: flex;
   flex-direction: column;
+  // justify-content: flex-start;
+  // align-items: flex-start;
   height: 100%;
-  max-width: 100%;
-  // background-color: rgb(12, 105, 70);
-  overflow: hidden;
+  max-width: 88%;
+  // background-color: rgb(136, 192, 170);
+  // overflow: hidden;
+}
+
+#lightboxModal .viewContainer {
+  width: 100%;
+  height: 95%;
 }
 
 
-#lightboxModal .media { 
+#lightboxModal .media {
   margin: 0px auto;
   object-fit: contain;
-  height: 95%;
+  height: 100%;
   max-width: 100%;
+  border-radius: 10px;
+  // border: transparent solid 2px;
+  // padding: 2px; 
+}
+
+#lightboxModal .media:focus {
+  outline: $tertiary solid 2px;
+  // outline: none;   
+}
+
+#lightboxModal .legendContainer {
+  height: 5%;
 }
 
 #lightboxModal .legend {
-// #lightboxModal figcaption {  
-  margin: 12px 0px 0px 5px;
-  height: 5%;
-  color: #901C1C;
-  // background-color: rgb(193, 248, 248);
+  margin: 12px 0px 0px 0px;
+  color: $primary;
   font-size: 1.5em;
   font-weight: 400;
 }
 
-
-// figure {
-//   border: thin #c0c0c0 solid;
-//   display: flex;
-//   flex-flow: column;
-//   padding: 5px;
-//   max-width: 220px;
-//   margin: auto;
-// }
-
-// img {
-//   max-width: 220px;
-//   max-height: 150px;
-// }
-
-// figcaption {
-//   background-color: #222;
-//   color: #fff;
-//   font: italic smaller sans-serif;
-//   padding: 3px;
-//   text-align: left;
-// }
+#lightboxModal .legend:focus {
+  color: $tertiary;
+  outline: none;
+}

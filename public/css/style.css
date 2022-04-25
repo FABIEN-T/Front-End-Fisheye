@@ -344,100 +344,6 @@ body {
   margin: 0;
 }
 
-header a,
-header h1 {
-  border-radius: 10px;
-  padding: 2px;
-}
-
-header a:focus,
-header h1:focus {
-  outline: #d3573c solid 2px;
-}
-
-.linkPhotographer,
-.informationPhotograph {
-  border-radius: 10px;
-  padding: 4px;
-}
-
-.linkPhotographer:focus,
-.informationPhotograph:focus {
-  outline: #d3573c solid 2px;
-}
-
-.photographHeader .photograpHeaderH1,
-.photographHeader .paragraph,
-.mySelect .myLabel {
-  border-radius: 10px;
-  padding: 2px 4px;
-}
-
-.photographHeader .photograpHeaderH1:focus,
-.photographHeader .paragraph:focus,
-.mySelect .myLabel:focus {
-  outline: #d3573c solid 2px;
-}
-
-#gallery .mediaContainer {
-  border-radius: 10px;
-  padding: 0px;
-  border: white solid 2px;
-  outline: none;
-}
-
-#gallery .mediaContainer:focus {
-  border: #d3573c solid 2px;
-  outline: none;
-}
-
-#gallery h3:focus,
-#gallery .nbLikes:focus,
-#gallery .iconHeart:focus {
-  color: #d3573c;
-  outline: none;
-}
-
-#footer .insertLikes,
-#footer .pricePerDay {
-  border-radius: 10px;
-  padding: 0px;
-  border: #DB8876 solid 2px;
-}
-
-#footer .insertLikes:focus,
-#footer .pricePerDay:focus {
-  border: black solid 2px;
-  outline: none;
-}
-
-#lightboxModal .media {
-  border-radius: 10px;
-  padding: 2px;
-  border: transparent solid 2px;
-}
-
-#lightboxModal .media:focus {
-  border: #d3573c solid 2px;
-  outline: none;
-}
-
-#lightboxModal .prev:focus,
-#lightboxModal .next:focus,
-#lightboxModal .legend:focus {
-  color: #d3573c;
-  outline: none;
-}
-
-#lightboxModal .crossCloseLightbox:focus {
-  outline: none;
-}
-
-#lightboxModal .crossCloseLightbox:focus .svgCross {
-  fill: #d3573c;
-  outline: none;
-}
-
 header {
   display: flex;
   flex-direction: row;
@@ -445,6 +351,11 @@ header {
   padding-top: 18px;
   padding-bottom: 22px;
   margin: 0 100px;
+}
+
+header a {
+  display: inline-block;
+  height: 50px;
 }
 
 header .logo {
@@ -459,91 +370,65 @@ header h1 {
   height: 100%;
 }
 
-.photographHeader .contact_button {
+header a,
+header h1 {
+  border-radius: 10px;
+  padding: 2px;
+}
+
+header a:focus,
+header h1:focus {
+  outline: #D3573C solid 2px;
+}
+
+.photographHeader .contactButton,
+#contact_modal .contactButton {
   cursor: pointer;
   font-size: 1.125em;
   font-weight: 700;
+  background-color: #901C1C;
   color: white;
-  padding: 11px;
   width: 170px;
   height: 69px;
   border: none;
-  background-color: #901c1c;
   border-radius: 5px;
 }
 
-.contact_button:hover {
-  background-color: #db8876;
+.contactButton:hover {
+  background-color: #DB8876;
   color: black;
 }
 
-.contact_button:focus {
+.contactButton:focus {
   color: black;
-  background-color: #db8876;
-  outline: none;
-  border-radius: 10px;
-  border: black solid 2px;
+  background-color: #DB8876;
+  border-radius: 5px;
+  outline: black solid 2px;
 }
 
-#contact_modal .contact_button {
-  cursor: pointer;
-  font-size: 1.125em;
-  font-weight: 700;
-  background-color: #901c1c;
-  color: white;
-  width: 170px;
+#contact_modal .contactButton:hover {
+  outline: black solid 2px;
 }
 
-#contact_modal .contact_button:hover {
-  border: black solid 2px;
-  background-color: #db8876;
+#contact_modal .contactButton:focus {
   color: black;
+  background-color: #DB8876;
 }
 
-#contact_modal .contact_button:focus {
-  border: black solid 2px;
-  background-color: #db8876;
-  border-radius: 10px;
-  color: black;
-  font-size: 1.3em;
-}
-
-#contact_modal .crossCloseModal {
-  cursor: pointer;
-  position: absolute;
-  top: 34px;
-  right: 35px;
-}
-
-#contact_modal .crossCloseLightbox:focus {
-  outline: none;
-}
-
-#contact_modal .crossCloseModal:focus .svgCross {
-  fill: black;
-  outline: none;
-}
-
-#contact_modal .crossCloseModal:focus {
-  outline: none;
-}
-
-.mySelect {
-  margin: 0px 100px 50px 100px;
+.selectContainer {
+  margin: 0px 0px 50px 100px;
   display: flex;
   align-items: flex-start;
 }
 
-.myLabel {
-  margin-right: 16px;
-  margin-top: 24px;
+label {
   font-size: 1em;
   font-weight: 700;
 }
 
 .custom-selector {
   position: relative;
-  /* display: inline-block; */
+  display: inline-block;
 }
 
 .custom-selector select {
@@ -553,17 +438,22 @@ header h1 {
   color: white;
   width: 170px;
   min-height: 69px;
+  margin-left: 16px;
   padding: 20px 0px 18px 15px;
   appearance: none;
-  background: #901c1c;
+  background: #901C1C;
   border: 2px solid transparent;
   border-radius: 5px;
   outline: none;
 }
 
+.custom-selector select:focus {
+  outline: 3px solid #DB8876;
+}
+
 .custom-selector .selector-options {
   list-style: none;
-  background: #901c1c;
+  background: #901C1C;
   z-index: 1;
   width: 170px;
   padding: 0;
@@ -583,7 +473,6 @@ header h1 {
   /* padding: 0 20px; */
   cursor: pointer;
   color: white;
-  transition: background 0.3s ease;
 }
 
 .custom-selector li::after {
@@ -603,7 +492,7 @@ header h1 {
 
 .custom-selector li:hover {
   color: black;
-  background: #db8876;
+  background: #DB8876;
   border-radius: 5px;
   /* padding: 50px 15px; */
 }
@@ -629,18 +518,29 @@ header h1 {
   align-items: center;
 }
 
-.photographerSection article a {
+.photographerSection .linkPhotographer {
   text-decoration: none;
 }
 
-.photographerSection article a .linkContainer {
-  border: #ffffff solid 2px;
+.linkPhotographer,
+.informationPhotograph {
+  border-radius: 10px;
+  padding: 4px;
+}
+
+.photographerSection .linkPhotographer:focus,
+.photographerSection .informationPhotograph:focus {
+  outline: #D3573C solid 2px;
+}
+
+.photographerSection .linkContainer {
+  border: white solid 2px;
   padding: 5px 5px 0px;
   display: flex;
   flex-direction: column;
 }
 
-.photographerSection article h2 {
+.photographerSection h2 {
   text-align: center;
   color: #D3573C;
   font-size: 2.25em;
@@ -649,7 +549,7 @@ header h1 {
   margin: 20px 0px 0px;
 }
 
-.photographerSection article .imgContainer {
+.photographerSection .imgContainer {
   align-self: center;
   height: 200px;
   width: 200px;
@@ -659,7 +559,7 @@ header h1 {
   box-shadow: 0px 5px 15px #cccccc;
 }
 
-.photographerSection article img {
+.photographerSection img {
   object-fit: cover;
   max-height: 200px;
   min-width: 200px;
@@ -674,24 +574,26 @@ header h1 {
   flex-direction: column;
 }
 
-.informationPhotograph .location, .tagline, .price {
+.photographerSection .location,
+.photographerSection .tagline,
+.photographerSection .price {
   margin: auto;
 }
 
-.photographerSection article .location {
+.photographerSection .location {
   color: #901C1C;
   font-size: 0.813em;
   font-weight: 400;
   line-height: 1.1em;
 }
 
-.photographerSection article .tagline {
+.photographerSection .tagline {
   font-size: 0.625em;
   font-weight: 400;
   line-height: 1.9em;
 }
 
-.photographerSection article .price {
+.photographerSection .price {
   color: #757575;
   font-size: 0.563em;
   font-weight: 400;
@@ -717,7 +619,7 @@ header h1 {
 }
 
 .photographHeader .photograpHeaderH1 {
-  color: #d3573c;
+  color: #D3573C;
   font-size: 4em;
   font-weight: 400;
   line-height: 83.33px;
@@ -730,7 +632,7 @@ header h1 {
 
 .photographHeader h2 {
   margin: -2px 0px 2px;
-  color: #901c1c;
+  color: #901C1C;
   font-size: 1.5em;
   font-weight: 400;
   line-height: 31.25px;
@@ -764,45 +666,18 @@ header h1 {
 }
 
 .photographHeader .imgContainer:focus {
-  outline: #d3573c solid 3px;
+  outline: #D3573C solid 3px;
 }
 
-.selectContainer {
-  margin: 0px 0px 50px 100px;
-  position: relative;
-  font-size: 1.125em;
-  font-weight: 700;
+.photographHeader .photograpHeaderH1,
+.photographHeader .paragraph {
+  border-radius: 10px;
+  padding: 2px 4px;
 }
 
-label {
-  margin-right: 16px;
-}
-
-.selectContainer select {
-  cursor: pointer;
-  font-weight: 700;
-  color: white;
-  background-color: #901c1c;
-  width: 170px;
-  height: 69px;
-  padding: 0px 20px;
-  border-radius: 5px;
-  outline: none;
-  appearance: none;
-}
-
-.selectContainer custom-selector::after {
-  content: "";
-  color: blue;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent;
-  border-top-color: green;
-  display: inline-block;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  border-radius: 2px;
+.photographHeader .photograpHeaderH1:focus,
+.photographHeader .paragraph:focus {
+  outline: #D3573C solid 2px;
 }
 
 #gallery {
@@ -820,23 +695,26 @@ label {
   height: 350px;
   width: 350px;
   position: relative;
-  border-radius: 5px;
-  overflow: hidden;
+  padding: 0px;
 }
 
-#gallery .mediaContainer img,
-.mediaContainer video {
+#gallery .media {
+  border-radius: 5px;
   cursor: pointer;
   object-fit: cover;
   height: 100%;
   width: 100%;
 }
 
-#gallery .mediaContainer img {
+#gallery .media:focus {
+  outline: #D3573C solid 2px;
+}
+
+#gallery img {
   object-position: 80% 18%;
 }
 
-#gallery .mediaContainer video {
+#gallery video {
   position: absolute;
   object-position: 50% 50%;
 }
@@ -849,8 +727,9 @@ label {
   overflow: hidden;
 }
 
-#gallery h3, .nbLikes {
-  color: #901c1c;
+#gallery h3,
+.nbLikes {
+  color: #901C1C;
   font-size: 1.5em;
   font-weight: 400;
   line-height: 1.953em;
@@ -879,8 +758,15 @@ label {
 #gallery .iconHeart {
   cursor: pointer;
   font-size: 1.4em;
-  color: #901c1c;
+  color: #901C1C;
   line-height: 1.953em;
+}
+
+#gallery h3:focus,
+#gallery .nbLikes:focus,
+#gallery .iconHeart:focus {
+  color: #D3573C;
+  outline: white solid 1px;
 }
 
 #footer {
@@ -892,7 +778,7 @@ label {
   bottom: 0px;
   right: 36px;
   border-radius: 5px 5px 0px 0px;
-  background-color: #db8876;
+  background-color: #DB8876;
   font-size: 1.5em;
   font-weight: 500;
 }
@@ -910,8 +796,16 @@ label {
   width: 50px;
 }
 
-* {
-  box-sizing: border-box;
+#footer .insertLikes,
+#footer .pricePerDay {
+  border-radius: 10px;
+  padding: 0px;
+  border: #DB8876 solid 2px;
+}
+
+#footer .insertLikes:focus,
+#footer .pricePerDay:focus {
+  outline: black solid 2px;
 }
 
 #contact_modal {
@@ -928,7 +822,7 @@ label {
 
 #contact_modal .contentModal {
   border-radius: 5px;
-  background-color: #db8876;
+  background-color: #DB8876;
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -953,7 +847,6 @@ label {
   margin: 0;
   padding: 0;
   width: calc(100% - 60px);
-  outline: transparent 2px solid;
 }
 
 #contact_modal #contactPhotographerH1:focus {
@@ -973,16 +866,17 @@ label {
   padding: 0px;
 }
 
-#contact_modal form label {
+#contact_modal label {
   color: #312e2e;
   font-size: 2.25em;
+  font-weight: normal;
   line-height: 1.5em;
   margin: 0px;
   padding: 0px;
 }
 
-#contact_modal form input,
-form textarea {
+#contact_modal input,
+#contact_modal textarea {
   color: black;
   font-size: 1.8em;
   line-height: 1.5em;
@@ -998,29 +892,33 @@ form textarea {
   margin-bottom: 26px;
 }
 
-#contact_modal form input, form textarea {
+#contact_modal input,
+#contact_modal textarea {
   padding: 0px 10px;
   width: 100%;
   border: none;
   border-radius: 5px;
 }
 
-#contact_modal form input {
+#contact_modal input {
   height: 68px;
 }
 
-#contact_modal form textarea {
+#contact_modal textarea {
   height: 170px;
   resize: none;
 }
 
-#contact_modal button:focus, form input:focus, form textarea:focus {
+#contact_modal button:focus,
+#contact_modal input:focus,
+#contact_modal textarea:focus {
   outline: black solid 2px;
   border-radius: 10px;
 }
 
 /* Mise en forme des messages d'erreurs */
-#contact_modal .error input, .error textarea {
+#contact_modal .error input,
+#contact_modal .error textarea {
   border: 2px solid #fe142f;
 }
 
@@ -1032,6 +930,26 @@ form textarea {
   color: black;
   padding-right: 0;
   align-self: flex-end;
+}
+
+#contact_modal .crossCloseModal {
+  cursor: pointer;
+  position: absolute;
+  top: 34px;
+  right: 35px;
+}
+
+#contact_modal .crossCloseModal:hover .svgCross {
+  fill: black;
+}
+
+#contact_modal .crossCloseModal:focus .svgCross {
+  fill: black;
+  outline: none;
+}
+
+#contact_modal .crossCloseModal:focus {
+  outline: none;
 }
 
 #lightboxModal {
@@ -1066,14 +984,17 @@ form textarea {
 #lightboxModal .prev,
 #lightboxModal .next {
   cursor: pointer;
-  color: #901c1c;
+  color: #901C1C;
   font-size: 4em;
   margin: auto 20px;
 }
 
 #lightboxModal .prev:hover,
-#lightboxModal .next:hover {
-  color: #d3573c;
+#lightboxModal .next:hover,
+#lightboxModal .prev:focus,
+#lightboxModal .next:focus {
+  color: #D3573C;
+  outline: none;
 }
 
 #lightboxModal .crossCloseLightbox {
@@ -1082,10 +1003,19 @@ form textarea {
   right: 54px;
 }
 
+#lightboxModal .crossCloseLightbox:focus {
+  outline: none;
+}
+
 #lightboxModal .svgCross:hover {
   position: absolute;
   cursor: pointer;
-  fill: #d3573c;
+  fill: #D3573C;
+}
+
+#lightboxModal .crossCloseLightbox:focus .svgCross {
+  fill: #D3573C;
+  outline: none;
 }
 
 #lightboxModal .lightboxMediaContainer {
@@ -1093,23 +1023,40 @@ form textarea {
   display: flex;
   flex-direction: column;
   height: 100%;
-  max-width: 100%;
-  overflow: hidden;
+  max-width: 88%;
+}
+
+#lightboxModal .viewContainer {
+  width: 100%;
+  height: 95%;
 }
 
 #lightboxModal .media {
   margin: 0px auto;
   object-fit: contain;
-  height: 95%;
+  height: 100%;
   max-width: 100%;
+  border-radius: 10px;
+}
+
+#lightboxModal .media:focus {
+  outline: #D3573C solid 2px;
+}
+
+#lightboxModal .legendContainer {
+  height: 5%;
 }
 
 #lightboxModal .legend {
-  margin: 12px 0px 0px 5px;
-  height: 5%;
+  margin: 12px 0px 0px 0px;
   color: #901C1C;
   font-size: 1.5em;
   font-weight: 400;
+}
+
+#lightboxModal .legend:focus {
+  color: #D3573C;
+  outline: none;
 }
 
 /*# sourceMappingURL=style.css.map */

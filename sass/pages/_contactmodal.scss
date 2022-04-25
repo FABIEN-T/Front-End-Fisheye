@@ -1,12 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
-// #contact_modal > *:focus {
-//   box-shadow: 0 0 20px green;
-//   // border: solid 3px green;       
-// } 
-
 #contact_modal {
   display: none;
   position: fixed;
@@ -21,12 +12,10 @@
 
 #contact_modal .contentModal {
   border-radius: 5px;
-  background-color: #db8876;
+  background-color: $secondary;
   width: 50%;
   display: flex;
   flex-direction: column;
-  // align-items: center;
-  // justify-content: space-between;
   position: absolute;
   top : 1%;
   left: 25%;
@@ -37,9 +26,6 @@
 #contact_modal #headerModal {
   margin: 0 0 20px 0;
   padding: 0;
-  // display: flex;
-  // justify-content: space-between;
-  // width: 100%;
 }
 
 #contact_modal #contactPhotographerH1 {
@@ -51,15 +37,12 @@
   margin: 0;
   padding: 0;
   width: calc(100% - 60px);
-  outline: transparent 2px solid;
 }
 
 #contact_modal #contactPhotographerH1:focus {
   padding: 0;
-  // outline: none;
   outline: black 2px solid;
 }
-
 
 #contact_modal form {
   display: flex;
@@ -71,24 +54,20 @@
 #contact_modal .formData {
   margin: 0px 0px 5px;
   padding: 0px;
-  // background-color: aqua;
 }
 
-#contact_modal form label {
-  color: #312e2e;
+#contact_modal label {
+  color: $darkGrey;
   font-size: 2.25em;
-  // font-size: 1.2em;
+  font-weight: normal;
   line-height: 1.5em;
   margin: 0px;
   padding: 0px;
 }
 
-#contact_modal 
-form input,
-form textarea {
+#contact_modal input,
+#contact_modal textarea {
   color: black;
-  // outline: none;
-  // border: #312e2e solid 5px;
   font-size: 1.8em;
   line-height: 1.5em;
   margin: 0px;
@@ -103,35 +82,35 @@ form textarea {
   margin-bottom: 26px;
 }
 
-#contact_modal form input, form textarea {
+#contact_modal input,
+#contact_modal textarea {
   padding: 0px 10px;
   width: 100%;
   border: none;
   border-radius: 5px;
 } 
 
-#contact_modal form input {   
+#contact_modal input {   
   height: 68px;
 }
 
-#contact_modal form textarea {  
+#contact_modal textarea {  
   height: 170px;
   resize: none;
 }
 
-#contact_modal button:focus, form input:focus, form textarea:focus {
-  // box-shadow: 0 0 10px #312E2E;
+#contact_modal button:focus,
+#contact_modal input:focus,
+#contact_modal textarea:focus {
   outline: black solid 2px;
   border-radius: 10px;
-  // border: #312e2e solid 5px;
-  // outline: #312e2e;
 }
 
 /* Mise en forme des messages d'erreurs */
 
-#contact_modal .error input, .error textarea {
-  // color: #ff4e60;
-  border: 2px solid #fe142f;
+#contact_modal .error input, 
+#contact_modal .error textarea {
+  border: 2px solid $redAlert;
 }
 
 #contact_modal .error > span {
@@ -142,6 +121,25 @@ form textarea {
   color: black;
   padding-right: 0;
   align-self: flex-end;
-  // margin-top: -5px;
-  // margin-bottom: -8px;
+}
+
+// Icône croix fermeture de la modale
+#contact_modal .crossCloseModal {
+  cursor: pointer;
+  position: absolute;
+  top: 34px;
+  right: 35px;
+}
+
+#contact_modal .crossCloseModal:hover .svgCross {
+    fill: black;
+}
+
+#contact_modal .crossCloseModal:focus .svgCross {
+  fill: black;
+  outline: none;
+}
+
+#contact_modal .crossCloseModal:focus {
+  outline: none;
 }

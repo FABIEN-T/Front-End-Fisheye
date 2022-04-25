@@ -26,27 +26,27 @@ function photographerMediaFactory(dataMedia) {
       likesHeart.classList.add("likesHeart");
       const nbLikes = document.createElement("span");
       // nbLikes.classList.add("nbLikes");
-      const iconHeart = document.createElement("i");
+      const iconHeart = document.createElement("em");
       // const iconHeartButton = document.createElement("button");
       // iconHeartButton.classList.add("iconHeartButton");
 
       // Création des attributs et contenus
       // linkLightbox.setAttribute("href", "#");
       // linkLightbox.setAttribute("role", "Image link");
-      mediaContainer.setAttribute("tabindex", "80");
+      // mediaContainer.setAttribute("tabindex", "0");
       h3.textContent = title;
       h3.setAttribute("aria-label", "title");
       h3.setAttribute("role", "Text");
-      h3.setAttribute("tabindex", "80");
+      h3.setAttribute("tabindex", "0");
 
       nbLikes.textContent = likes;
       nbLikes.setAttribute("aria-label", "nombre de likes");
       nbLikes.setAttribute("class", "nbLikes unClick");
-      nbLikes.setAttribute("tabindex", "80");
+      nbLikes.setAttribute("tabindex", "0");
       iconHeart.setAttribute("class", "far fa-heart iconHeart");
       iconHeart.setAttribute("aria-label", "likes");
       iconHeart.setAttribute("role", "Image");
-      iconHeart.setAttribute("tabindex", "80");
+      iconHeart.setAttribute("tabindex", "0");
       // document.querySelector(".iconHeart").focus();
 
       // Création des éléments HTML
@@ -71,6 +71,8 @@ function photographerMediaFactory(dataMedia) {
         videoElement.setAttribute("class", "media movie");
         // videoElement.setAttribute("control", "");
         videoElement.setAttribute("poster", "");
+        videoElement.setAttribute("mute", "false");
+        videoElement.setAttribute("tabindex", "0");
         videoElement.setAttribute("alt", title);
         mediaContainer.appendChild(videoElement);
       } else {
@@ -82,6 +84,7 @@ function photographerMediaFactory(dataMedia) {
         imgElement.setAttribute("class", "media");
         imgElement.setAttribute("alt", title);
         imgElement.setAttribute("aria-label", "ouverture du diaporama");
+        imgElement.setAttribute("tabindex", "0");
         // imgElement.setAttribute("role", "Image link");
         mediaContainer.appendChild(imgElement);
       }

@@ -7,7 +7,7 @@ function photographerPageFactory(data) {
     function getPhotographerPageDOM() {   
         // Déclaration des variables pour la création d'éléments HTML
         const photographHeader= document.querySelector(".photographHeader");
-        // const article = document.createElement( 'article' );
+        // const article = document.createElement( 'article' );        
         const nameContainer = document.createElement( 'div' );
         nameContainer.classList.add( 'nameContainer' );
         const h1 = document.createElement( 'h1' );
@@ -18,8 +18,8 @@ function photographerPageFactory(data) {
         cityCountry.classList.add( 'location' );
         const slogan = document.createElement( 'div' );
         slogan.classList.add( 'tagline' );
-        // const button = document.createElement( 'button' );
-        // button.classList.add( 'contact_button' );
+        const contactButton = document.createElement( 'button' );
+        contactButton.classList.add( 'contactButton' );
         const img = document.createElement( 'img' );
         const imgContainer = document.createElement( 'div' );
         imgContainer.classList.add( 'imgContainer' );
@@ -34,10 +34,10 @@ function photographerPageFactory(data) {
         h1.textContent = name;        
         h1.setAttribute('aria-label', 'nom du photographe');
         h1.setAttribute('role', 'Header (h1)');
-        h1.setAttribute("tabindex", "20");
+        h1.setAttribute("tabindex", "0");
         
         paragraph.setAttribute('role', 'Text');
-        paragraph.setAttribute("tabindex", "30");
+        paragraph.setAttribute("tabindex", "0");
 
         cityCountry.textContent = city+','+' '+country;
         cityCountry.setAttribute('aria-label', 'ville du photographe');
@@ -45,22 +45,24 @@ function photographerPageFactory(data) {
         slogan.textContent = tagline;
         slogan.setAttribute('aria-label', 'slogan du photographe');
 
-        imgContainer.setAttribute("tabindex", "60");    
+        contactButton.textContent = "Contactez-moi";
+        contactButton.setAttribute('aria-label', "Contact me");
+        contactButton.setAttribute("tabindex", "0"); 
+        contactButton.setAttribute('onclick', 'displayModal()');
+
+        imgContainer.setAttribute("tabindex", "0");    
         img.setAttribute('src', picture );
         img.setAttribute('alt', "Portrait de " + name );
         img.setAttribute('role', 'Image');
-        // img.setAttribute("tabindex", "60");
+        // img.setAttribute("tabindex", "0");
 
-        // button.textContent = "Contactez-moi";
-        // button.setAttribute('onclick', 'displayModal()')
-                
         // Création des éléments HTML
         photographHeader.appendChild(nameContainer);       
         nameContainer.appendChild(h1);
         nameContainer.appendChild(paragraph);
         paragraph.appendChild(cityCountry);
         paragraph.appendChild(slogan);
-        // photographHeader.appendChild(button);
+        photographHeader.appendChild(contactButton);
         photographHeader.appendChild(imgContainer);
         imgContainer.appendChild(img);       
         // return (photographHeader);

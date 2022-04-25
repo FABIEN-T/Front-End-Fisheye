@@ -1,11 +1,8 @@
 @import "./utils/variables";
-@import "./utils/mixins";
-@import "./utils/functions";
 
 @import "./vendors/normalize";
 
 @import "./base/base";
-@import "./base/focus";
 
 @import "./layout/header";
 
@@ -13,6 +10,7 @@
 @import "./components/select";
 
 @import "./pages/index";
-@import "./pages/photographer";
-@import "./pages/formmodal";
+@import "./pages/photographerHeader";
+@import "./pages/photographerGallery";
+@import "./pages/contactmodal";
 @import "./pages/lightbox";

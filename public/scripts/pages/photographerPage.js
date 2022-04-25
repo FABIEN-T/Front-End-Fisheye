@@ -35,20 +35,6 @@ async function initPhotographer() {
 
     let select = document.getElementById("sortingSelect");
     let value = "popularity";
-    // console.log("hey", select.focus());
-
-    // const mySelect = document.querySelector(".mySelect");
-    // document
-    //   .querySelector(".custom-selector")
-    //   .addEventListener("keydown", listenEnter);
-      
-    // function listenEnter(e) {
-    //   if (e.key === "Enter") {
-    //     console.log("hey");
-    //     // selectFunction();
-    //   }
-    // }
-
     typeSort(value);
 
     select.addEventListener("change", function (e) {
@@ -98,8 +84,8 @@ async function initPhotographer() {
   /*Appel des fonctions*/
   getThisPhotographer();
   getThisMedias();
-  sort();
   photographerPageFactory(thisPhotographer);
+  sort();  
   increment();  
   
   // lightbox();
