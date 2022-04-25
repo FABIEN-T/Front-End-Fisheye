@@ -34,13 +34,14 @@
       <a
         class="headerLink"
         href="https://fabien-t.github.io/Front-End-Fisheye/public/"
-        aria-label="logo et lien de la page d'accueil"
+        aria-label="Fisheye et lien de la page d'accueil"
         tabindex="0"
       >
         <img
           src="assets/images/logo.png"
           alt="Fisheye Home page"
           class="logo"
+          role="Image link"
         />
       </a>
     </header>
@@ -63,7 +64,7 @@
           <select
             name="typeSort"
             id="sortingSelect"
-            aria-label="type de tri"
+            aria-label="type de tri des médias"
             tabindex="0"
             aria-expanded="false"
           >
@@ -92,17 +93,19 @@
     <footer
       id="footer"
       class="insert"
-      aria-label="total des likes et prix par jour"
       aria-hidden="false"
+      aria-label="total des likes et prix par jour"
+      tabindex="0"
+      ;
     >
       <div class="insertText">
-        <div class="insertLikes" tabindex="0">
+        <div class="insertLikes">
           <div class="totalLikes"></div>
           <div class="iconLikes">
-            <em class="fas fa-heart iconHeart"></em>
+            <em class="fas fa-heart iconHeart" aria-label="likes"></em>
           </div>
         </div>
-        <div class="pricePerDay" tabindex="0">/ jour</div>
+        <div class="pricePerDay">/ jour</div>
       </div>
     </footer>
 
@@ -130,7 +133,7 @@
                 maxlength="40"
                 placeholder="Entre 2 et 40 caractères."
                 aria-required="true"
-                tabindex="0"                
+                tabindex="0"
                 type="text"
               />
               <!-- span permettant l'affichage du message d'erreur si le champ est incorrect -->
@@ -141,7 +144,7 @@
               <label for="last">Nom</label>
               <br />
               <input
-                class="text-control"                
+                class="text-control"
                 id="last"
                 name="last"
                 minlength="2"
@@ -187,12 +190,16 @@
           <input
             class="contactButton"
             value="Envoyer"
-            aria-label="Envoyer"
+            aria-label="Envoyer le formulaire"
             tabindex="0"
             type="submit"
           />
         </form>
-        <div class="crossCloseModal" tabindex="0">
+        <div
+          class="crossCloseModal"
+          tabindex="0"
+          aria-label="Fermeture du formulaire"
+        >
           <svg
             width="42"
             height="42"
@@ -215,17 +222,17 @@
     <div id="lightboxModal" aria-hidden="true">
       <div class="lightboxContainer">
         <div class="angleContainer">
-          <em class="fas fa-angle-left prev" tabindex="0"></em>
+          <em class="fas fa-angle-left prev" tabindex="0"  aria-label="image précédente"></em>
         </div>
         <div class="lightboxMediaContainer">
           <div class="viewContainer"></div>
           <div class="legendContainer"></div>
         </div>
         <div class="angleContainer">
-          <em class="fas fa-angle-right next" tabindex="0"></em>
+          <em class="fas fa-angle-right next" tabindex="0" aria-label="image suivante"></em>
         </div>
       </div>
-      <div class="crossCloseLightbox" tabindex="0">
+      <div class="crossCloseLightbox" tabindex="0" aria-label="fermeture de la lightbox">
         <svg
           width="42"
           height="42"

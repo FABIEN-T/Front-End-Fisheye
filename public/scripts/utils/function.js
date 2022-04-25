@@ -5,7 +5,7 @@ async function getPhotographers() {
 
 // Fonction écoute de la touche "Escape" pour fermer les modales
 function echapClose(f) {
-  window.addEventListener("keydown", (e) => {
+  document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" || e.key === "Esc") {
       f(e);
     }
@@ -22,6 +22,7 @@ function increment() {
   gallery.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
       e.preventDefault();
+      e.stopPropagation();
       inc(e);
     }
   });

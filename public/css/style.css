@@ -763,7 +763,6 @@ label {
 }
 
 #gallery h3:focus,
-#gallery .nbLikes:focus,
 #gallery .iconHeart:focus {
   color: #D3573C;
   outline: white solid 1px;
@@ -796,15 +795,7 @@ label {
   width: 50px;
 }
 
-#footer .insertLikes,
-#footer .pricePerDay {
-  border-radius: 10px;
-  padding: 0px;
-  border: #DB8876 solid 2px;
-}
-
-#footer .insertLikes:focus,
-#footer .pricePerDay:focus {
+#footer:focus {
   outline: black solid 2px;
 }
 

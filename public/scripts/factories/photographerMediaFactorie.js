@@ -3,6 +3,7 @@ function photographerMediaFactory(dataMedia) {
     const { id, photographerId, title, image, video, likes, date, price } =
       media;
     // console.log("factory", media);
+    // console.log("title", title);
     if (media.image) {
       getPhotographerGalleryDOM(image);
     } else if (media.video) {
@@ -35,16 +36,16 @@ function photographerMediaFactory(dataMedia) {
       // linkLightbox.setAttribute("role", "Image link");
       // mediaContainer.setAttribute("tabindex", "0");
       h3.textContent = title;
-      h3.setAttribute("aria-label", "title");
+      h3.setAttribute("aria-label", title);
       h3.setAttribute("role", "Text");
       h3.setAttribute("tabindex", "0");
 
       nbLikes.textContent = likes;
       nbLikes.setAttribute("aria-label", "nombre de likes");
       nbLikes.setAttribute("class", "nbLikes unClick");
-      nbLikes.setAttribute("tabindex", "0");
+      // nbLikes.setAttribute("tabindex", "0");
       iconHeart.setAttribute("class", "far fa-heart iconHeart");
-      iconHeart.setAttribute("aria-label", "likes");
+      iconHeart.setAttribute("aria-label", likes + " likes cliquable");
       iconHeart.setAttribute("role", "Image");
       iconHeart.setAttribute("tabindex", "0");
       // document.querySelector(".iconHeart").focus();
@@ -71,10 +72,12 @@ function photographerMediaFactory(dataMedia) {
         videoElement.setAttribute("class", "media movie");
         // videoElement.setAttribute("control", "");
         videoElement.setAttribute("poster", "");
-        videoElement.setAttribute("mute", "false");
-        videoElement.setAttribute("tabindex", "0");
+        // videoElement.setAttribute("mute", "false");
         videoElement.setAttribute("alt", title);
+        videoElement.setAttribute("aria-label",  title + " ouvrir la visionneuse");
+        
         mediaContainer.appendChild(videoElement);
+        videoElement.setAttribute("tabindex", "0");
       } else {
         const imgElement = document.createElement("img");
         imgElement.classList.add(likes);
@@ -83,7 +86,7 @@ function photographerMediaFactory(dataMedia) {
         imgElement.setAttribute("id", id);
         imgElement.setAttribute("class", "media");
         imgElement.setAttribute("alt", title);
-        imgElement.setAttribute("aria-label", "ouverture du diaporama");
+        imgElement.setAttribute("aria-label", title + " ouvrir la visionneuse");
         imgElement.setAttribute("tabindex", "0");
         // imgElement.setAttribute("role", "Image link");
         mediaContainer.appendChild(imgElement);

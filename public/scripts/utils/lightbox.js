@@ -3,11 +3,16 @@ const viewContainer = document.querySelector(".viewContainer");
 const legendContainer = document.querySelector(".legendContainer");
 
 // FERMETURE DE LA LIGHTBOX : Ecoute de la touche "Echap"
-echapClose(closeLightModal);
+// echapClose(closeLightbox);
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" || e.key === "Esc") {
+    closeLightbox();
+  }
+});
 
 // FERMETURE DE LA LIGHTBOX : Ecoute du "click" sur la croix de la lightbox
 const crossCloseLightbox = document.querySelector(".crossCloseLightbox");
-crossCloseLightbox.addEventListener("click", closeLightModal);
+crossCloseLightbox.addEventListener("click", closeLightbox);
 
 
 // Fonction ouverture de la lightbox
@@ -16,20 +21,26 @@ function openLightboxModal() {
   document.getElementById("header").style.display = "none";
   document.getElementById("main").style.display = "none";
   document.getElementById("footer").style.display = "none";
+  lightboxModal.setAttribute("aria-hidden", false);
   // lightboxModal.focus();
 }
 
 // Fonction Fermeture de la lightbox
-function closeLightModal() {
+function closeLightbox() {
   lightboxModal.blur();
   lightboxModal.style.display = "none";
   // document.getElementById("lightboxModal").blur();
   document.getElementById("header").style.display = "block";
   document.getElementById("main").style.display = "block";
   document.getElementById("footer").style.display = "block";
+  lightboxModal.setAttribute("aria-hidden", true);
   const movieRemove = document.querySelectorAll(".movie");
   movieRemove.forEach(() => {
     document.querySelector(".movie").removeAttribute("controls", "");
+    
+    // document.querySelector(".movie").setAttribute("autoplay", "false");
+    // document.querySelector(".movie").pause();
+    // document.querySelector(".movie").setAttribute("autoplay.enabled", "false");
   });
 }
 
@@ -57,7 +68,7 @@ function lightbox() {
       if (e.key === "Enter") {
         e.preventDefault();
         let index = tableauMedias.indexOf(e.target); // Récupération et mémorisation de l'index du media cliqué
-        // console.log("key e", tableauMedias.indexOf(e.target), e.target);
+        console.log("key e", tableauMedias.indexOf(e.target), e.target);
         launchMedia(index);
       }
     });
@@ -78,25 +89,30 @@ function lightbox() {
 
     // Ecoute du clavier sur les Contrôles "média suivant" et ""media précédent"
     document.addEventListener("keyup", function (e) {
-      // console.log(e.key, e.code);
+      console.log(e.key, e.code);
+      // Touche flèche gauche : on décrémente (image précédente)
       if (e.key === "ArrowLeft") {
-        displaySlides((index -= 1)); // clic sur précédent : on décrémente (image précédente)
+        displaySlides((index -= 1)); 
       }
+      // Touche flèche droite : on incrémente (image suivante)
       if (e.key === "ArrowRight") {
-        displaySlides((index += 1)); // clic sur précédent : on incrémente (image suivante)
+        displaySlides((index += 1)); 
       }
+      // Touche Entrée détectée sur la flèche droite : on incrémente (image suivante)
       if (e.key === "Enter" && e.target.className.includes("prev")) {
         displaySlides((index -= 1));
       }
+      // Touche Entrée détectée sur la flèche gauche, on incrémente (image suivante)
       if (e.key === "Enter" && e.target.className.includes("next")) {
         displaySlides((index += 1));
       }
       // console.log("e.target", e.target);
+      // Touche Entrée détectée sur la croix, on ferme la lightbox
       if (
         e.key === "Enter" &&
         e.target.className.includes("crossCloseLightbox")
       ) {
-        closeLightModal();
+        closeLightbox();
       }
     });
 
@@ -120,36 +136,15 @@ function lightbox() {
       // const lightboxMediaContainer = document.querySelector(
       //   ".lightboxMediaContainer"
       // );
-
+      
+      const titreMedia = tableauMedias[index].getAttribute("alt");
       tableauMedias[index].setAttribute("tabindex", "0");
+      tableauMedias[index].setAttribute("aria-label", titreMedia);
       viewContainer.innerHTML = tableauMedias[index].outerHTML;
       legendContainer.innerHTML = '<h1 class="legend"></h1>';
-      // lightboxMediaContainer.innerHTML = tableauMedias[index].outerHTML;
-      // lightboxMediaContainer.innerHTML += '<h1 class="legend"></h1>';
       const legend = document.querySelector(".legend");
       legend.innerHTML = tableauMedias[index].getAttribute("alt");
       legend.setAttribute("tabindex", "0");
-      // console.log("lightboxModal", lightboxModal);
     }
   }
 }
-
-// const focusableSelectorLightboxModal = "h1, i, button, .media, .crossCloseLightbox";
-// let focusablesLightBox = [];
-// console.log("init", focusablesLightBox);
-// focusablesLightBox = Array.from(
-//   lightboxModal.querySelectorAll(focusableSelectorLightboxModal)
-// );
-// console.log("après mise en tableau", focusablesLightBox);
-// focusInLightbox();
-// function focusInLightbox() {
-//   document.querySelector(".prev").focus();
-//   // console.log("focusablesLightBox", focusablesLightBox);
-//   // Ecoute de la touche "tab" au clavier
-//   document.addEventListener("keydown", function (e) {
-//     if (e.key === "Tab" && lightboxModal.style.display === "block") {
-//       console.log("hugh", e);
-//       focusModals(e, focusablesLightBox);
-//     }
-//   });
-// }

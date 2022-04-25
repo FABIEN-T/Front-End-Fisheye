@@ -25,7 +25,9 @@ async function informationFooter() {
       const i = parseInt(e.innerHTML);
       totalOfLikes += i;
       // console.log("totalLikes", totalOfLikes);
+      document.querySelector(".totalLikes").setAttribute("aria-label","total des likes")
       document.querySelector(".totalLikes").innerHTML = totalOfLikes;
+      // document.querySelector(".iconLikes").innerHTML = '<em class="fas fa-heart iconHeart" aria-label="likes"></em>';
     });
   }
 }

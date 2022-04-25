@@ -86,12 +86,12 @@ async function initPhotographer() {
   getThisMedias();
   photographerPageFactory(thisPhotographer);
   sort();  
-  increment();  
-  
-  // lightbox();
+  increment();    
+  lightbox();
 }
 
 initPhotographer();
+
 // console.log("lightboxModal", lightboxModal);
 // focusInLightbox();
 

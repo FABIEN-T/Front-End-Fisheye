@@ -32,21 +32,21 @@ function photographerPageFactory(data) {
         // photographHeader.setAttribute('aria-label', 'présentation du photographe')
 
         h1.textContent = name;        
-        h1.setAttribute('aria-label', 'nom du photographe');
+        h1.setAttribute('aria-label', 'nom du photographe ' + name);
         h1.setAttribute('role', 'Header (h1)');
         h1.setAttribute("tabindex", "0");
         
         paragraph.setAttribute('role', 'Text');
         paragraph.setAttribute("tabindex", "0");
 
-        cityCountry.textContent = city+','+' '+country;
-        cityCountry.setAttribute('aria-label', 'ville du photographe');
+        cityCountry.textContent = city + ',' + ' '+ country;
+        cityCountry.setAttribute('aria-label', 'ville du photographe ' + city);
     
         slogan.textContent = tagline;
         slogan.setAttribute('aria-label', 'slogan du photographe');
 
         contactButton.textContent = "Contactez-moi";
-        contactButton.setAttribute('aria-label', "Contact me");
+        contactButton.setAttribute('aria-label', "Contactez-moi, ouvrir le formulaire");
         contactButton.setAttribute("tabindex", "0"); 
         contactButton.setAttribute('onclick', 'displayModal()');
 
