@@ -21,7 +21,7 @@ function selectFunction() {
     // Pour tous les items du select
     [...select.children].forEach((option) => {
       const dropDownOption = document.createElement("li"); // Créer un élément de la liste à puce
-      const arrow = document.createElement("i");
+      const arrow = document.createElement("em");
       arrow.setAttribute("class", "fas fa-chevron-up arrow"); // A l'ouverture du menu, l'icône flèche pointe vers le bas
       dropDownOption.textContent = option.textContent; // Chaque élément de la liste à puce récupère l'intitulé de l'item du select correspondant
       // console.log("dropDownOption.textContent", dropDownOption.textContent);
