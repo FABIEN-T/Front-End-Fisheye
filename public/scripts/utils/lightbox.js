@@ -87,7 +87,6 @@ function lightbox() {
       displaySlides((index += 1)); // clic sur précédent : on incrémente (image suivante)
     });
 
-    // Ecoute du clavier sur les Contrôles "média suivant" et ""media précédent"
     document.addEventListener("keyup", function (e) {
       console.log(e.key, e.code);
       // Touche flèche gauche : on décrémente (image précédente)
@@ -97,7 +96,13 @@ function lightbox() {
       // Touche flèche droite : on incrémente (image suivante)
       if (e.key === "ArrowRight") {
         displaySlides((index += 1)); 
-      }
+      }      
+    });
+
+
+    // Ecoute du clavier sur les Contrôles "média suivant" et ""media précédent"
+    document.addEventListener("keyup", function (e) {
+      // console.log(e.key, e.code);
       // Touche Entrée détectée sur la flèche droite : on incrémente (image suivante)
       if (e.key === "Enter" && e.target.className.includes("prev")) {
         displaySlides((index -= 1));
