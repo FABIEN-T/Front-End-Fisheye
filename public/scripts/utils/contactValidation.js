@@ -16,16 +16,16 @@ function contactValidation() {
         console.log("FIRST", e.target.value);
         e.target.value = e.target.value.replace(/^[\s]/, ""); // supprime les espaces en début de chaîne
         e.target.value = e.target.value.replace(/[\s]+/g, " "); // remplace les espaces successifs au milieu de la chaîne par un seul espace
-        e.target.value = e.target.value.replace(/[\-]+/g, "-"); // remplace de multiples tirets successifs par un seul tiret
-        e.target.value = e.target.value.replace(/[\']+/g, "'"); // remplace de multiples apostrophes successifs par un seul apostrophe
+        e.target.value = e.target.value.replace(/[-]+/g, "-"); // remplace de multiples tirets successifs par un seul tiret
+        e.target.value = e.target.value.replace(/[']+/g, "'"); // remplace de multiples apostrophes successifs par un seul apostrophe
         firstNameValue = e.target.value;
       }
       if (e.target.id == "last") {
         console.log("LAST", e.target.value);
         e.target.value = e.target.value.replace(/^[\s]/, ""); // supprime les espaces en début de chaîne
         e.target.value = e.target.value.replace(/[\s]+/g, " "); // remplace les espaces successifs au milieu de la chaîne par un seul espace
-        e.target.value = e.target.value.replace(/[\-]+/g, "-"); // remplace de multiples tirets successifs par un seul tiret
-        e.target.value = e.target.value.replace(/[\']+/g, "'"); // remplace de multiples apostrophes successifs par un seul apostrophe
+        e.target.value = e.target.value.replace(/[-]+/g, "-"); // remplace de multiples tirets successifs par un seul tiret
+        e.target.value = e.target.value.replace(/[']+/g, "'"); // remplace de multiples apostrophes successifs par un seul apostrophe
         lastNameValue = e.target.value;
       }
       if (e.target.id == "email") {

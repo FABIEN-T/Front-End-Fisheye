@@ -3,12 +3,12 @@ const viewContainer = document.querySelector(".viewContainer");
 const legendContainer = document.querySelector(".legendContainer");
 
 // FERMETURE DE LA LIGHTBOX : Ecoute de la touche "Echap"
-// echapClose(closeLightbox);
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" || e.key === "Esc") {
-    closeLightbox();
-  }
-});
+echapClose(closeLightbox);
+// document.addEventListener("keydown", (e) => {
+//   if (e.key === "Escape" || e.key === "Esc") {
+//     closeLightbox();
+//   }
+// });
 
 // FERMETURE DE LA LIGHTBOX : Ecoute du "click" sur la croix de la lightbox
 const crossCloseLightbox = document.querySelector(".crossCloseLightbox");
@@ -49,7 +49,7 @@ function lightbox() {
   // Transformation de la Collection HTML "media" de la galerie en un tableau
   // (ensemble des div de class "media" dans la galerie)
   const tableauMedias = Array.from(document.getElementsByClassName("media"));
-  const tableauMediaContainer = Array.from(document.getElementsByClassName("mediaContainer"));
+  // const tableauMediaContainer = Array.from(document.getElementsByClassName("mediaContainer"));
   // console.log("tab1",tableauMedias);
   // console.log("tab2", tableauMediaContainer.length, tableauMediaContainer);
   // Boucle : pour chaque élément du tableau, écouter le "click"

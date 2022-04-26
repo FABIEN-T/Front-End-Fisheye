@@ -86,7 +86,7 @@ function mailChecker(value) {
   if (!value) {
     emailValue = null;
     errorMessage("address", "Le champ Email doit être rempli.");
-  } else if (!value.match(/^[\w\._-]+@[\w-]+\.[a-z]{2,4}$/g)) {
+  } else if (!value.match(/^[\w._-]+@[\w-]+\.[a-z]{2,4}$/g)) {
     errorMessage(
       "address",
       "L'adresse du courriel n'est pas valide (ne pas mettre d'espace ni de caractères accentués)."

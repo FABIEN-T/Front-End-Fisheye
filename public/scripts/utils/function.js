@@ -77,4 +77,4 @@ function focusModals(e, focusables) {
     console.log("index<0", index);
   }
   focusables[index].focus();
-};
+}
