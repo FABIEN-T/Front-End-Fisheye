@@ -5,6 +5,8 @@
 @import "./base/base";
 
 @import "./layout/header";
+@import "./layout/contactmodal";
+@import "./layout/lightbox";
 
 @import "./components/buttons";
 @import "./components/select";
@@ -12,5 +14,3 @@
 @import "./pages/index";
 @import "./pages/photographerHeader";
 @import "./pages/photographerGallery";
-@import "./pages/contactmodal";
-@import "./pages/lightbox";

@@ -1,7 +1,6 @@
 /**
  * DÉCLARATION DES VARIABLES DE VALIDATION
  */
-
 let firstNameValue, lastNameValue, emailValue, messageValue;
 
 function contactValidation() {
@@ -11,7 +10,6 @@ function contactValidation() {
   );
   inputsType.forEach((inputVar) => {
     inputVar.addEventListener("input", (e) => {
-      // console.log("e.target.value", e.target.value);
       if (e.target.id == "first") {
         console.log("FIRST", e.target.value);
         e.target.value = e.target.value.replace(/^[\s]/, ""); // supprime les espaces en début de chaîne
@@ -56,12 +54,11 @@ document.querySelector("#form").addEventListener("submit", (e) => {
   lastNameChecker(lastNameValue);
   mailChecker(emailValue);
   messageChecker(messageValue);
-  // console.log("2", messageValue);
   // SI tous les champs sont corrects
   if (firstNameValue && lastNameValue && emailValue && messageValue) {
     // ALORS Fermeture de la Modale
     closeModal();
-    // Effacement des champs du formulaire
+    // et Effacement des champs du formulaire
     (firstNameValue = null),
       (lastNameValue = null),
       (emailValue = null),

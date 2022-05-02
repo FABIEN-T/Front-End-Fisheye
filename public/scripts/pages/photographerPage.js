@@ -1,3 +1,6 @@
+// RÉCUPERATION DES DATAS ET MEDIAS DU PHOTOGRAPHE SELECTIONNÉ
+// ET LANCEMENT DES FACTORIES AVEC TRI DES MEDIAS
+
 async function initPhotographer() {
   // Récupère l'ID dans l'URL
   let params = new URL(document.location).searchParams;
@@ -5,11 +8,11 @@ async function initPhotographer() {
 
   // Récupère les datas et les medias des photographes
   const { photographers, media } = await getPhotographers();
-  // Récupère les datas et les medias DU photographe choisi
-  const thisMedias = [];
+  // Déclaration de constantes : tableaux qui vont acccueillir les données
   const thisPhotographer = [];
-
-  // Récupère les medias des photographes
+  const thisMedias = [];
+  
+  // Récupère les datas du photographe sélectionné et les mets dans un tableau
   function getThisPhotographer() {
     photographers.forEach((element) => {
       if (photographerIdUrl == element.id) {
@@ -18,7 +21,7 @@ async function initPhotographer() {
     });
   }
 
-  // Récupère les datas des médias pour le photographe sélectionné
+  // Récupère les médias du photographe sélectionné et les mets dans un tableau
   function getThisMedias() {
     media.forEach((element) => {
       if (photographerIdUrl == element.photographerId) {
@@ -26,86 +29,76 @@ async function initPhotographer() {
       }
     });
   }
-  
-// TRI
+
+  // TRI DES MEDIAS
   function sort() {
-    // let select = document.querySelector('#sortingSelect');
-    // let value = document.getElementById("sortingSelect").value;
-    // document.getElementById("demo").innerHTML = "You selected: " + x;
+    const dropDown = document.querySelector(".dropDown");
+    const headerDropdown = document.querySelector(".headerDropdown");
+    let valueSort = "popularity";
+    typeSort(valueSort);
 
-    let select = document.getElementById("sortingSelect");
-    let value = "popularity";
-    typeSort(value);
+    // Déclaration de la fonction de recupération de la valeur du type de tri
+    function recoverySortValue(e) {
+      if (e.target.className.includes("popularity")) {
+        headerDropdown.innerHTML = "Popularité";
+        valueSort = "popularity";
+      }
+      if (e.target.className.includes("date")) {
+        headerDropdown.innerHTML = "Date";
+        valueSort = "date";
+      }
+      if (e.target.className.includes("title")) {
+        headerDropdown.innerHTML = "Titre";
+        valueSort = "title";
+      }
+      typeSort(valueSort); // Lancement de la fonction de tri avec la valeur du type de tri
+    }
 
-    select.addEventListener("change", function (e) {
-      // console.log("e.target.value", e.target.value);
-      // typeSort(this.value);
-      typeSort(e.target.value);
-      // console.log("type de tri", e.target.value);
+    // Écoute du clic de la souris et lancement de la fonction de recupération de la valeur du type de tri
+    dropDown.addEventListener("mousedown", (e) => {
+      recoverySortValue(e);
+    });
+    // Ecoute du clavier de la souris et lancement de la fonction de recupération de la valeur du type de tri
+    dropDown.addEventListener("keydown", (e) => {
+      recoverySortValue(e);
     });
 
+    // Déclaration de la fonction de tri avec la valeur du type de tri récupérée
     function typeSort(value) {
-      // console.log("typeSort", value);
       if (value === "popularity") {
         thisMedias.sort((a, b) => {
-          // console.log("a b", a, b);
           return a.likes > b.likes ? -1 : 1;
         });
-        // console.log("tm popularity", thisMedias);
       }
       if (value === "date") {
         thisMedias.sort((a, b) => {
           return a.date > b.date ? -1 : 1;
         });
-        console.log("tm date", thisMedias);
       }
-      // console.log("2", value);
       if (value === "title") {
         thisMedias.sort((a, b) => {
           return a.title < b.title ? -1 : 1;
         });
-        console.log("tm title", thisMedias);
       }
-      // console.log("s1", value);
-      // console.log("1", value)
 
+      // Effacement de la galerie avant son nouvel affichage prenant en compte le type tri sélectionné
       let htmlMedias = Array.from(document.querySelector("#gallery").children);
       htmlMedias.forEach((media) => {
         media.remove();
       });
-      // console.log("thisMedias", thisMedias);
-      photographerMediaFactory(thisMedias);
-      lightbox();
-      // focusInLightbox();
-      
+
+      photographerMediaFactory(thisMedias); // Création de la galerie
+      lightbox(); // Création de la visionneuse
     }
   }
 
-  /*Appel des fonctions*/
+  // Appel des fonctions
   getThisPhotographer();
   getThisMedias();
-  photographerPageFactory(thisPhotographer);
-  sort();  
-  increment();    
-  lightbox();
+  photographerPageFactory(thisPhotographer); // Création de l'encart présentant le photographe
+  sort(); // Lancement du tri des médias et création de la galerie
+  lightbox(); // Création de la visionneuse
 }
 
 initPhotographer();
-
-// console.log("lightboxModal", lightboxModal);
-// focusInLightbox();
-
-// function focusInLightbox() {
-//   const focusableSelectorLightboxModal = "h1, i, button, .media";
-//   let focusablesLightBox = [];  
-//   focusablesLightBox = Array.from(
-//     lightboxModal.querySelectorAll(focusableSelectorLightboxModal)
-//   );
-//   console.log("focusablesLightBox", focusablesLightBox);
-//   // Ecoute de la touche "tab" au clavier
-//   document.addEventListener("keydown", function (e) {
-//     if (e.key === "Tab" && lightboxModal.style.display === "block") {
-//       focusModals(e, focusablesLightBox);
-//     }
-//   });
-// }
+increment(); // Lancemment de la fonction d'incrémentation des likes

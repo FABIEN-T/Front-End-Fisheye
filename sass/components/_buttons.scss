@@ -3,8 +3,8 @@
   cursor: pointer;
   font-size: 1.125em;
   font-weight: 700;
-  background-color: $primary;  
-  color: white;  
+  background-color: $primary;
+  color: white;
   // padding: 11px;
   width: 170px;
   height: 69px;
@@ -22,7 +22,6 @@
   background-color: $secondary;
   border-radius: 5px;
   outline: black solid 2px;
-
 }
 
 #contact_modal .contactButton:hover {
@@ -33,5 +32,3 @@
   color: black;
   background-color: $secondary;
 }
-
-

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <link href="./css/style.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="./css/style.css" rel="stylesheet" type="text/css" /> -->
+    <link href="../sass/main.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8" />
     <link
       rel="icon"
@@ -10,24 +11,24 @@
       href="./assets/icons/favicon-photo.png"
     />
     <title>Fisheye - photographe</title>
-    
+
     <script src="./scripts/utils/function.js" defer></script>
     <script src="./scripts/utils/lightbox.js" defer></script>
+
     <script
       src="./scripts/factories/photographerPageFactorie.js"
       defer
     ></script>
-    <!-- <script src="./scripts/utils/function.js" defer></script> -->
-    <script src="./scripts/pages/photographerPage.js" defer></script>
     <script
       src="./scripts/factories/photographerMediaFactorie.js"
       defer
     ></script>
+    <script src="./scripts/pages/photographerPage.js" defer></script>
     <script src="./scripts/utils/footer.js" defer></script>
     <script src="./scripts/utils/contactModal.js" defer></script>
     <script src="./scripts/utils/contactValidation.js" defer></script>
     <script src="./scripts/utils/contactFunctions.js" defer></script>
-    <script src="./scripts/utils/select.js" defer></script>    
+    <script src="./scripts/utils/select.js" defer></script>
   </head>
 
   <body>
@@ -35,7 +36,7 @@
       <a
         class="headerLink"
         href="https://fabien-t.github.io/Front-End-Fisheye/public/"
-        aria-label="Fisheye et lien de la page d'accueil"
+        aria-label="Fisheye lien de la page d'accueil"
         tabindex="0"
       >
         <img
@@ -47,49 +48,38 @@
     </header>
 
     <main id="main" aria-hidden="false">
+      <!-- PHOTOGRAPHE SELECTIONNÉ-->
       <section
         class="photographHeader"
         aria-label="présentation du photographe"
-      >
-        <!-- <button class="contactButton" aria-label="Contact me" tabindex="0">
-          Contactez-moi
-        </button> -->
-      </section>
+      ></section>
 
-      <!-- SELECT TRI -->
-      <div class="selectContainer">
-        <!-- <div class="myLabel"></div> -->
-        <label for="sortingSelect" class="custom-selector" aria-haspopup="true"
-          >Trier par
-          <select
-            name="typeSort"
-            id="sortingSelect"
-            aria-label="type de tri des médias"
+      <!-- SELECT TRI DES MEDIAS -->
+      <div class="select">
+        <div class="textLabel">Trier par</div>
+        <div class="dropDownContainer">
+          <button
+            class="headerDropdown"
             tabindex="0"
+            aria-label="Choix du tri"
+            aria-haspopup="true"
             aria-expanded="false"
           >
-            <option value="popularity">Popularité</option>
-            <option value="date">Date</option>
-            <option value="title">Titre</option>
-          </select>
+            Popularité
+          </button>
+          <ul class="dropDown">
+            <li class="item popularity" tabindex="0">Popularité</li>
+            <li class="item date" tabindex="0">Date</li>
+            <li class="item title" tabindex="0">Titre</li>
+          </ul>
           <em class="fas fa-chevron-down arrow"></em>
-        </label>
-        <!-- <div class="iconArrow"></div> -->
+        </div>
       </div>
-
-      <!-- <div class="selectContainer">
-        <label for="sortingSelect">Triez par</label>
-        <select name="sorting" id="sortingSelect">      
-          <option value="popularity">Popularité</option>
-          <option value="date">Date</option>
-          <option value="title">Titre</option>
-        </select>
-      </div> -->
 
       <div id="gallery"></div>
     </main>
 
-    <!-- FOOTER : "insert" total deds likes et prix/jour -->
+    <!-- FOOTER : INFORMATION du total des likes et du prix/jour -->
     <footer
       id="footer"
       class="insert"
@@ -189,7 +179,6 @@
           <input
             class="contactButton"
             value="Envoyer"
-            aria-label="Envoyer le formulaire"
             tabindex="0"
             type="submit"
           />
@@ -221,17 +210,29 @@
     <div id="lightboxModal" aria-hidden="true">
       <div class="lightboxContainer">
         <div class="angleContainer">
-          <em class="fas fa-angle-left prev" tabindex="0"  aria-label="image précédente"></em>
+          <em
+            class="fas fa-angle-left prev"
+            tabindex="0"
+            aria-label="image précédente"
+          ></em>
         </div>
         <div class="lightboxMediaContainer">
           <div class="viewContainer"></div>
           <div class="legendContainer"></div>
         </div>
         <div class="angleContainer">
-          <em class="fas fa-angle-right next" tabindex="0" aria-label="image suivante"></em>
+          <em
+            class="fas fa-angle-right next"
+            tabindex="0"
+            aria-label="image suivante"
+          ></em>
         </div>
       </div>
-      <div class="crossCloseLightbox" tabindex="0" aria-label="fermeture de la lightbox">
+      <div
+        class="crossCloseLightbox"
+        tabindex="0"
+        aria-label="fermeture de la lightbox"
+      >
         <svg
           width="42"
           height="42"

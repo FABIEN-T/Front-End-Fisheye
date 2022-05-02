@@ -1,17 +1,14 @@
 /**
  * MESSAGE D'ERREUR APPELÉ PAR LES FONCTIONS DE VALIDATION DES CHAMPS (INPUTS)
  */
- function errorMessage(tag, message, valid) {
+function errorMessage(tag, message, valid) {
   const constClass = document.querySelector("." + tag); // Ajout du "." avant le nom de classe
   const constSpan = document.querySelector("." + tag + "> span"); // Balise span de la classe donnée
   if (!valid) {
-    // Si non valide : Ajout de la classe "error" permettant la mise en forme CSS en rouge
-    constClass.classList.add("error");
-    // Ecriture du message d'erreur dans la balise span du document HTML
+    // Si non valide : Ecriture du message d'erreur dans la balise span du document HTML
     constSpan.textContent = message;
   } else {
-    // Si valide : Suppression de la classe "error" et de la mise en forme CSS en rouge
-    constClass.classList.remove("error");
+    // Si valide : Suppression de la classe "error" et
     // Ecriture du message (vide) dans la balise span du document HTML
     constSpan.textContent = message;
   }
@@ -22,7 +19,6 @@
  */
 
 /**
- * 
  * CONTRÔLE DU PRENOM
  * Le champ Prénom a un minimum de 2 caractères / n'est pas vide.
  */
@@ -98,12 +94,11 @@ function mailChecker(value) {
   }
 }
 
-
 /**
  * CONTRÔLE DU TEXTAREA
  * Un message doit être saisi.
  */
- function messageChecker(value) {
+function messageChecker(value) {
   if (!value) {
     messageValue = null;
     console.log("MESSAGE", value);
@@ -112,5 +107,3 @@ function mailChecker(value) {
     errorMessage("message", "", true);
   }
 }
-
-
