@@ -1,6 +1,6 @@
 # projet P6 - FISHEYE
 
-[Lien GitHub pages](https://fabien-t.github.io/Front-End-Fisheye/public/)
+[Lien GitHub pages](https://fabien-t.github.io/Front-End-Fisheye/public/)  
 <b>FISHEYE</b> est l'un des plus grands sites de photographes freelance
 
 Leur site est obsolète et a besoin d'être remanié :  
