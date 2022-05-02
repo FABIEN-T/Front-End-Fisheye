@@ -37,7 +37,7 @@ async function initPhotographer() {
     let valueSort = "popularity";
     typeSort(valueSort);
 
-    // Déclaration de la fonction de recupération de la valeur du type de tri
+    // Déclaration de la fonction de récupération de la valeur du type de tri
     function recoverySortValue(e) {
       if (e.target.className.includes("popularity")) {
         headerDropdown.innerHTML = "Popularité";
