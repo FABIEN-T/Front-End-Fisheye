@@ -7,7 +7,7 @@ async function getPhotographers() {
 // Fonction écoute de la touche "Escape" pour fermer le formulaire de contact et la lightbox
 function echapClose(f) {
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" || e.key === "Esc") {
+    if (e.key === "Escape" || e.key === "esc") {
       f(e);
     }
   });

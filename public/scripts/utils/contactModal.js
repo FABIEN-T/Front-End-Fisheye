@@ -72,7 +72,6 @@ function closeModal() {
   for (let element of constCloseClass) {
     element.classList.remove("error");
   }
-  document.querySelector(".focusButton").focus();
 }
 
 // ÉCOUTE DE LA TOUCHE "TAB" AU CLAVIER ET "ENFERMEMENT" DU FOCUS DANS LA MODALE

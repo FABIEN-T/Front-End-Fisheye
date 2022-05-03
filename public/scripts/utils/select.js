@@ -46,11 +46,9 @@ dropDown.addEventListener("keydown", function (e) {
 });
 
 // CLAVIER : FERMETURE du menu de tri
-document.addEventListener("keydown", function (e) {
-  if (e.key === "Escape" || e.key === "esc") {
+document.querySelector(".select").addEventListener("keydown", function (e) {
+  if (e.key === "Escape" || e.key === "esc") {    
     closeDropdown();
-    // en quittant le menu on redonne le focus au bouton
-    headerDropdown.focus();
   }
 });
 
