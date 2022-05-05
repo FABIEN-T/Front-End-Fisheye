@@ -60,10 +60,7 @@ function photographerMediaFactory(dataMedia) {
         videoElement.setAttribute("class", "media movie");
         videoElement.setAttribute("poster", "");
         videoElement.setAttribute("alt", title);
-        videoElement.setAttribute(
-          "aria-label",
-          title + " ouvrir la visionneuse"
-        );
+        videoElement.setAttribute("aria-label", title + " ouvrir la visionneuse");
         videoElement.setAttribute("tabindex", "0");
         mediaContainer.appendChild(videoElement);
       } else {

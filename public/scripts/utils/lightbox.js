@@ -30,7 +30,7 @@ function closeLightbox() {
   document.getElementById("footer").style.display = "block";
   lightboxModal.setAttribute("aria-hidden", true); // Les attributs Aria de la lightbox ne sont plus lisibles
   const movieRemove = document.querySelectorAll(".movie");
-  // Pour toutes les vidéos, les éléments de contrôle sont retirés et mises en pause
+  // Pour toutes les vidéos, les éléments de contrôle sont retirés et les vidéos mises en pause
   movieRemove.forEach(() => {
     document.querySelector(".movie").removeAttribute("controls", "");
     document.querySelector(".movie").pause();
@@ -70,21 +70,21 @@ function lightbox() {
     displaySlides(index);
     // Ecoute du "click" sur les Contrôles "média suivant" et ""media précédent"
     lightboxModal.querySelector(".prev").addEventListener("click", function () {
-      displaySlides((index -= 1)); // clic sur précédent : on décrémente (image précédente)
+      displaySlides(index -= 1); // clic sur précédent : on décrémente (image précédente)
     });
     lightboxModal.querySelector(".next").addEventListener("click", function () {
-      displaySlides((index += 1)); // clic sur précédent : on incrémente (image suivante)
+      displaySlides(index += 1); // clic sur précédent : on incrémente (image suivante)
     });
 
     // Ecoute des flèches gauche et droite du clavier
     document.addEventListener("keyup", function (e) {
       // Touche flèche gauche : on décrémente (image précédente)
       if (e.key === "ArrowLeft") {
-        displaySlides((index -= 1));
+        displaySlides(index -= 1);
       }
       // Touche flèche droite : on incrémente (image suivante)
       if (e.key === "ArrowRight") {
-        displaySlides((index += 1));
+        displaySlides(index += 1);
       }
     });
 
@@ -126,13 +126,13 @@ function lightbox() {
       }
 
       // Création des eléments du DOM de la lightbox
-      const titreMedia = tableauMedias[index].getAttribute("alt");
+      const titreMedia = tableauMedias[index].getAttribute("alt"); // Récupération du titre du média
       tableauMedias[index].setAttribute("tabindex", "0");
       tableauMedias[index].setAttribute("aria-label", titreMedia);
       viewContainer.innerHTML = tableauMedias[index].outerHTML;
       legendContainer.innerHTML = '<h1 class="legend"></h1>';
       const legend = document.querySelector(".legend");
-      legend.innerHTML = tableauMedias[index].getAttribute("alt");
+      legend.innerHTML = titreMedia;
       legend.setAttribute("tabindex", "0");
     }
   }

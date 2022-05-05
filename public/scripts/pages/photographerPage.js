@@ -41,7 +41,7 @@ async function initPhotographer() {
     dropDown.addEventListener("mousedown", (e) => {
       recoverySortValue(e);
     });
-    // Ecoute du clavier (touche "Enter") et lancement de la fonction de recupération de la valeur du type de tri
+    // Écoute du clavier (touche "Enter") et lancement de la fonction de recupération de la valeur du type de tri
     dropDown.addEventListener("keydown", (e) => {
       if (e.key === "Enter") {        
         recoverySortValue(e);

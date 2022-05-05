@@ -36,7 +36,7 @@ function increment() {
       // Si le nombres de likes n'a pas été incrémenté
       if (nbLikes.classList.contains("unClick")) {
         // alors on l'incrémente et on lui donne la classe "click"
-        // pour effacer l'incrémentation à la prochaine activation
+        // pour dérémenter à la prochaine activation
         nbLikes.classList.replace("unClick", "click");
         nbLikes.innerHTML++;
         // Incrémentation matérialisée par un coeur plein
@@ -45,7 +45,7 @@ function increment() {
         // Sinon on décrémente et on lui donne la classe "unClick"
         nbLikes.classList.replace("click", "unClick");
         nbLikes.innerHTML--;
-        // Dérémentation matérialisée par un coeur vide
+        // Décrémentation matérialisée par un coeur vide
         e.target.setAttribute("class", "far fa-heart iconHeart");
       }
       informationFooter();
