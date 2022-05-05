@@ -56,6 +56,7 @@ function increment() {
 // Bouclage de la navigation clavier ("Tab") à l'intérieur du formulaire de contact et du menu de tri
 function focusLoop(e, focusables) {
   e.preventDefault();
+  e.stopPropagation();
   // L'index est le premier élément qui a le focus dans tableau des éléménts "focusables"
   let index = focusables.findIndex(
     (searchFocus) => searchFocus === document.querySelector(":focus")

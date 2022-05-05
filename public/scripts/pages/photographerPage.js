@@ -35,7 +35,18 @@ async function initPhotographer() {
     const dropDown = document.querySelector(".dropDown");
     const headerDropdown = document.querySelector(".headerDropdown");
     let valueSort = "popularity";
-    typeSort(valueSort);
+    typeSort(valueSort);    
+
+    // Écoute du clic de la souris et lancement de la fonction de recupération de la valeur du type de tri
+    dropDown.addEventListener("mousedown", (e) => {
+      recoverySortValue(e);
+    });
+    // Ecoute du clavier (touche "Enter") et lancement de la fonction de recupération de la valeur du type de tri
+    dropDown.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {        
+        recoverySortValue(e);
+      }
+    });
 
     // Déclaration de la fonction de récupération de la valeur du type de tri
     function recoverySortValue(e) {
@@ -53,15 +64,6 @@ async function initPhotographer() {
       }
       typeSort(valueSort); // Lancement de la fonction de tri avec la valeur du type de tri
     }
-
-    // Écoute du clic de la souris et lancement de la fonction de recupération de la valeur du type de tri
-    dropDown.addEventListener("mousedown", (e) => {
-      recoverySortValue(e);
-    });
-    // Ecoute du clavier de la souris et lancement de la fonction de recupération de la valeur du type de tri
-    dropDown.addEventListener("keydown", (e) => {
-      recoverySortValue(e);
-    });
 
     // Déclaration de la fonction de tri avec la valeur du type de tri récupérée
     function typeSort(value) {
@@ -93,8 +95,8 @@ async function initPhotographer() {
   }
 
   // Appel des fonctions
-  getThisPhotographer();
-  getThisMedias();
+  getThisPhotographer(); // Récupération des informations du photographe sélectionné
+  getThisMedias(); // Récupération médias du photographe sélectionné
   photographerPageFactory(thisPhotographer); // Création de l'encart présentant le photographe
   sort(); // Lancement du tri des médias et création de la galerie
   lightbox(); // Création de la visionneuse
