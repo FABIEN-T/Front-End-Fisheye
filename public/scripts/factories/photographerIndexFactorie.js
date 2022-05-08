@@ -6,7 +6,7 @@ function photographerIndexFactory(data) {
   getUserCardDOM();
 
   function getUserCardDOM() {
-    // Injection du code HTML dans le DOM en prenant en compte les datas pour chaque photographe
+    // Injection du code HTML dans le DOM en prenant en compte les datas pour chaque photographe (introduction de variables)
     document.querySelector(".photographerSection").innerHTML += `
       <article>
         <a class="linkPhotographer" href="./photographer.html?id=${id}" role="Link(h2) + image" aria-label="Portrait de ${name} graphique">
